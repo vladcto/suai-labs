@@ -42,7 +42,7 @@ private:
 	void ChampionAction(int champIndex, bool enemyTurn) {
 		Champion& myChampion = enemyTurn ? enemyTeam[champIndex] : alliesTeam[champIndex];
 		//Перезаряка его способности.
-		myChampion.stunCooldownRemain = max(myChampion.stunCooldownRemain-1,1);
+		myChampion.stunCooldownRemain = max(myChampion.stunCooldownRemain - 1, 1);
 		//Если герой в стане, уменьшаем его длительность и пропускаем все действия.
 		if (myChampion.stunedSecs > 0) {
 			myChampion.stunedSecs -= 1;
@@ -97,13 +97,14 @@ public:
 	int FightTeams(float* hpLeft) {
 		float hpBeginAlies = CountHp(false);
 		int secondsFight = 0;
-		bool enemyTurn = true;
+		bool enemyTurn = true; //может сделать случайным... или через аргумент передавать...
 
 		//Сражение, пока одна из команд не проиграет.
 		while (enemyTeam.size() != 0 && alliesTeam.size() != 0) {
 			TeamAttack(enemyTurn);
 			enemyTurn ^= true; // меняем ход
 			TeamAttack(enemyTurn);
+			enemyTurn ^= true; // меняем ход
 			secondsFight += 1;
 		}
 
@@ -139,6 +140,12 @@ Champion InputChampion() {
 	return champ;
 }
 
+void PrintVector(const vector<int> inp) {
+	for (int i = 0; i < inp.size(); i++) {
+		cout << inp[i] << " ";
+	}
+}
+
 //Создать вектор чемпионов на indexes вектора чемпионов source.
 vector<Champion> ChampionsFromIndex(vector<int> indexes, const vector<Champion> source) {
 	vector<Champion> res;
@@ -146,12 +153,6 @@ vector<Champion> ChampionsFromIndex(vector<int> indexes, const vector<Champion> 
 		res.push_back(source[indexes[i]]);
 	}
 	return res;
-}
-
-void PrintVector(const vector<int> inp) {
-	for (int i = 0; i < inp.size(); i++) {
-		cout << inp[i] << " ";
-	}
 }
 
 int main() {
@@ -215,6 +216,7 @@ int main() {
 			}
 		}
 	} while (std::prev_permutation(bitmask.begin(), bitmask.end())); // следующая лексикографическая перестановка.
+	// Надо бы память освободить, но она и так освобдится в конце выполнения.
 
 	bool sortHp = RequestInput<bool>("Сортировать по хп? (0 - false , остальное - true): ");
 	if (sortHp) {
