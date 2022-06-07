@@ -24,7 +24,8 @@ vector<string> splitBy(string input, char sep) {
 }
 
 bool isSimple(int num) {
-    for (int i = 2; i <= sqrt(num) + 1; i++) {
+    if (num < 2) return false;
+    for (int i = 2; i <= sqrt(num); i++) {
         if (num % i == 0) return false;
     }
     return true;
