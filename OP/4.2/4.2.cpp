@@ -4,6 +4,8 @@
 #include<string>
 #include<math.h>
 
+// Ввод бойцов как N1 N2 N3 N4 : A , где N - номер скилла; A - зарплата
+
 using namespace std;
 
 struct Employer {
