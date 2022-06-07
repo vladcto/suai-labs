@@ -42,7 +42,7 @@ private:
 	void ChampionAction(int champIndex, bool enemyTurn) {
 		Champion& myChampion = enemyTurn ? enemyTeam[champIndex] : alliesTeam[champIndex];
 		//Перезаряка его способности.
-		myChampion.stunCooldownRemain = max(myChampion.stunCooldownRemain - 1, 1);
+		myChampion.stunCooldownRemain = max(myChampion.stunCooldownRemain - 1, 0);
 		//Если герой в стане, уменьшаем его длительность и пропускаем все действия.
 		if (myChampion.stunedSecs > 0) {
 			myChampion.stunedSecs -= 1;
