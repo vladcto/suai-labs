@@ -22,7 +22,7 @@ Here are the laboratories for the time of study at the __SUAI__.
 ### Information Systems Architecture
 | № | source |
 | :---: | :---: |
-| 1 | [source](SUAI_homework/3_semester/AIS_#/) |
+| 1 | [source](SUAI_homework/3_semester/AIS) |
 ### Basics of Programming
 | № | code | task |
 | :---: | :---: | :---: |
