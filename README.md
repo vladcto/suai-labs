@@ -26,12 +26,12 @@ Here are the laboratories for the time of study at the __SUAI__.
 ### Basics of Programming
 | № | code | task |
 | :---: | :---: | :---: |
-| 1 | [code](OP/2семестр_доп_задание1/source_code.cpp) | :x: |
-| 2 | [code](OP/2семестр_доп_задание1/source_code.cpp) | :x: |
-| 3 | [code](OP/2семестр_доп_задание1/source_code.cpp) | :x: |
+| 1 | [code](3_semester/OP/lab_1/src/) | :x: |
+| 2 | [code](3_semester/OP/lab_2/src/) | :x: |
+| 3 | [code](3_semester/OP/lab_3/src/) | :x: |
 ### Information Technology
-| № | code | task |
-| :---: | :---: | :---: |
-| 1 | [code](OP/2семестр_доп_задание1/source_code.cpp) | :x: |
-| 2 | [code](OP/2семестр_доп_задание1/source_code.cpp) | :x: |
-| 3 | [code](OP/2семестр_доп_задание1/source_code.cpp) | :x: |
+| № | source |
+| :---: | :---: |
+| 1 | [code](3_semester/IT/lab_1/) |
+| 2 | [code](3_semester/IT/lab_2/) |
+| 3 | [code](3_semester/IT/lab_3/) |
