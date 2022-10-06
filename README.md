@@ -20,9 +20,9 @@ Here are the laboratories for the time of study at the __SUAI__.
 | __add__ 1 | [code](2_semester/OP/2семестр_доп_задание1/source_code.cpp) |:trollface:| :x: |
 ## 3 Semester
 ### Information Systems Architecture
-| № | code | task |
-| :---: | :---: | :---: |
-| 1 | [code](OP/2семестр_доп_задание1/source_code.cpp) | :x: |
+| № | source |
+| :---: | :---: |
+| 1 | [source](SUAI_homework/3_semester/AIS_#/) |
 ### Basics of Programming
 | № | code | task |
 | :---: | :---: | :---: |
