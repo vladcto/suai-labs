@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="StrengthDisplay.StrengthDisplayer">
+    <Position X="3.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>StrengthDisplayer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Calibri" Size="10" />
+</ClassDiagram>

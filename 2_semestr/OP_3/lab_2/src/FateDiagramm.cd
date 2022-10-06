@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="lab_2.FatePrediction">
+    <Position X="3.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAEAAAAAgAAAAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>FatePrediction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="lab_2.Person">
+    <Position X="5.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Person.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Font Name="Calibri" Size="10" />
+</ClassDiagram>
