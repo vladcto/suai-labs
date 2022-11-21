@@ -32,8 +32,10 @@ namespace lab_6
         private void button3_Click(object sender, EventArgs e)
         {
             if (food is Burger burger)
+            {
                 burger.ShowInfo();
-            else 
+            }
+            else
                 ShowUserMistake();
         }
 
@@ -55,5 +57,9 @@ namespace lab_6
             MessageBox.Show($"—ьеденно {food!.Eat()}");
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
