@@ -9,7 +9,7 @@ using System.Xml.Linq;
 
 namespace AirplanesLib
 {
-    internal class Airport : BindingList<Airplane>
+    public class Airport : List<Airplane>
     {
         public Airport() { }
 

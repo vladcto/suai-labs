@@ -28,46 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listView1 = new System.Windows.Forms.ListView();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.flightCostLabel = new System.Windows.Forms.Label();
+            this.companyNameLabel = new System.Windows.Forms.Label();
+            this.departureTimeLabel = new System.Windows.Forms.Label();
+            this.destinationLabel = new System.Windows.Forms.Label();
+            this.flightNumberLabel = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.timeFilterInput = new System.Windows.Forms.DateTimePicker();
+            this.destinationFilterInp = new System.Windows.Forms.TextBox();
+            this.filterDateCheckBox = new System.Windows.Forms.CheckBox();
+            this.filterDestinationCheckBox = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.departureInput = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.flightCostInp = new System.Windows.Forms.NumericUpDown();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.destinationInp = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.companyInput = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.flightNumberInput = new System.Windows.Forms.TextBox();
             this.addBtn = new System.Windows.Forms.Button();
             this.removeBtn = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.airportListBox = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.flightCostInp)).BeginInit();
             this.SuspendLayout();
-            // 
-            // listView1
-            // 
-            this.listView1.Location = new System.Drawing.Point(31, 43);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(387, 318);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
             // 
             // label1
             // 
@@ -80,11 +72,11 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.flightCostLabel);
+            this.groupBox1.Controls.Add(this.companyNameLabel);
+            this.groupBox1.Controls.Add(this.departureTimeLabel);
+            this.groupBox1.Controls.Add(this.destinationLabel);
+            this.groupBox1.Controls.Add(this.flightNumberLabel);
             this.groupBox1.Location = new System.Drawing.Point(462, 93);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(445, 208);
@@ -92,58 +84,58 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
-            // label6
+            // flightCostLabel
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(26, 155);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(38, 15);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "label6";
+            this.flightCostLabel.AutoSize = true;
+            this.flightCostLabel.Location = new System.Drawing.Point(26, 155);
+            this.flightCostLabel.Name = "flightCostLabel";
+            this.flightCostLabel.Size = new System.Drawing.Size(38, 15);
+            this.flightCostLabel.TabIndex = 4;
+            this.flightCostLabel.Text = "label6";
             // 
-            // label5
+            // companyNameLabel
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(162, 50);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(38, 15);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "label5";
+            this.companyNameLabel.AutoSize = true;
+            this.companyNameLabel.Location = new System.Drawing.Point(182, 155);
+            this.companyNameLabel.Name = "companyNameLabel";
+            this.companyNameLabel.Size = new System.Drawing.Size(38, 15);
+            this.companyNameLabel.TabIndex = 3;
+            this.companyNameLabel.Text = "label5";
             // 
-            // label4
+            // departureTimeLabel
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(26, 118);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 15);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "label4";
+            this.departureTimeLabel.AutoSize = true;
+            this.departureTimeLabel.Location = new System.Drawing.Point(26, 122);
+            this.departureTimeLabel.Name = "departureTimeLabel";
+            this.departureTimeLabel.Size = new System.Drawing.Size(38, 15);
+            this.departureTimeLabel.TabIndex = 2;
+            this.departureTimeLabel.Text = "label4";
             // 
-            // label3
+            // destinationLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(26, 83);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 15);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "label3";
+            this.destinationLabel.AutoSize = true;
+            this.destinationLabel.Location = new System.Drawing.Point(26, 83);
+            this.destinationLabel.Name = "destinationLabel";
+            this.destinationLabel.Size = new System.Drawing.Size(38, 15);
+            this.destinationLabel.TabIndex = 1;
+            this.destinationLabel.Text = "label3";
             // 
-            // label2
+            // flightNumberLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(26, 50);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 15);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "label2";
+            this.flightNumberLabel.AutoSize = true;
+            this.flightNumberLabel.Location = new System.Drawing.Point(26, 50);
+            this.flightNumberLabel.Name = "flightNumberLabel";
+            this.flightNumberLabel.Size = new System.Drawing.Size(38, 15);
+            this.flightNumberLabel.TabIndex = 0;
+            this.flightNumberLabel.Text = "label2";
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.textBox5);
-            this.groupBox2.Controls.Add(this.dateTimePicker1);
-            this.groupBox2.Controls.Add(this.textBox4);
-            this.groupBox2.Controls.Add(this.checkBox3);
-            this.groupBox2.Controls.Add(this.checkBox2);
+            this.groupBox2.Controls.Add(this.timeFilterInput);
+            this.groupBox2.Controls.Add(this.destinationFilterInp);
+            this.groupBox2.Controls.Add(this.filterDateCheckBox);
+            this.groupBox2.Controls.Add(this.filterDestinationCheckBox);
             this.groupBox2.Controls.Add(this.checkBox1);
             this.groupBox2.Location = new System.Drawing.Point(32, 416);
             this.groupBox2.Name = "groupBox2";
@@ -152,39 +144,49 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "groupBox2";
             // 
-            // dateTimePicker1
+            // textBox5
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(109, 121);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 23);
-            this.dateTimePicker1.TabIndex = 4;
+            this.textBox5.Location = new System.Drawing.Point(109, 42);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(250, 23);
+            this.textBox5.TabIndex = 5;
             // 
-            // textBox4
+            // timeFilterInput
             // 
-            this.textBox4.Location = new System.Drawing.Point(109, 92);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(250, 23);
-            this.textBox4.TabIndex = 3;
+            this.timeFilterInput.Location = new System.Drawing.Point(109, 121);
+            this.timeFilterInput.Name = "timeFilterInput";
+            this.timeFilterInput.Size = new System.Drawing.Size(200, 23);
+            this.timeFilterInput.TabIndex = 4;
+            this.timeFilterInput.ValueChanged += new System.EventHandler(this.ChangedFilters);
             // 
-            // checkBox3
+            // destinationFilterInp
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(20, 121);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(83, 19);
-            this.checkBox3.TabIndex = 2;
-            this.checkBox3.Text = "checkBox3";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.destinationFilterInp.Location = new System.Drawing.Point(109, 92);
+            this.destinationFilterInp.Name = "destinationFilterInp";
+            this.destinationFilterInp.Size = new System.Drawing.Size(250, 23);
+            this.destinationFilterInp.TabIndex = 3;
             // 
-            // checkBox2
+            // filterDateCheckBox
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(20, 96);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(83, 19);
-            this.checkBox2.TabIndex = 1;
-            this.checkBox2.Text = "checkBox2";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.filterDateCheckBox.AutoSize = true;
+            this.filterDateCheckBox.Location = new System.Drawing.Point(20, 121);
+            this.filterDateCheckBox.Name = "filterDateCheckBox";
+            this.filterDateCheckBox.Size = new System.Drawing.Size(83, 19);
+            this.filterDateCheckBox.TabIndex = 2;
+            this.filterDateCheckBox.Text = "checkBox3";
+            this.filterDateCheckBox.UseVisualStyleBackColor = true;
+            this.filterDateCheckBox.CheckedChanged += new System.EventHandler(this.ChangedFilters);
+            // 
+            // filterDestinationCheckBox
+            // 
+            this.filterDestinationCheckBox.AutoSize = true;
+            this.filterDestinationCheckBox.Location = new System.Drawing.Point(20, 96);
+            this.filterDestinationCheckBox.Name = "filterDestinationCheckBox";
+            this.filterDestinationCheckBox.Size = new System.Drawing.Size(83, 19);
+            this.filterDestinationCheckBox.TabIndex = 1;
+            this.filterDestinationCheckBox.Text = "checkBox2";
+            this.filterDestinationCheckBox.UseVisualStyleBackColor = true;
+            this.filterDestinationCheckBox.CheckedChanged += new System.EventHandler(this.ChangedFilters);
             // 
             // checkBox1
             // 
@@ -198,15 +200,15 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.dateTimePicker2);
+            this.groupBox3.Controls.Add(this.departureInput);
             this.groupBox3.Controls.Add(this.label10);
-            this.groupBox3.Controls.Add(this.numericUpDown1);
+            this.groupBox3.Controls.Add(this.flightCostInp);
             this.groupBox3.Controls.Add(this.label9);
-            this.groupBox3.Controls.Add(this.textBox3);
+            this.groupBox3.Controls.Add(this.destinationInp);
             this.groupBox3.Controls.Add(this.label8);
-            this.groupBox3.Controls.Add(this.textBox2);
+            this.groupBox3.Controls.Add(this.companyInput);
             this.groupBox3.Controls.Add(this.label7);
-            this.groupBox3.Controls.Add(this.textBox1);
+            this.groupBox3.Controls.Add(this.flightNumberInput);
             this.groupBox3.Location = new System.Drawing.Point(462, 326);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(442, 214);
@@ -214,12 +216,12 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "groupBox3";
             // 
-            // dateTimePicker2
+            // departureInput
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(23, 171);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(209, 23);
-            this.dateTimePicker2.TabIndex = 10;
+            this.departureInput.Location = new System.Drawing.Point(23, 171);
+            this.departureInput.Name = "departureInput";
+            this.departureInput.Size = new System.Drawing.Size(209, 23);
+            this.departureInput.TabIndex = 10;
             // 
             // label10
             // 
@@ -230,12 +232,12 @@
             this.label10.TabIndex = 9;
             this.label10.Text = "label10";
             // 
-            // numericUpDown1
+            // flightCostInp
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(244, 104);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(173, 23);
-            this.numericUpDown1.TabIndex = 8;
+            this.flightCostInp.Location = new System.Drawing.Point(244, 104);
+            this.flightCostInp.Name = "flightCostInp";
+            this.flightCostInp.Size = new System.Drawing.Size(173, 23);
+            this.flightCostInp.TabIndex = 8;
             // 
             // label9
             // 
@@ -246,12 +248,12 @@
             this.label9.TabIndex = 7;
             this.label9.Text = "label9";
             // 
-            // textBox3
+            // destinationInp
             // 
-            this.textBox3.Location = new System.Drawing.Point(244, 48);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(173, 23);
-            this.textBox3.TabIndex = 6;
+            this.destinationInp.Location = new System.Drawing.Point(244, 48);
+            this.destinationInp.Name = "destinationInp";
+            this.destinationInp.Size = new System.Drawing.Size(173, 23);
+            this.destinationInp.TabIndex = 6;
             // 
             // label8
             // 
@@ -262,12 +264,12 @@
             this.label8.TabIndex = 4;
             this.label8.Text = "label8";
             // 
-            // textBox2
+            // companyInput
             // 
-            this.textBox2.Location = new System.Drawing.Point(23, 104);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(209, 23);
-            this.textBox2.TabIndex = 3;
+            this.companyInput.Location = new System.Drawing.Point(23, 104);
+            this.companyInput.Name = "companyInput";
+            this.companyInput.Size = new System.Drawing.Size(209, 23);
+            this.companyInput.TabIndex = 3;
             // 
             // label7
             // 
@@ -278,12 +280,12 @@
             this.label7.TabIndex = 2;
             this.label7.Text = "label7";
             // 
-            // textBox1
+            // flightNumberInput
             // 
-            this.textBox1.Location = new System.Drawing.Point(23, 48);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(209, 23);
-            this.textBox1.TabIndex = 1;
+            this.flightNumberInput.Location = new System.Drawing.Point(23, 48);
+            this.flightNumberInput.Name = "flightNumberInput";
+            this.flightNumberInput.Size = new System.Drawing.Size(209, 23);
+            this.flightNumberInput.TabIndex = 1;
             // 
             // addBtn
             // 
@@ -293,6 +295,7 @@
             this.addBtn.TabIndex = 5;
             this.addBtn.Text = "Добавить";
             this.addBtn.UseVisualStyleBackColor = true;
+            this.addBtn.Click += new System.EventHandler(this.AddPlane);
             // 
             // removeBtn
             // 
@@ -302,26 +305,28 @@
             this.removeBtn.TabIndex = 6;
             this.removeBtn.Text = "Удалить";
             this.removeBtn.UseVisualStyleBackColor = true;
-            this.removeBtn.Click += new System.EventHandler(this.button2_Click);
+            this.removeBtn.Click += new System.EventHandler(this.RemovePlane);
             // 
-            // textBox5
+            // airportListBox
             // 
-            this.textBox5.Location = new System.Drawing.Point(109, 42);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(250, 23);
-            this.textBox5.TabIndex = 5;
+            this.airportListBox.FormattingEnabled = true;
+            this.airportListBox.ItemHeight = 15;
+            this.airportListBox.Location = new System.Drawing.Point(32, 55);
+            this.airportListBox.Name = "airportListBox";
+            this.airportListBox.Size = new System.Drawing.Size(386, 304);
+            this.airportListBox.TabIndex = 7;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(933, 622);
+            this.Controls.Add(this.airportListBox);
             this.Controls.Add(this.removeBtn);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.listView1);
             this.Controls.Add(this.addBtn);
             this.Name = "MainForm";
             this.Text = "Form1";
@@ -331,40 +336,39 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.flightCostInp)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private ListView listView1;
         private Label label1;
         private GroupBox groupBox1;
-        private Label label6;
-        private Label label5;
-        private Label label4;
-        private Label label3;
-        private Label label2;
+        private Label flightCostLabel;
+        private Label companyNameLabel;
+        private Label departureTimeLabel;
+        private Label destinationLabel;
+        private Label flightNumberLabel;
         private GroupBox groupBox2;
-        private CheckBox checkBox3;
-        private CheckBox checkBox2;
+        private CheckBox filterDateCheckBox;
+        private CheckBox filterDestinationCheckBox;
         private CheckBox checkBox1;
         private GroupBox groupBox3;
         private Label label8;
-        private TextBox textBox2;
+        private TextBox companyInput;
         private Label label7;
-        private TextBox textBox1;
-        private DateTimePicker dateTimePicker1;
-        private TextBox textBox4;
-        private DateTimePicker dateTimePicker2;
+        private TextBox flightNumberInput;
+        private DateTimePicker timeFilterInput;
+        private TextBox destinationFilterInp;
+        private DateTimePicker departureInput;
         private Label label10;
-        private NumericUpDown numericUpDown1;
+        private NumericUpDown flightCostInp;
         private Label label9;
-        private TextBox textBox3;
+        private TextBox destinationInp;
         private Button addBtn;
         private Button removeBtn;
         private TextBox textBox5;
+        private ListBox airportListBox;
     }
 }

@@ -17,9 +17,9 @@
             FlightCost = flightCost;
         }
 
-        class Builder
+        public class Builder
         {
-            private string? _flightNumber = null;
+            private string _flightNumber = "Любительская авиация";
             private string? _destination = null;
             private DateTime? _departureTime = null;
             private string? _company = null;
@@ -33,7 +33,7 @@
 
             public Airplane Build()
             {
-                if (_flightNumber == null || _destination == null ||
+                if (_destination == null ||
                     _departureTime == null || _company == null || _flightCost == null)
                 {
                     throw new Exception();
