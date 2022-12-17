@@ -27,7 +27,11 @@
 
             public Builder SetFlightNumber(string inp) { _flightNumber = inp; return this; }
             public Builder SetDestination(string inp) { _destination = inp; return this; }
-            public Builder SetDepartureTime(DateTime inp) { _departureTime = inp; return this; }
+            public Builder SetDepartureTime(DateTime inp)
+            {
+                _departureTime = inp;
+                return this;
+            }
             public Builder SetCompany(string inp) { _company = inp; return this; }
             public Builder SetFlightCost(float inp) { _flightCost = inp; return this; }
 
@@ -40,8 +44,8 @@
                 }
                 return new Airplane(_flightNumber,
                     _destination,
-                    (DateTime)_departureTime, 
-                    _company, 
+                    (DateTime)_departureTime,
+                    _company,
                     (float)_flightCost);
             }
         }

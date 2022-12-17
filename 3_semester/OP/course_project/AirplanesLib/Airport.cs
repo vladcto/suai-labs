@@ -1,42 +1,60 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
-
-namespace AirplanesLib
+﻿namespace AirplanesLib
 {
-    public class Airport : List<Airplane>
+    public interface SimpleList<T>
     {
-        public Airport() { }
+        public event Action? ListUpdatedIvent;
 
-        private static bool DestinationCompare(Airplane a1, string destination)
-            => a1.Destination == destination;
-        private static bool DepartureTimeCompare(Airplane a1, DateTime time)
-            => a1.DepartuteTime > time;
+        public int Count();
+        public void Add(T item);
+        public void Remove(T item);
+    }
 
-        public Airplane FindFlightNumber(string flightNumber)
+    public class Airport : SimpleList<Airplane>
+    {
+        public event Action? ListUpdatedIvent;
+
+        private List<Airplane> airplanes = new();
+
+        public Airport()
         {
-            return this.First((e) => e.FlightNumber == flightNumber);
+            Filters.FiltersAppliedEvent +=
+                () => this.ListUpdatedIvent?.Invoke();
         }
 
-        public IEnumerable FindBy(string destination)
+        public Filters<Airplane> Filters { get; init; } = new();
+
+        public IList<Airplane> FilteredPlanes { get => Filters.ApplyTo(airplanes); }
+
+        public int Count() => airplanes.Count;
+
+        public void Add(Airplane item)
         {
-            return this.Where((e) => DestinationCompare(e, destination));
+            airplanes.Add(item);
+            ListUpdatedIvent?.Invoke();
         }
 
-        public IEnumerable FindBy(DateTime dateTime)
+        public void Remove(Airplane item)
         {
-            return this.Where((e) => DepartureTimeCompare(e, dateTime));
+            airplanes.Remove(item);
+            ListUpdatedIvent?.Invoke();
         }
+    }
 
-        public IEnumerable FindBy(string destination, DateTime dateTime)
+    public class Filters<T>
+    {
+        internal event Action? FiltersAppliedEvent;
+
+        readonly List<Func<T, bool>> filters = new();
+
+        public void Add(Func<T, bool> predicate) => filters.Add(predicate);
+        public void Clear() => filters.Clear();
+        public void Apply() => FiltersAppliedEvent?.Invoke();
+
+        internal IList<T> ApplyTo(IEnumerable<T> filtered)
         {
-            return this.Where((e) => DestinationCompare(e, destination))
-                .Where((e) => DepartureTimeCompare(e, dateTime));
+            foreach (var filter in filters)
+                filtered = filtered.Where(filter);
+            return filtered.ToList();
         }
     }
 }

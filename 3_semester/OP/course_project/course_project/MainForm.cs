@@ -10,10 +10,14 @@ namespace course_project
         public MainForm()
         {
             InitializeComponent();
-            UpdateAirportListBox();
             airportListBox.DisplayMember = nameof(Airplane.FlightNumber);
             airportListBox.SelectedIndexChanged += 
                 (sender, e) => DisplayAirplane((Airplane) airportListBox.SelectedItem);
+            airport.ListUpdatedIvent += () =>
+            {
+                airportListBox.DataSource = airport.FilteredPlanes;
+                airportListBox.Refresh();
+            };
         }
 
         private void AddPlane(object sender, EventArgs e)
@@ -25,7 +29,6 @@ namespace course_project
             builder.SetFlightCost((int)flightCostInp.Value);
             builder.SetDepartureTime(departureInput.Value);
             airport.Add(builder.Build());
-            UpdateAirportListBox();
         }
 
         private void RemovePlane(object sender, EventArgs e)
@@ -36,8 +39,7 @@ namespace course_project
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            airport.RemoveAt(airportListBox.SelectedIndex);
-            UpdateAirportListBox();
+            airport.Remove((Airplane)airportListBox.SelectedItem);
         }
 
         private void DisplayAirplane(Airplane airplane)
@@ -51,17 +53,12 @@ namespace course_project
 
         private void UpdateAirportListBox()
         {
-            var toShow = airport.AsEnumerable();
+            airport.Filters.Clear();
             if (filterDateCheckBox.Checked)
-            {
-                toShow = toShow.Where((e) => timeFilterInput.Value <= e.DepartuteTime);
-            }
+                airport.Filters.Add((e) => timeFilterInput.Value <= e.DepartuteTime);
             if (filterDestinationCheckBox.Checked)
-            {
-                toShow = toShow.Where((e) => e.Destination == destinationFilterInp.Text);
-            }
-            airportListBox.DataSource = new BindingList<Airplane>(toShow.ToList());
-            airportListBox.Refresh();
+                airport.Filters.Add((e) => e.Destination == destinationFilterInp.Text);
+            airport.Filters.Apply();
         }
 
         private void ChangedFilters(object sender, EventArgs e)
