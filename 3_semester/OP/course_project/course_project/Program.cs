@@ -1,4 +1,4 @@
-namespace course_project
+namespace CourseProject
 {
     internal static class Program
     {

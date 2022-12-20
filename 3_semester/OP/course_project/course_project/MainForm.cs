@@ -1,7 +1,7 @@
 using AirplanesLib;
 using System.ComponentModel;
 
-namespace course_project
+namespace CourseProject
 {
     public partial class MainForm : Form
     {
@@ -11,8 +11,8 @@ namespace course_project
         {
             InitializeComponent();
             airportListBox.DisplayMember = nameof(Airplane.FlightNumber);
-            airportListBox.SelectedIndexChanged += 
-                (sender, e) => DisplayAirplane((Airplane) airportListBox.SelectedItem);
+            airportListBox.SelectedIndexChanged +=
+                (sender, e) => DisplayAirplane((Airplane)airportListBox.SelectedItem);
             airport.ListUpdatedIvent += () =>
             {
                 airportListBox.DataSource = airport.FilteredPlanes;
@@ -20,22 +20,39 @@ namespace course_project
             };
         }
 
+        static void ValidateAction(Action validateOperation, Control errorLabel)
+        {
+            errorLabel.Hide();
+            try
+            {
+                validateOperation();
+            }
+            catch (ArgumentException) { errorLabel.Show(); };
+        }
+
         private void AddPlane(object sender, EventArgs e)
         {
             Airplane.Builder builder = new();
-            builder.SetFlightNumber(flightNumberInput.Text);
+            ValidateAction(
+                () => builder.SetFlightNumber(flightNumberInput.Text), flightNumberError);
+            ValidateAction(
+                () => builder.SetDestination(destinationInp.Text), destinationError);
             builder.SetCompany(companyInput.Text);
-            builder.SetDestination(destinationInp.Text);
             builder.SetFlightCost((int)flightCostInp.Value);
             builder.SetDepartureTime(departureInput.Value);
-            airport.Add(builder.Build());
+            try
+            {
+                airport.Add(builder.Build());
+            }
+            catch (ArgumentException) { };
+
         }
 
         private void RemovePlane(object sender, EventArgs e)
         {
-            if(airportListBox.SelectedIndex == -1)
+            if (airportListBox.SelectedIndex == -1)
             {
-                MessageBox.Show("Нечего удалять.", "Ошибка удаления!", 
+                MessageBox.Show("Нечего удалять.", "Ошибка удаления!",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
@@ -44,16 +61,18 @@ namespace course_project
 
         private void DisplayAirplane(Airplane airplane)
         {
-            companyNameLabel.Text = airplane.CompanyName;
-            flightNumberLabel.Text = airplane.FlightNumber;
-            flightCostLabel.Text = airplane.FlightCost.ToString();
-            departureTimeLabel.Text = airplane.DepartuteTime.ToLongDateString();
-            destinationLabel.Text = airplane.Destination;
+            companyNameLabel.Text = $"Компания: {airplane.CompanyName}";
+            flightNumberLabel.Text = $"Международный код: {airplane.FlightNumber}";
+            flightCostLabel.Text = $"Стоимость пролета: {airplane.FlightCost} рупий.";
+            departureTimeLabel.Text = $"Дата вылета: {airplane.DepartuteTime.ToLongDateString()}";
+            destinationLabel.Text = $"Пункт назначения: {airplane.Destination}";
         }
 
-        private void UpdateAirportListBox()
+        private void ChangedFilters(object sender, EventArgs e)
         {
             airport.Filters.Clear();
+            if (flightNumberCheck.Checked)
+                airport.Filters.Add((e) => e.FlightNumber == flightNumberFilter.Text);
             if (filterDateCheckBox.Checked)
                 airport.Filters.Add((e) => timeFilterInput.Value <= e.DepartuteTime);
             if (filterDestinationCheckBox.Checked)
@@ -61,9 +80,18 @@ namespace course_project
             airport.Filters.Apply();
         }
 
-        private void ChangedFilters(object sender, EventArgs e)
+        private void FlightNumberChanged(object sender, EventArgs e)
         {
-            UpdateAirportListBox();
+            ValidateAction(() =>
+                new Airplane.Builder().SetFlightNumber(flightNumberInput.Text),
+                flightNumberError);
+        }
+
+        private void DestinationChanged(object sender, EventArgs e)
+        {
+            ValidateAction(() =>
+                new Airplane.Builder().SetDestination(destinationInp.Text),
+                destinationError);
         }
     }
 }
