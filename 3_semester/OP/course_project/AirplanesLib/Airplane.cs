@@ -27,6 +27,7 @@
 
             public Builder SetFlightNumber(string inp)
             {
+                //Не совпадает формату ИКАО
                 if (inp.Trim().Length < 3 || inp.Trim().Length > 8)
                 {
                     _flightNumber = null;
@@ -85,5 +86,4 @@
             }
         }
     }
-
 }

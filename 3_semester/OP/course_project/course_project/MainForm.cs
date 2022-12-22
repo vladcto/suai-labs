@@ -1,5 +1,4 @@
 using AirplanesLib;
-using System.ComponentModel;
 
 namespace CourseProject
 {
@@ -13,7 +12,7 @@ namespace CourseProject
             airportListBox.DisplayMember = nameof(Airplane.FlightNumber);
             airportListBox.SelectedIndexChanged +=
                 (sender, e) => DisplayAirplane((Airplane)airportListBox.SelectedItem);
-            airport.ListUpdatedIvent += () =>
+            airport.ListUpdatedEvent += () =>
             {
                 airportListBox.DataSource = airport.FilteredPlanes;
                 airportListBox.Refresh();

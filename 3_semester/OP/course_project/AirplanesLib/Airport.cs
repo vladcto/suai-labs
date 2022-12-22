@@ -1,33 +1,33 @@
 ﻿namespace AirplanesLib
 {
-    public class Airport : SimpleList<Airplane>
+    public class Airport : ISimpleList<Airplane>
     {
-        public event Action? ListUpdatedIvent;
+        public event Action? ListUpdatedEvent;
 
         private List<Airplane> airplanes = new();
 
         public Airport()
         {
             Filters.FiltersAppliedEvent +=
-                () => this.ListUpdatedIvent?.Invoke();
+                () => this.ListUpdatedEvent?.Invoke();
         }
 
         public Filters<Airplane> Filters { get; init; } = new();
 
         public IList<Airplane> FilteredPlanes { get => Filters.ApplyTo(airplanes); }
 
-        public int Count() => airplanes.Count;
+        public int Count => airplanes.Count;
 
         public void Add(Airplane item)
         {
             airplanes.Add(item);
-            ListUpdatedIvent?.Invoke();
+            ListUpdatedEvent?.Invoke();
         }
 
         public void Remove(Airplane item)
         {
             airplanes.Remove(item);
-            ListUpdatedIvent?.Invoke();
+            ListUpdatedEvent?.Invoke();
         }
     }
 }

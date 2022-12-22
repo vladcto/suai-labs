@@ -256,9 +256,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(244, 104);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 15);
+            this.label2.Size = new System.Drawing.Size(118, 15);
             this.label2.TabIndex = 11;
-            this.label2.Text = "Стоимость";
+            this.label2.Text = "Стоимость в рупиях";
             // 
             // departureInput
             // 
@@ -269,7 +269,17 @@
             // 
             // flightCostInp
             // 
+            this.flightCostInp.Increment = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
             this.flightCostInp.Location = new System.Drawing.Point(244, 122);
+            this.flightCostInp.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
             this.flightCostInp.Name = "flightCostInp";
             this.flightCostInp.Size = new System.Drawing.Size(173, 23);
             this.flightCostInp.TabIndex = 8;
@@ -363,7 +373,7 @@
             this.Controls.Add(this.addBtn);
             this.Controls.Add(this.airportListBox);
             this.Name = "MainForm";
-            this.Text = "Form1";
+            this.Text = "ИС Аэропорта";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
