@@ -70,9 +70,11 @@
             this.groupBox1.Controls.Add(this.departureTimeLabel);
             this.groupBox1.Controls.Add(this.destinationLabel);
             this.groupBox1.Controls.Add(this.flightNumberLabel);
-            this.groupBox1.Location = new System.Drawing.Point(462, 81);
+            this.groupBox1.Location = new System.Drawing.Point(528, 108);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(445, 220);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox1.Size = new System.Drawing.Size(509, 293);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Информаця о самолете";
@@ -80,45 +82,45 @@
             // flightCostLabel
             // 
             this.flightCostLabel.AutoSize = true;
-            this.flightCostLabel.Location = new System.Drawing.Point(26, 148);
+            this.flightCostLabel.Location = new System.Drawing.Point(30, 197);
             this.flightCostLabel.Name = "flightCostLabel";
-            this.flightCostLabel.Size = new System.Drawing.Size(12, 15);
+            this.flightCostLabel.Size = new System.Drawing.Size(15, 20);
             this.flightCostLabel.TabIndex = 4;
             this.flightCostLabel.Text = "-";
             // 
             // companyNameLabel
             // 
             this.companyNameLabel.AutoSize = true;
-            this.companyNameLabel.Location = new System.Drawing.Point(26, 185);
+            this.companyNameLabel.Location = new System.Drawing.Point(30, 247);
             this.companyNameLabel.Name = "companyNameLabel";
-            this.companyNameLabel.Size = new System.Drawing.Size(12, 15);
+            this.companyNameLabel.Size = new System.Drawing.Size(15, 20);
             this.companyNameLabel.TabIndex = 3;
             this.companyNameLabel.Text = "-";
             // 
             // departureTimeLabel
             // 
             this.departureTimeLabel.AutoSize = true;
-            this.departureTimeLabel.Location = new System.Drawing.Point(26, 116);
+            this.departureTimeLabel.Location = new System.Drawing.Point(30, 155);
             this.departureTimeLabel.Name = "departureTimeLabel";
-            this.departureTimeLabel.Size = new System.Drawing.Size(12, 15);
+            this.departureTimeLabel.Size = new System.Drawing.Size(15, 20);
             this.departureTimeLabel.TabIndex = 2;
             this.departureTimeLabel.Text = "-";
             // 
             // destinationLabel
             // 
             this.destinationLabel.AutoSize = true;
-            this.destinationLabel.Location = new System.Drawing.Point(26, 77);
+            this.destinationLabel.Location = new System.Drawing.Point(30, 103);
             this.destinationLabel.Name = "destinationLabel";
-            this.destinationLabel.Size = new System.Drawing.Size(12, 15);
+            this.destinationLabel.Size = new System.Drawing.Size(15, 20);
             this.destinationLabel.TabIndex = 1;
             this.destinationLabel.Text = "-";
             // 
             // flightNumberLabel
             // 
             this.flightNumberLabel.AutoSize = true;
-            this.flightNumberLabel.Location = new System.Drawing.Point(26, 38);
+            this.flightNumberLabel.Location = new System.Drawing.Point(30, 51);
             this.flightNumberLabel.Name = "flightNumberLabel";
-            this.flightNumberLabel.Size = new System.Drawing.Size(12, 15);
+            this.flightNumberLabel.Size = new System.Drawing.Size(15, 20);
             this.flightNumberLabel.TabIndex = 0;
             this.flightNumberLabel.Text = "-";
             // 
@@ -130,44 +132,50 @@
             this.groupBox2.Controls.Add(this.filterDateCheckBox);
             this.groupBox2.Controls.Add(this.filterDestinationCheckBox);
             this.groupBox2.Controls.Add(this.flightNumberCheck);
-            this.groupBox2.Location = new System.Drawing.Point(32, 416);
+            this.groupBox2.Location = new System.Drawing.Point(37, 555);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(386, 172);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox2.Size = new System.Drawing.Size(441, 229);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Фильтры";
             // 
             // flightNumberFilter
             // 
-            this.flightNumberFilter.Location = new System.Drawing.Point(128, 42);
+            this.flightNumberFilter.Location = new System.Drawing.Point(146, 56);
+            this.flightNumberFilter.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.flightNumberFilter.Name = "flightNumberFilter";
-            this.flightNumberFilter.Size = new System.Drawing.Size(231, 23);
+            this.flightNumberFilter.Size = new System.Drawing.Size(263, 27);
             this.flightNumberFilter.TabIndex = 5;
             this.flightNumberFilter.Leave += new System.EventHandler(this.ChangedFilters);
             // 
             // timeFilterInput
             // 
-            this.timeFilterInput.Location = new System.Drawing.Point(128, 123);
+            this.timeFilterInput.Location = new System.Drawing.Point(146, 164);
+            this.timeFilterInput.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.timeFilterInput.Name = "timeFilterInput";
-            this.timeFilterInput.Size = new System.Drawing.Size(231, 23);
+            this.timeFilterInput.Size = new System.Drawing.Size(263, 27);
             this.timeFilterInput.TabIndex = 4;
             this.timeFilterInput.ValueChanged += new System.EventHandler(this.ChangedFilters);
             this.timeFilterInput.Leave += new System.EventHandler(this.ChangedFilters);
             // 
             // destinationFilterInp
             // 
-            this.destinationFilterInp.Location = new System.Drawing.Point(128, 92);
+            this.destinationFilterInp.Location = new System.Drawing.Point(146, 123);
+            this.destinationFilterInp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.destinationFilterInp.Name = "destinationFilterInp";
-            this.destinationFilterInp.Size = new System.Drawing.Size(231, 23);
+            this.destinationFilterInp.Size = new System.Drawing.Size(263, 27);
             this.destinationFilterInp.TabIndex = 3;
             this.destinationFilterInp.Leave += new System.EventHandler(this.ChangedFilters);
             // 
             // filterDateCheckBox
             // 
             this.filterDateCheckBox.AutoSize = true;
-            this.filterDateCheckBox.Location = new System.Drawing.Point(20, 127);
+            this.filterDateCheckBox.Location = new System.Drawing.Point(23, 169);
+            this.filterDateCheckBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.filterDateCheckBox.Name = "filterDateCheckBox";
-            this.filterDateCheckBox.Size = new System.Drawing.Size(114, 19);
+            this.filterDateCheckBox.Size = new System.Drawing.Size(143, 24);
             this.filterDateCheckBox.TabIndex = 2;
             this.filterDateCheckBox.Text = "Время вылета >";
             this.filterDateCheckBox.UseVisualStyleBackColor = true;
@@ -176,9 +184,10 @@
             // filterDestinationCheckBox
             // 
             this.filterDestinationCheckBox.AutoSize = true;
-            this.filterDestinationCheckBox.Location = new System.Drawing.Point(20, 96);
+            this.filterDestinationCheckBox.Location = new System.Drawing.Point(23, 128);
+            this.filterDestinationCheckBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.filterDestinationCheckBox.Name = "filterDestinationCheckBox";
-            this.filterDestinationCheckBox.Size = new System.Drawing.Size(98, 19);
+            this.filterDestinationCheckBox.Size = new System.Drawing.Size(123, 24);
             this.filterDestinationCheckBox.TabIndex = 1;
             this.filterDestinationCheckBox.Text = "Назначение: ";
             this.filterDestinationCheckBox.UseVisualStyleBackColor = true;
@@ -187,12 +196,14 @@
             // flightNumberCheck
             // 
             this.flightNumberCheck.AutoSize = true;
-            this.flightNumberCheck.Location = new System.Drawing.Point(20, 44);
+            this.flightNumberCheck.Location = new System.Drawing.Point(23, 59);
+            this.flightNumberCheck.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.flightNumberCheck.Name = "flightNumberCheck";
-            this.flightNumberCheck.Size = new System.Drawing.Size(106, 19);
+            this.flightNumberCheck.Size = new System.Drawing.Size(131, 24);
             this.flightNumberCheck.TabIndex = 0;
             this.flightNumberCheck.Text = "Поиск по коду";
             this.flightNumberCheck.UseVisualStyleBackColor = true;
+            this.flightNumberCheck.Click += new System.EventHandler(this.ChangedFilters);
             // 
             // groupBox3
             // 
@@ -208,9 +219,11 @@
             this.groupBox3.Controls.Add(this.companyInput);
             this.groupBox3.Controls.Add(this.flightNumberError);
             this.groupBox3.Controls.Add(this.flightNumberInput);
-            this.groupBox3.Location = new System.Drawing.Point(462, 326);
+            this.groupBox3.Location = new System.Drawing.Point(528, 435);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(442, 214);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox3.Size = new System.Drawing.Size(505, 285);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Ввод нового самолета";
@@ -218,53 +231,54 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(244, 28);
+            this.label5.Location = new System.Drawing.Point(279, 37);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(73, 15);
+            this.label5.Size = new System.Drawing.Size(94, 20);
             this.label5.TabIndex = 15;
             this.label5.Text = "Назначение";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(23, 30);
+            this.label4.Location = new System.Drawing.Point(26, 40);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(123, 15);
+            this.label4.Size = new System.Drawing.Size(156, 20);
             this.label4.TabIndex = 14;
             this.label4.Text = "Международный код";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(26, 104);
+            this.label1.Location = new System.Drawing.Point(30, 139);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 15);
+            this.label1.Size = new System.Drawing.Size(81, 20);
             this.label1.TabIndex = 13;
             this.label1.Text = "Компания";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(71, 176);
+            this.label3.Location = new System.Drawing.Point(81, 235);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(84, 15);
+            this.label3.Size = new System.Drawing.Size(107, 20);
             this.label3.TabIndex = 12;
             this.label3.Text = "Время вылета";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(244, 104);
+            this.label2.Location = new System.Drawing.Point(279, 139);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(118, 15);
+            this.label2.Size = new System.Drawing.Size(148, 20);
             this.label2.TabIndex = 11;
             this.label2.Text = "Стоимость в рупиях";
             // 
             // departureInput
             // 
-            this.departureInput.Location = new System.Drawing.Point(161, 170);
+            this.departureInput.Location = new System.Drawing.Point(184, 227);
+            this.departureInput.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.departureInput.Name = "departureInput";
-            this.departureInput.Size = new System.Drawing.Size(209, 23);
+            this.departureInput.Size = new System.Drawing.Size(238, 27);
             this.departureInput.TabIndex = 10;
             // 
             // flightCostInp
@@ -274,69 +288,74 @@
             0,
             0,
             0});
-            this.flightCostInp.Location = new System.Drawing.Point(244, 122);
+            this.flightCostInp.Location = new System.Drawing.Point(279, 163);
+            this.flightCostInp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.flightCostInp.Maximum = new decimal(new int[] {
             100000,
             0,
             0,
             0});
             this.flightCostInp.Name = "flightCostInp";
-            this.flightCostInp.Size = new System.Drawing.Size(173, 23);
+            this.flightCostInp.Size = new System.Drawing.Size(198, 27);
             this.flightCostInp.TabIndex = 8;
             // 
             // destinationError
             // 
             this.destinationError.AutoSize = true;
             this.destinationError.ForeColor = System.Drawing.Color.Red;
-            this.destinationError.Location = new System.Drawing.Point(244, 74);
+            this.destinationError.Location = new System.Drawing.Point(279, 99);
             this.destinationError.Name = "destinationError";
-            this.destinationError.Size = new System.Drawing.Size(113, 15);
+            this.destinationError.Size = new System.Drawing.Size(144, 20);
             this.destinationError.TabIndex = 7;
             this.destinationError.Text = "Пустое назначение";
             this.destinationError.Visible = false;
             // 
             // destinationInp
             // 
-            this.destinationInp.Location = new System.Drawing.Point(244, 48);
+            this.destinationInp.Location = new System.Drawing.Point(279, 64);
+            this.destinationInp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.destinationInp.Name = "destinationInp";
             this.destinationInp.PlaceholderText = "Назначение";
-            this.destinationInp.Size = new System.Drawing.Size(173, 23);
+            this.destinationInp.Size = new System.Drawing.Size(197, 27);
             this.destinationInp.TabIndex = 6;
             this.destinationInp.TextChanged += new System.EventHandler(this.DestinationChanged);
             // 
             // companyInput
             // 
-            this.companyInput.Location = new System.Drawing.Point(23, 122);
+            this.companyInput.Location = new System.Drawing.Point(26, 163);
+            this.companyInput.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.companyInput.Name = "companyInput";
             this.companyInput.PlaceholderText = "Компания";
-            this.companyInput.Size = new System.Drawing.Size(209, 23);
+            this.companyInput.Size = new System.Drawing.Size(238, 27);
             this.companyInput.TabIndex = 3;
             // 
             // flightNumberError
             // 
             this.flightNumberError.AutoSize = true;
             this.flightNumberError.ForeColor = System.Drawing.Color.Red;
-            this.flightNumberError.Location = new System.Drawing.Point(26, 74);
+            this.flightNumberError.Location = new System.Drawing.Point(30, 99);
             this.flightNumberError.Name = "flightNumberError";
-            this.flightNumberError.Size = new System.Drawing.Size(138, 15);
+            this.flightNumberError.Size = new System.Drawing.Size(175, 20);
             this.flightNumberError.TabIndex = 2;
             this.flightNumberError.Text = "Неверный формат кода";
             this.flightNumberError.Visible = false;
             // 
             // flightNumberInput
             // 
-            this.flightNumberInput.Location = new System.Drawing.Point(23, 48);
+            this.flightNumberInput.Location = new System.Drawing.Point(26, 64);
+            this.flightNumberInput.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.flightNumberInput.Name = "flightNumberInput";
             this.flightNumberInput.PlaceholderText = "Международный код";
-            this.flightNumberInput.Size = new System.Drawing.Size(209, 23);
+            this.flightNumberInput.Size = new System.Drawing.Size(238, 27);
             this.flightNumberInput.TabIndex = 1;
             this.flightNumberInput.TextChanged += new System.EventHandler(this.FlightNumberChanged);
             // 
             // addBtn
             // 
-            this.addBtn.Location = new System.Drawing.Point(217, 354);
+            this.addBtn.Location = new System.Drawing.Point(248, 472);
+            this.addBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.addBtn.Name = "addBtn";
-            this.addBtn.Size = new System.Drawing.Size(201, 49);
+            this.addBtn.Size = new System.Drawing.Size(230, 65);
             this.addBtn.TabIndex = 5;
             this.addBtn.Text = "Добавить";
             this.addBtn.UseVisualStyleBackColor = true;
@@ -344,9 +363,10 @@
             // 
             // removeBtn
             // 
-            this.removeBtn.Location = new System.Drawing.Point(32, 354);
+            this.removeBtn.Location = new System.Drawing.Point(37, 472);
+            this.removeBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.removeBtn.Name = "removeBtn";
-            this.removeBtn.Size = new System.Drawing.Size(187, 49);
+            this.removeBtn.Size = new System.Drawing.Size(214, 65);
             this.removeBtn.TabIndex = 6;
             this.removeBtn.Text = "Удалить";
             this.removeBtn.UseVisualStyleBackColor = true;
@@ -355,23 +375,25 @@
             // airportListBox
             // 
             this.airportListBox.FormattingEnabled = true;
-            this.airportListBox.ItemHeight = 15;
-            this.airportListBox.Location = new System.Drawing.Point(32, 55);
+            this.airportListBox.ItemHeight = 20;
+            this.airportListBox.Location = new System.Drawing.Point(37, 73);
+            this.airportListBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.airportListBox.Name = "airportListBox";
-            this.airportListBox.Size = new System.Drawing.Size(386, 304);
+            this.airportListBox.Size = new System.Drawing.Size(441, 404);
             this.airportListBox.TabIndex = 7;
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(933, 622);
+            this.ClientSize = new System.Drawing.Size(1066, 829);
             this.Controls.Add(this.removeBtn);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.addBtn);
             this.Controls.Add(this.airportListBox);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "MainForm";
             this.Text = "ИС Аэропорта";
             this.groupBox1.ResumeLayout(false);

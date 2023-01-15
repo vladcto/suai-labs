@@ -5,16 +5,17 @@
         public event Action? ListUpdatedEvent;
 
         private List<Airplane> airplanes = new();
+        private Filters<Airplane> filters = new Filters<Airplane>();
 
         public Airport()
         {
-            Filters.FiltersAppliedEvent +=
+            filters.FiltersAppliedEvent +=
                 () => this.ListUpdatedEvent?.Invoke();
         }
 
-        public Filters<Airplane> Filters { get; init; } = new();
+        public IFilterCall<Airplane> Filters { get => filters; }
 
-        public IList<Airplane> FilteredPlanes { get => Filters.ApplyTo(airplanes); }
+        public IList<Airplane> FilteredPlanes { get => filters.ApplyTo(airplanes); }
 
         public int Count => airplanes.Count;
 
