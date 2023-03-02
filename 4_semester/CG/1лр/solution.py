@@ -2,6 +2,18 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.widgets import Button
 
+def my_polinom(x):
+    return 0.0005 * ( 0.0006 * (x ** 9) 
+                     - 0.004 * (x ** 8) 
+                     - 4 * (x ** 7) 
+                     + (x ** 6) 
+                     - 6 * (x ** 5) 
+                     + 2 * (x ** 4) 
+                     + 700 * (x ** 3) 
+                     - 500 * (x ** 2) 
+                     - x 
+                     - 0.5)
+
 # Catmull Row function
 def catmull_equation(points,t):
     p1 = points[0]
@@ -33,21 +45,24 @@ y_f = 2 * np.sin(x_f) + 1.5 * np.sin(x_f * 2)
 
 # Control points
 x_s_p = np.linspace(-np.pi, np.pi, 8)
-y_s_p = 2 * np.sin(x_s_p) + 1.5 * np.sin(x_s_p * 2)
 
 # Splain points
+y_s_p = 2 * np.sin(x_s_p) + 1.5 * np.sin(x_s_p * 2)
 splain = catmull_row(np.column_stack((x_s_p,y_s_p)))
 x_splain = splain[:,0]
 y_splain = splain[:,1]
 
-# example of draw buttons
-# Draw buttons
-# bnext = Button(plt.axes([0.7, 0.05, 0.1, 0.075]), 'Next')
-# bnext.on_clicked(lambda x: print("amogus"))
+# Polinom points
+y_poli = np.asarray([my_polinom(x) for x in x_f])
+poli_point_y = np.asarray([my_polinom(x) for x in x_s_p])
+poli_points = catmull_row(np.column_stack([x_s_p,poli_point_y]))
 
 # Draw graphics
 plt.plot(x_f, y_f, "g--", label = "2sin(x) + 1.5sin(2x)")
 plt.plot(x_s_p, y_s_p, "ro", label = "control points")
 plt.plot(x_splain, y_splain, "r-", label = "splain")
+plt.plot(x_f, y_poli, "b--", label = "polinom")
+plt.plot(poli_points[:,0], poli_points[:,1], "b-", label = "polinom splain")
+plt.plot(x_s_p, poli_point_y, "bo", label = "polinom control points")
 plt.legend()
 plt.show()
