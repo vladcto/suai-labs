@@ -64,7 +64,7 @@ def update_plot(state, fig):
         fig.plot(x_controls, poli_controls_y, "bo", label="polinom control points")
         # Calculate error
         y_predict = np.asarray([my_polinom(x) for x in poli_points[:, 0]])
-        error_dif = np.abs(poli_points[:, 1] - y_predict).sum() / 101
+        error_dif = np.abs(poli_points[:, 1] - y_predict).mean()
         label_text += f"Epl = {round(error_dif,4)} "
 
     if (state["catmull"]):
@@ -77,7 +77,7 @@ def update_plot(state, fig):
         # Calculate error
         y_predict = np.asarray(
             [2 * sin(x) + 1.5*sin(2 * x) for x in x_splain])
-        error_dif = np.abs(y_splain - y_predict).sum() / 101
+        error_dif = np.abs(y_splain - y_predict).mean()
         label_text += f"Esp = {round(error_dif,4)} "
 
     if (state["fx"]):
