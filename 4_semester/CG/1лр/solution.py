@@ -111,7 +111,6 @@ def clear(state, fig):
     state["fx"] = False
     state["catmull"] = False
     state["poly"] = False
-    state["points"] = 4
     update_plot(state, fig)
 
 
