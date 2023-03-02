@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 from matplotlib.widgets import Button, Slider
 
 
+# Return y of polinom(x)
 def my_polinom(x):
     return 0.0005 * (x ** 9
         + 0.5 * (x ** 8) 
@@ -30,7 +31,7 @@ def catmull_equation(points, t):
     return 0.5 * (q1 + q2 + q3 + q4)
 
 
-# Get points for splain
+# Get points for spline
 def catmull_row(points, step=0.05):
     # copy one point to start and one to end
     res = []
@@ -53,26 +54,26 @@ def update_plot(state, fig):
 
     if (state["poly"]):
         # Polinom points
-        y_poli = np.asarray([my_polinom(x) for x in x_points])
-        poli_point_y = np.asarray([my_polinom(x) for x in x_controls])
-        poli_points = catmull_row(np.column_stack([x_controls, poli_point_y]))
+        poli_y = np.asarray([my_polinom(x) for x in x_points])
+        poli_controls_y = np.asarray([my_polinom(x) for x in x_controls])
+        poli_points = catmull_row(np.column_stack([x_controls, poli_controls_y]))
         
-        fig.plot(x_points, y_poli, "b--", label="polinom")
+        fig.plot(x_points, poli_y, "b--", label="polinom")
         fig.plot(poli_points[:, 0], poli_points[:, 1],
-                 "b-", label="polinom splain")
-        fig.plot(x_controls, poli_point_y, "bo", label="polinom control points")
+                 "b-", label="polinom spline")
+        fig.plot(x_controls, poli_controls_y, "bo", label="polinom control points")
         # Calculate error
         y_predict = np.asarray([my_polinom(x) for x in poli_points[:, 0]])
         error_dif = np.abs(poli_points[:, 1] - y_predict).sum() / 101
         label_text += f"Epl = {round(error_dif,4)} "
 
     if (state["catmull"]):
-        # Splain points
+        # Spline points
         splain = catmull_row(np.column_stack((x_controls, y_controls)))
         x_splain = splain[:, 0]
         y_splain = splain[:, 1]
         
-        fig.plot(x_splain, y_splain, "r-", label="splain")
+        fig.plot(x_splain, y_splain, "r-", label="spline")
         # Calculate error
         y_predict = np.asarray(
             [2 * sin(x) + 1.5*sin(2 * x) for x in x_splain])
@@ -83,7 +84,7 @@ def update_plot(state, fig):
         y_f = 2 * np.sin(x_points) + 1.5 * np.sin(x_points * 2)
         
         fig.plot(x_points, y_f, "g--", label="2sin(x) + 1.5sin(2x)")
-        fig.plot(x_controls, y_controls, "ro--", label="control points")
+        fig.plot(x_controls, y_controls, "ro--", label="spline control points")
 
     handles, labels = fig.get_legend_handles_labels()
     by_label = dict(zip(labels, handles))
@@ -97,7 +98,7 @@ def draw_polinom(state, fig):
     update_plot(state, fig)
 
 
-def draw_splain(state, fig):
+def draw_spline(state, fig):
     state["catmull"] = True
     update_plot(state, fig)
 
@@ -136,7 +137,7 @@ fx_btn.on_clicked(lambda _: draw_function(my_state, ax))
 
 ax_splain_btn = fig.add_axes([0.6, 0.05, 0.2, 0.2])
 splain_btn = Button(ax_splain_btn, "Show splain")
-splain_btn.on_clicked(lambda _: draw_splain(my_state, ax))
+splain_btn.on_clicked(lambda _: draw_spline(my_state, ax))
 
 ax_clear_btn = fig.add_axes([0.11, 0.11, 0.08, 0.08])
 clear_btn = Button(ax_clear_btn, "x")
