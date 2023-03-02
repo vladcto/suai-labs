@@ -6,7 +6,7 @@ from matplotlib.widgets import Button, Slider
 
 # Return y of polinom(x)
 def my_polinom(x):
-    return 0.0005 * (x ** 9
+    return 0.0005 * ((x ** 9)
         + 0.5 * (x ** 8) 
         - 23.79 * (x ** 7) 
         - 5.685 * (x ** 6) 
@@ -136,7 +136,7 @@ fx_btn = Button(ax_fx_btn, "Show fx")
 fx_btn.on_clicked(lambda _: draw_function(my_state, ax))
 
 ax_splain_btn = fig.add_axes([0.6, 0.05, 0.2, 0.2])
-splain_btn = Button(ax_splain_btn, "Show splain")
+splain_btn = Button(ax_splain_btn, "Show spline")
 splain_btn.on_clicked(lambda _: draw_spline(my_state, ax))
 
 ax_clear_btn = fig.add_axes([0.11, 0.11, 0.08, 0.08])
@@ -151,5 +151,4 @@ slider = Slider(ax_slider,
                 label="points",
                 valstep=1)
 slider.on_changed(lambda num: change_control_points(my_state, ax, num))
-
 plt.show()
