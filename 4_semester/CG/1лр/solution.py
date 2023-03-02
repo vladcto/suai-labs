@@ -10,11 +10,11 @@ def my_polinom(x):
         + 0.5 * (x ** 8) 
         - 23.79 * (x ** 7) 
         - 5.685 * (x ** 6) 
-        + 133.275 * (x ** 5)
+        - 133.275 * (x ** 5)
         - 40.485 * (x ** 4)
-        - 140 * (x ** 3)
-        + 560 * (x ** 2)
-        + 290 * x
+        - 1400 * (x ** 3)
+        - 56000 * (x ** 2)
+        + 290000 * x
         - 10)
 
 
@@ -47,8 +47,8 @@ def catmull_row(points, step=0.05):
 def update_plot(state, fig):
     fig.clear()
     # Control points for spline and other curves.
-    x_points = np.linspace(-np.pi, np.pi, 100)
-    x_controls = np.linspace(-np.pi, np.pi, state["points"])
+    x_points = np.linspace(0, 2 * np.pi, 100)
+    x_controls = np.linspace(0, 2 * np.pi, state["points"])
     y_controls = 2 * np.sin(x_controls) + 1.5 * np.sin(x_controls * 2)
     label_text = ""
 
