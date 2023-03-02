@@ -1,68 +1,155 @@
+from math import sin
 import numpy as np
 import matplotlib.pyplot as plt
-from matplotlib.widgets import Button
+from matplotlib.widgets import Button, Slider
+
 
 def my_polinom(x):
-    return 0.0005 * ( 0.0006 * (x ** 9) 
-                     - 0.004 * (x ** 8) 
-                     - 4 * (x ** 7) 
-                     + (x ** 6) 
-                     - 6 * (x ** 5) 
-                     + 2 * (x ** 4) 
-                     + 700 * (x ** 3) 
-                     - 500 * (x ** 2) 
-                     - x 
-                     - 0.5)
+    return 0.0005 * (x ** 9
+        + 0.5 * (x ** 8) 
+        - 23.79 * (x ** 7) 
+        - 5.685 * (x ** 6) 
+        + 133.275 * (x ** 5)
+        - 40.485 * (x ** 4)
+        - 140 * (x ** 3)
+        + 560 * (x ** 2)
+        + 290 * x
+        - 10)
+
 
 # Catmull Row function
-def catmull_equation(points,t):
+def catmull_equation(points, t):
     p1 = points[0]
     p2 = points[1]
     p3 = points[2]
     p4 = points[3]
-    
     q1 = -t * ((1 - t) ** 2) * p1
-    q2 = (2 - 5 * (t ** 2) + 3 * (t ** 3) ) * p2
+    q2 = (2 - 5 * (t ** 2) + 3 * (t ** 3)) * p2
     q3 = t * (1 + 4 * t - 3 * (t ** 2)) * p3
-    q4 = -(t ** 2) * ( 1 - t) * p4 
+    q4 = -(t ** 2) * (1 - t) * p4
     return 0.5 * (q1 + q2 + q3 + q4)
 
-# Get points for splain 
-def catmull_row(points, step = 0.05):
-    res = []
+
+# Get points for splain
+def catmull_row(points, step=0.05):
     # copy one point to start and one to end
-    points = np.vstack((points[0],points, points[-1]))
+    res = []
+    points = np.vstack((points[0], points, points[-1]))
     # take 4 points
-    for i in range( points.shape[0] - 3):
+    for i in range(points.shape[0] - 3):
         points_now = points[i:i+4]
-        for t in np.arange(0,1,step):
+        for t in np.arange(0, 1, step):
             res.append(catmull_equation(points_now, t))
     return np.array(res)
 
-# Variant f(x)
-x_f = np.linspace(-np.pi,np.pi,100)
-y_f = 2 * np.sin(x_f) + 1.5 * np.sin(x_f * 2)
 
-# Control points
-x_s_p = np.linspace(-np.pi, np.pi, 8)
+def update_plot(state, fig):
+    fig.clear()
+    # Control points for spline and other curves.
+    x_points = np.linspace(-np.pi, np.pi, 100)
+    x_controls = np.linspace(-np.pi, np.pi, state["points"])
+    y_controls = 2 * np.sin(x_controls) + 1.5 * np.sin(x_controls * 2)
+    label_text = ""
 
-# Splain points
-y_s_p = 2 * np.sin(x_s_p) + 1.5 * np.sin(x_s_p * 2)
-splain = catmull_row(np.column_stack((x_s_p,y_s_p)))
-x_splain = splain[:,0]
-y_splain = splain[:,1]
+    if (state["poly"]):
+        # Polinom points
+        y_poli = np.asarray([my_polinom(x) for x in x_points])
+        poli_point_y = np.asarray([my_polinom(x) for x in x_controls])
+        poli_points = catmull_row(np.column_stack([x_controls, poli_point_y]))
+        
+        fig.plot(x_points, y_poli, "b--", label="polinom")
+        fig.plot(poli_points[:, 0], poli_points[:, 1],
+                 "b-", label="polinom splain")
+        fig.plot(x_controls, poli_point_y, "bo", label="polinom control points")
+        # Calculate error
+        y_predict = np.asarray([my_polinom(x) for x in poli_points[:, 0]])
+        error_dif = np.abs(poli_points[:, 1] - y_predict).sum() / 101
+        label_text += f"Epl = {round(error_dif,4)} "
 
-# Polinom points
-y_poli = np.asarray([my_polinom(x) for x in x_f])
-poli_point_y = np.asarray([my_polinom(x) for x in x_s_p])
-poli_points = catmull_row(np.column_stack([x_s_p,poli_point_y]))
+    if (state["catmull"]):
+        # Splain points
+        splain = catmull_row(np.column_stack((x_controls, y_controls)))
+        x_splain = splain[:, 0]
+        y_splain = splain[:, 1]
+        
+        fig.plot(x_splain, y_splain, "r-", label="splain")
+        # Calculate error
+        y_predict = np.asarray(
+            [2 * sin(x) + 1.5*sin(2 * x) for x in x_splain])
+        error_dif = np.abs(y_splain - y_predict).sum() / 101
+        label_text += f"Esp = {round(error_dif,4)} "
+
+    if (state["fx"]):
+        y_f = 2 * np.sin(x_points) + 1.5 * np.sin(x_points * 2)
+        
+        fig.plot(x_points, y_f, "g--", label="2sin(x) + 1.5sin(2x)")
+        fig.plot(x_controls, y_controls, "ro--", label="control points")
+
+    handles, labels = fig.get_legend_handles_labels()
+    by_label = dict(zip(labels, handles))
+    fig.legend(by_label.values(), by_label.keys())
+    fig.set_title(label_text)
+    plt.draw()
+
+
+def draw_polinom(state, fig):
+    state["poly"] = True
+    update_plot(state, fig)
+
+
+def draw_splain(state, fig):
+    state["catmull"] = True
+    update_plot(state, fig)
+
+
+def draw_function(state, fig):
+    state["fx"] = True
+    update_plot(state, fig)
+
+
+def clear(state, fig):
+    state["fx"] = False
+    state["catmull"] = False
+    state["poly"] = False
+    state["points"] = 4
+    update_plot(state, fig)
+
+
+def change_control_points(state, fig, num):
+    state["points"] = int(num)
+    update_plot(state, fig)
+
 
 # Draw graphics
-plt.plot(x_f, y_f, "g--", label = "2sin(x) + 1.5sin(2x)")
-plt.plot(x_s_p, y_s_p, "ro", label = "control points")
-plt.plot(x_splain, y_splain, "r-", label = "splain")
-plt.plot(x_f, y_poli, "b--", label = "polinom")
-plt.plot(poli_points[:,0], poli_points[:,1], "b-", label = "polinom splain")
-plt.plot(x_s_p, poli_point_y, "bo", label = "polinom control points")
-plt.legend()
+fig, ax = plt.subplots()
+my_state = {"fx": False, "catmull": False, "poly": False, "points": 4}
+fig.subplots_adjust(bottom=0.3)
+fig.subplots_adjust(right=0.85)
+
+# Buttons and slider
+ax_poli_btn = fig.add_axes([0.2, 0.05, 0.2, 0.2])
+poli_btn = Button(ax_poli_btn, "Show poly.")
+poli_btn.on_clicked(lambda _: draw_polinom(my_state, ax))
+
+ax_fx_btn = fig.add_axes([0.4, 0.05, 0.2, 0.2])
+fx_btn = Button(ax_fx_btn, "Show fx")
+fx_btn.on_clicked(lambda _: draw_function(my_state, ax))
+
+ax_splain_btn = fig.add_axes([0.6, 0.05, 0.2, 0.2])
+splain_btn = Button(ax_splain_btn, "Show splain")
+splain_btn.on_clicked(lambda _: draw_splain(my_state, ax))
+
+ax_clear_btn = fig.add_axes([0.11, 0.11, 0.08, 0.08])
+clear_btn = Button(ax_clear_btn, "x")
+clear_btn.on_clicked(lambda _: clear(my_state, ax))
+
+ax_slider = fig.add_axes([0.9, 0.1, 0.05, 0.8])
+slider = Slider(ax_slider,
+                valmin=4,
+                valmax=100,
+                orientation="vertical",
+                label="points",
+                valstep=1)
+slider.on_changed(lambda num: change_control_points(my_state, ax, num))
+
 plt.show()
