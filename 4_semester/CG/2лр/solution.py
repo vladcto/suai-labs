@@ -3,6 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.widgets import Button, Slider
 
+
 # Catmull Row function
 def bezie_equation(points, t):
     p1 = points[0]
@@ -18,22 +19,25 @@ def bezier_curve(points, step=0.01):
     res = []
     i = 0
     while i < points.shape[0]:
+        # Start of curve
         if i == 0:
             points_now = np.vstack(
                 [points[i: 3],
                  (points[2] + points[3])/2]
             )
             i += 3
+        # End of curve
         elif i + 2 >= points.shape[0]:
             points_now = np.vstack(
                 [(points[i] + points[i-1])/2, points[i:],
                  *[points[-1] for _ in range(3)]]
             )
             i += 2
+        # Middle of curve
         else:
             points_now = np.vstack(
                 [(points[i] + points[i-1])/2,
-                 points[i : i + 2],
+                 points[i: i + 2],
                  (points[i+1] + points[i+2])/2]
             )
             i += 2
@@ -56,10 +60,11 @@ def update_plot(state, fig):
         # Polynom points
         y_f = 2 * np.sin(x_points) + 1.5 * np.sin(x_points * 2)
         # Polynom coefs
-        p = np.polyfit(x_points,y_f,9)
-        poli_y = np.polyval(p,x_points)
-        poli_controls_y = np.polyval(p,x_controls)
-        poli_points = bezier_curve(np.column_stack([x_controls, poli_controls_y]))
+        p = np.polyfit(x_points, y_f, 9)
+        poli_y = np.polyval(p, x_points)
+        poli_controls_y = np.polyval(p, x_controls)
+        poli_points = bezier_curve(
+            np.column_stack([x_controls, poli_controls_y]))
 
         fig.plot(x_points, poli_y, "b--", label="polinom")
         fig.plot(poli_points[:, 0], poli_points[:, 1],
@@ -67,7 +72,7 @@ def update_plot(state, fig):
         fig.plot(x_controls, poli_controls_y, "bo",
                  label="polinom control points")
         # Calculate error
-        y_predict = np.polyval(p,poli_points[:,0])
+        y_predict = np.polyval(p, poli_points[:, 0])
         error_dif = np.abs(poli_points[:, 1] - y_predict).mean()
         label_text += f"Epl = {round(error_dif,4)} "
 
