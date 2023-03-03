@@ -7,15 +7,15 @@ from matplotlib.widgets import Button, Slider
 # Return y of polinom(x)
 def my_polinom(x):
     return 0.0005 * ((x ** 9)
-        + 0.5 * (x ** 8) 
-        - 23.79 * (x ** 7) 
-        - 5.685 * (x ** 6) 
-        - 133.275 * (x ** 5)
-        - 40.485 * (x ** 4)
-        - 1400 * (x ** 3)
-        - 56000 * (x ** 2)
-        + 290000 * x
-        - 10)
+                     + 0.5 * (x ** 8)
+                     - 23.79 * (x ** 7)
+                     - 5.685 * (x ** 6)
+                     - 133.275 * (x ** 5)
+                     - 40.485 * (x ** 4)
+                     - 1400 * (x ** 3)
+                     - 56000 * (x ** 2)
+                     + 290000 * x
+                     - 10)
 
 
 # Catmull Row function
@@ -28,27 +28,34 @@ def bezie_equation(points, t):
     return q1 * (1 - t) + (t ** 3) * p4
 
 
-# Get points for spline
+# Get points for Bezie curve
 def bezie_curve(points, step=0.01):
-    # copy one point to start and one to end
     res = []
-    end = False
     i = 0
-    # take 3 points
-    try:
-        while True:
-            points_now = None
-            if i == 0:
-                points_now = np.vstack([points[i:min(points.shape[0],3)], (points[2] + points[3])/2])
-                i += 3
-            else:
-                points_now = np.vstack([(points[i] + points[i-1])/2,points[i:min(points.shape[0],i + 2)], (points[i+1] + points[i+2])/2])
-                i += 2
-            points_now = np.vstack([points_now, *[points[-1] for _ in range(4)]])
-            for t in np.arange(0, 1, step):
-                res.append(bezie_equation(points_now, t))
-    except:
-        return np.array(res)
+    while i < points.shape[0]:
+        if i == 0:
+            points_now = np.vstack(
+                [points[i: 3],
+                 (points[2] + points[3])/2]
+            )
+            i += 3
+        elif i + 2 >= points.shape[0]:
+            points_now = np.vstack(
+                [(points[i] + points[i-1])/2, points[i:],
+                 *[points[-1] for _ in range(3)]]
+            )
+            i += 2
+        else:
+            points_now = np.vstack(
+                [(points[i] + points[i-1])/2,
+                 points[i : i + 2],
+                 (points[i+1] + points[i+2])/2]
+            )
+            i += 2
+
+        for t in np.arange(0, 1, step):
+            res.append(bezie_equation(points_now, t))
+    return np.array(res)
 
 
 def update_plot(state, fig):
@@ -63,12 +70,14 @@ def update_plot(state, fig):
         # Polinom points
         poli_y = np.asarray([my_polinom(x) for x in x_points])
         poli_controls_y = np.asarray([my_polinom(x) for x in x_controls])
-        poli_points = bezie_curve(np.column_stack([x_controls, poli_controls_y]))
-        
+        poli_points = bezie_curve(
+            np.column_stack([x_controls, poli_controls_y]))
+
         fig.plot(x_points, poli_y, "b--", label="polinom")
         fig.plot(poli_points[:, 0], poli_points[:, 1],
                  "b-", label="polinom spline")
-        fig.plot(x_controls, poli_controls_y, "bo", label="polinom control points")
+        fig.plot(x_controls, poli_controls_y, "bo",
+                 label="polinom control points")
         # Calculate error
         y_predict = np.asarray([my_polinom(x) for x in poli_points[:, 0]])
         error_dif = np.abs(poli_points[:, 1] - y_predict).mean()
@@ -79,7 +88,7 @@ def update_plot(state, fig):
         splain = bezie_curve(np.column_stack((x_controls, y_controls)))
         x_splain = splain[:, 0]
         y_splain = splain[:, 1]
-        
+
         fig.plot(x_splain, y_splain, "r-", label="spline")
         # Calculate error
         y_predict = np.asarray(
@@ -89,7 +98,7 @@ def update_plot(state, fig):
 
     if (state["fx"]):
         y_f = 2 * np.sin(x_points) + 1.5 * np.sin(x_points * 2)
-        
+
         fig.plot(x_points, y_f, "g--", label="2sin(x) + 1.5sin(2x)")
         fig.plot(x_controls, y_controls, "ro--", label="spline control points")
 
