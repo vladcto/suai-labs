@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from matplotlib.widgets import Button, Slider
 
 
-# Catmull Row function
+# Bezier function
 def bezie_equation(points, t):
     p1 = points[0]
     p2 = points[1]
