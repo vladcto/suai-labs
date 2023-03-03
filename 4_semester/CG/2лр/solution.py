@@ -3,21 +3,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.widgets import Button, Slider
 
-
-# Return y of polinom(x)
-def my_polinom(x):
-    return 0.0005 * ((x ** 9)
-                     + 0.5 * (x ** 8)
-                     - 23.79 * (x ** 7)
-                     - 5.685 * (x ** 6)
-                     - 133.275 * (x ** 5)
-                     - 40.485 * (x ** 4)
-                     - 1400 * (x ** 3)
-                     - 56000 * (x ** 2)
-                     + 290000 * x
-                     - 10)
-
-
 # Catmull Row function
 def bezie_equation(points, t):
     p1 = points[0]
@@ -28,8 +13,8 @@ def bezie_equation(points, t):
     return q1 * (1 - t) + (t ** 3) * p4
 
 
-# Get points for Bezie curve
-def bezie_curve(points, step=0.01):
+# Get points for Bezier curve
+def bezier_curve(points, step=0.01):
     res = []
     i = 0
     while i < points.shape[0]:
@@ -68,10 +53,13 @@ def update_plot(state, fig):
 
     if (state["poly"]):
         # Polinom points
-        poli_y = np.asarray([my_polinom(x) for x in x_points])
-        poli_controls_y = np.asarray([my_polinom(x) for x in x_controls])
-        poli_points = bezie_curve(
-            np.column_stack([x_controls, poli_controls_y]))
+        # Polynom points
+        y_f = 2 * np.sin(x_points) + 1.5 * np.sin(x_points * 2)
+        # Polynom coefs
+        p = np.polyfit(x_points,y_f,9)
+        poli_y = np.polyval(p,x_points)
+        poli_controls_y = np.polyval(p,x_controls)
+        poli_points = bezier_curve(np.column_stack([x_controls, poli_controls_y]))
 
         fig.plot(x_points, poli_y, "b--", label="polinom")
         fig.plot(poli_points[:, 0], poli_points[:, 1],
@@ -79,13 +67,13 @@ def update_plot(state, fig):
         fig.plot(x_controls, poli_controls_y, "bo",
                  label="polinom control points")
         # Calculate error
-        y_predict = np.asarray([my_polinom(x) for x in poli_points[:, 0]])
+        y_predict = np.polyval(p,poli_points[:,0])
         error_dif = np.abs(poli_points[:, 1] - y_predict).mean()
         label_text += f"Epl = {round(error_dif,4)} "
 
-    if (state["catmull"]):
+    if (state["bezier"]):
         # Spline points
-        splain = bezie_curve(np.column_stack((x_controls, y_controls)))
+        splain = bezier_curve(np.column_stack((x_controls, y_controls)))
         x_splain = splain[:, 0]
         y_splain = splain[:, 1]
 
@@ -115,7 +103,7 @@ def draw_polinom(state, fig):
 
 
 def draw_spline(state, fig):
-    state["catmull"] = True
+    state["bezier"] = True
     update_plot(state, fig)
 
 
@@ -126,7 +114,7 @@ def draw_function(state, fig):
 
 def clear(state, fig):
     state["fx"] = False
-    state["catmull"] = False
+    state["bezier"] = False
     state["poly"] = False
     update_plot(state, fig)
 
@@ -138,7 +126,7 @@ def change_control_points(state, fig, num):
 
 # Draw graphics
 fig, ax = plt.subplots()
-my_state = {"fx": False, "catmull": False, "poly": False, "points": 4}
+my_state = {"fx": False, "bezier": False, "poly": False, "points": 4}
 fig.subplots_adjust(bottom=0.3)
 fig.subplots_adjust(right=0.85)
 
