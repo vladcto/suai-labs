@@ -61,7 +61,24 @@ vector<double> seindel(vector<vector<double>> a,
 	return x;
 }
 
-vector<double> split_s(string inp) {
+void printSubstitutionRoots(vector<vector<double>> a, vector<double> x, vector<double> b) {
+	const double round_sign = 10000;
+	cout << "\n---Roots Substitution---\n";
+	for (int i = 0; i < x.size(); i++) {
+		cout << "Root b" << i << " : ";
+		double b_res = 0;
+		for (int j = 0; j < a.size(); j++) {
+			cout << a[i][j] << " * " << x[j] << (j != a.size() - 1 ? " + " : "");
+			b_res += a[i][j] * x[j];
+		}
+		cout << " = "
+			<< round(b_res * round_sign) / round_sign
+			<< " expected " << round(b[i] * round_sign) / round_sign
+			<< ".\n";
+	}
+}
+
+vector<double> split_str(string inp) {
 	vector<double> res;
 	string token = "";
 	inp += " ";
@@ -93,30 +110,29 @@ int main()
 		cout << "Enter matrix: " << endl;
 		getline(cin, inp);
 		for (int i = 0; i < size; i++) {
-			cout << i << " : ";
 			getline(cin, inp);
-			a.push_back(split_s(inp));
+			a.push_back(split_str(inp));
 		}
 
 		cout << "Enter b:" << endl;
 		getline(cin, inp);
-		b = split_s(inp);
+		b = split_str(inp);
 
 		cout << "Enter epsilon: ";
 		cin >> epsilon;
 	}
 
 	vector<double> x = seindel(a, b, epsilon);
-	if (x.empty()) { 
+	cout << "\n---Solution---\n";
+	if (x.empty()) {
 		cout << "SLAE solutions is empty.";
 		return 0;
-	}
-	cout << "Solution: ";
-	for (int i = 0; i < 4; i++)
+	};
+	for (int i = 0; i < x.size(); i++)
 	{
 		cout << x[i] << " ";
 	}
 	cout << endl;
-
+	printSubstitutionRoots(a, x, b);
 	return 0;
 }
