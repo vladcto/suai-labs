@@ -1,0 +1,3 @@
+# ignore c++ compile files
+.vscode
+output*
