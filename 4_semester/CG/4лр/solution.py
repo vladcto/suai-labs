@@ -59,7 +59,6 @@ def main():
     glLightfv(GL_LIGHT0, GL_AMBIENT, (0, 0, 0, 1))
     glLightfv(GL_LIGHT0, GL_DIFFUSE, (1, 1, 1, 1))
 
-    now_rotate = 0
     enable_light = False
     while True:
         for event in pygame.event.get():
@@ -74,25 +73,27 @@ def main():
                 else:
                     glDisable(GL_LIGHTING)
                 
-        # input events to rotate vector
+        # input events to axis
         pressed = pygame.key.get_pressed()
         if pressed[pygame.K_UP]:
-            pygame.display.set_caption("Y-axis")
+            pygame.display.set_caption("Y-axis view")
             glPopMatrix()
             glPushMatrix()
             glRotatef(90,1,0,0)
         if pressed[pygame.K_DOWN]:
-            pygame.display.set_caption("Rotate object")
-            now_rotate += 4
+            pygame.display.set_caption("Isometric view")
             glPopMatrix()
             glPushMatrix()
-            glRotatef(now_rotate,1,1,1)
+            glRotatef(56.600269334224741, 
+                      0.5902844985873289, 
+                      0.76927373575385605, 
+                      0.24450384497347222)
         if pressed[pygame.K_RIGHT]:
-            pygame.display.set_caption("X-axis")
+            pygame.display.set_caption("X-axis view")
             glPopMatrix()
             glPushMatrix()
         if pressed[pygame.K_LEFT]:
-            pygame.display.set_caption("Z-axis")
+            pygame.display.set_caption("Z-axis view")
             glPopMatrix()
             glPushMatrix()
             glRotatef(90,0,1,0)
