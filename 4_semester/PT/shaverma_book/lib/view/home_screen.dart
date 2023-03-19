@@ -3,8 +3,6 @@ import 'package:shaverma_book/presenter/dish_presenter.dart';
 import 'package:shaverma_book/view/home/tall_dish_page.dart';
 import 'package:shaverma_book/view/home/wide_dish_page.dart';
 
-import 'home/dish_listview.dart';
-
 class HomeScreen extends StatelessWidget {
   final DishPresenter _dishPresenter = DishPresenter();
   HomeScreen({Key? key}) : super(key: key);
