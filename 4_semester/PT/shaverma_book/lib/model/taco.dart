@@ -1,4 +1,4 @@
-import 'package:shaverma_book/model/basic_dish.dart';
+import 'package:shaverma_book/model/dish.dart';
 
 class Taco extends Dish {
   String meat;

@@ -2,7 +2,7 @@ import 'package:shaverma_book/model/shaverma.dart';
 import 'package:shaverma_book/model/taco.dart';
 import 'package:shaverma_book/view/home/abstract_dish_page.dart';
 
-import '../model/basic_dish.dart';
+import '../model/dish.dart';
 
 enum DishSortType { none, shaverma, taco }
 
