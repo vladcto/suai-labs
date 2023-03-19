@@ -82,6 +82,8 @@ class DishPresenter {
     page.updateList();
   }
 
+  bool isShavermaAt(int i) => sortedDishes[i] is Shaverma;
+
   static bool equalType(Dish dish, DishSortType sortType) {
     if (sortType == DishSortType.shaverma) {
       return dish is Shaverma;

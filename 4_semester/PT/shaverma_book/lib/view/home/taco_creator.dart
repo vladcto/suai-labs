@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../Globals.dart';
+
 class TacoCreator extends StatefulWidget {
   final Function(String name, String description, String meat, String chesse)
       onCreateTaco;
@@ -23,9 +25,17 @@ class _TacoCreatorState extends State<TacoCreator> {
           child: _SimpleRow(
             TextField(
               controller: _nameTextController,
+              decoration: const InputDecoration(
+                border: OutlineInputBorder(),
+                labelText: "Название тако",
+              ),
             ),
             TextField(
               controller: _descrTextController,
+              decoration: const InputDecoration(
+                border: OutlineInputBorder(),
+                labelText: "Описание",
+              ),
             ),
           ),
         ),
@@ -33,18 +43,40 @@ class _TacoCreatorState extends State<TacoCreator> {
           child: _SimpleRow(
             TextField(
               controller: _meatTextController,
+              decoration: const InputDecoration(
+                border: OutlineInputBorder(),
+                labelText: "Мясо",
+              ),
             ),
             TextField(
               controller: _chesseTextController,
+              decoration: const InputDecoration(
+                border: OutlineInputBorder(),
+                labelText: "Сыр",
+              ),
             ),
           ),
         ),
         Expanded(
-          child: ElevatedButton(
-            onPressed: _createTaco,
-            child: Text("press me"),
+          child: AspectRatio(
+            aspectRatio: 1,
+            child: Container(
+              decoration: BoxDecoration(
+                color: Globals.mainColor,
+                borderRadius: BorderRadius.circular(100),
+              ),
+              child: GestureDetector(
+                onTap: _createTaco,
+                child: const Icon(
+                  Icons.check,
+                  color: Colors.black,
+                  size: 32,
+                ),
+              ),
+            ),
           ),
-        )
+        ),
+        const SizedBox(height: 8),
       ],
     );
   }

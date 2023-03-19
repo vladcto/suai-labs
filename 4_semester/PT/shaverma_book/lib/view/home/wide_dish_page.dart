@@ -5,6 +5,7 @@ import 'package:shaverma_book/view/home/abstract_dish_page.dart';
 import 'package:shaverma_book/view/home/filter_card.dart';
 import 'package:shaverma_book/view/home/recipe_previewer.dart';
 
+import '../../Globals.dart';
 import 'dish_listview.dart';
 
 class WideDishPage extends StatefulWidget {
@@ -28,58 +29,67 @@ class _WideDishPageState extends State<WideDishPage> implements AbstractDishPage
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: ConstrainedBox(
-        constraints: const BoxConstraints(maxWidth: 1080),
-        child: Row(
-          children: [
-            Flexible(
-              flex: 2,
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.lightBlue,
-                  borderRadius: BorderRadius.circular(16),
+    return Padding(
+      padding: const EdgeInsets.all(16),
+      child: Center(
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 1080),
+          child: Row(
+            children: [
+              Flexible(
+                flex: 2,
+                child: Container(
+                  decoration: BoxDecoration(
+                      color: Colors.green,
+                      borderRadius: BorderRadius.circular(16),
+                      boxShadow: [
+                        Globals.shadow,
+                      ]),
+                  clipBehavior: Clip.hardEdge,
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8),
+                        child: SizedBox(
+                            height: 76,
+                            child: FilterCard(
+                                onChangedFilter:
+                                    widget._dishPresenter.changeFilter)),
+                      ),
+                      Expanded(
+                        child: DishListView(widget._dishPresenter),
+                      ),
+                    ],
+                  ),
                 ),
-                clipBehavior: Clip.hardEdge,
+              ),
+              const SizedBox(
+                width: 16,
+              ),
+              Flexible(
+                flex: 3,
                 child: Column(
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.all(8),
-                      child: SizedBox(
-                          height: 64,
-                          child: FilterCard(
-                              onChangedFilter: widget._dishPresenter.changeFilter)),
+                    Flexible(
+                      flex: 3,
+                      child: RecipePreviewer(
+                        name: dishName,
+                        description: dishDescription,
+                        recipe: dishRecipe,
+                      ),
                     ),
-                    Expanded(
-                      child: DishListView(widget._dishPresenter),
+                    Flexible(
+                      flex: 2,
+                      child: DishCreator(
+                        onCreateTaco: widget._dishPresenter.createTaco,
+                        onCreateShaverma: widget._dishPresenter.createShaverma,
+                      ),
                     ),
                   ],
                 ),
-              ),
-            ),
-            Flexible(
-              flex: 3,
-              child: Column(
-                children: [
-                  Flexible(
-                    flex: 3,
-                    child: RecipePreviewer(
-                      name: dishName,
-                      description: dishDescription,
-                      recipe: dishRecipe,
-                    ),
-                  ),
-                  Flexible(
-                    flex: 2,
-                    child: DishCreator(
-                      onCreateTaco: widget._dishPresenter.createTaco,
-                      onCreateShaverma: widget._dishPresenter.createShaverma,
-                    ),
-                  ),
-                ],
-              ),
-            )
-          ],
+              )
+            ],
+          ),
         ),
       ),
     );

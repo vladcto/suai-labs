@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:shaverma_book/view/home/home_screen.dart';
+import 'package:shaverma_book/view/home_screen.dart';
+
+import 'Globals.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,8 +15,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        // is not restarted.
-        primarySwatch: Colors.blue,
+        colorScheme: ColorScheme.light(
+          primary: Globals.mainColor,
+          secondary: Globals.secondColor,
+          outline: Globals.secondColor,
+        ),
       ),
       home: HomeScreen(),
     );

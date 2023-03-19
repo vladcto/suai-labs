@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:shaverma_book/view/home/shaverma_creator.dart';
 import 'package:shaverma_book/view/home/taco_creator.dart';
 
+import '../../Globals.dart';
+
 class DishCreator extends StatefulWidget implements TacoCreator, ShavermaCreator {
   @override
   final Function(String name, String description, String meat, String chesse)
@@ -26,16 +28,34 @@ class _DishCreatorState extends State<DishCreator> {
   @override
   Widget build(BuildContext context) {
     return Card(
-      elevation: 4,
+      elevation: 6,
+      clipBehavior: Clip.hardEdge,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(16.0),
+      ),
       child: DefaultTabController(
         length: 2,
         child: Column(
           children: [
-            TabBar(
-              tabs: [
-                Tab(icon: Icon(Icons.directions_car)),
-                Tab(icon: Icon(Icons.directions_transit)),
-              ],
+            ColoredBox(
+              color: Globals.mainColor,
+              child: TabBar(
+                tabs: const [
+                  Tab(
+                    icon: Icon(
+                      Icons.diamond,
+                      color: Colors.black,
+                    ),
+                  ),
+                  Tab(
+                    icon: Icon(
+                      Icons.star,
+                      color: Colors.black,
+                    ),
+                  ),
+                ],
+                indicatorColor: Globals.secondColor,
+              ),
             ),
             Expanded(
               child: TabBarView(

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
 
+import '../../Globals.dart';
+
 class ShavermaCreator extends StatefulWidget {
   final Function(String name, String description, int checked, List<String> topings)
       onCreateShaverma;
@@ -25,9 +27,17 @@ class _ShavermaCreatorState extends State<ShavermaCreator> {
           child: _SimpleRow(
             TextField(
               controller: _nameTextController,
+              decoration: const InputDecoration(
+                border: OutlineInputBorder(),
+                labelText: "Имя шавермы",
+              ),
             ),
             TextField(
               controller: _descrTextController,
+              decoration: const InputDecoration(
+                border: OutlineInputBorder(),
+                labelText: "Описание",
+              ),
             ),
           ),
         ),
@@ -35,18 +45,40 @@ class _ShavermaCreatorState extends State<ShavermaCreator> {
           child: _SimpleRow(
             TextField(
               controller: _topingsTextController,
+              decoration: const InputDecoration(
+                border: OutlineInputBorder(),
+                labelText: "Топинг",
+              ),
             ),
             TextField(
               controller: _lavashController,
+              decoration: const InputDecoration(
+                border: OutlineInputBorder(),
+                labelText: "Тип лаваша",
+              ),
             ),
           ),
         ),
         Expanded(
-          child: ElevatedButton(
-            onPressed: _createShaverma,
-            child: Text("press me"),
+          child: AspectRatio(
+            aspectRatio: 1,
+            child: Container(
+              decoration: BoxDecoration(
+                color: Globals.mainColor,
+                borderRadius: BorderRadius.circular(100),
+              ),
+              child: GestureDetector(
+                onTap: _createShaverma,
+                child: const Icon(
+                  Icons.check,
+                  color: Colors.black,
+                  size: 32,
+                ),
+              ),
+            ),
           ),
-        )
+        ),
+        const SizedBox(height: 8),
       ],
     );
   }

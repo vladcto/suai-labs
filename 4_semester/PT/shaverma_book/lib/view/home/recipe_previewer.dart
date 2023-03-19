@@ -14,17 +14,38 @@ class RecipePreviewer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      elevation: 4,
-      child: Column(
-        children: [
-          Text(name),
-          Text(description),
-          Expanded(
-            child: ListView(
-              children: recipe.map((e) => Text(e)).toList(),
+      elevation: 6,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(16.0),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(8),
+        child: Column(
+          children: [
+            Text(
+              name,
+              style: const TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.w800,
+              ),
             ),
-          ),
-        ],
+            Text(
+              description,
+              style: const TextStyle(
+                fontSize: 14,
+                fontStyle: FontStyle.italic,
+              ),
+            ),
+            const SizedBox(
+              height: 8,
+            ),
+            Expanded(
+              child: ListView(
+                children: recipe.map((e) => Text(e)).toList(),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

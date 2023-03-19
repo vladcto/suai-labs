@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shaverma_book/presenter/dish_presenter.dart';
 
+import '../../Globals.dart';
+
 class FilterCard extends StatefulWidget {
   final Function(String find, DishSortType variant) onChangedFilter;
   const FilterCard({required this.onChangedFilter, Key? key}) : super(key: key);
@@ -15,7 +17,16 @@ class _FilterCardState extends State<FilterCard> {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
+    return Container(
+      padding: const EdgeInsets.symmetric(
+        horizontal: 16,
+        vertical: 8,
+      ),
+      decoration: BoxDecoration(
+        color: Colors.green,
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(color: Colors.black, width: 2),
+      ),
       child: Row(
         children: [
           FittedBox(
@@ -47,9 +58,13 @@ class _FilterCardState extends State<FilterCard> {
               padding: const EdgeInsets.all(4),
               child: TextField(
                 onChanged: (text) => widget.onChangedFilter(text, choosenSort),
-                decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
-                  hintText: 'Enter a search term',
+                decoration: InputDecoration(
+                  icon: const Icon(
+                    Icons.search,
+                    color: Colors.black,
+                  ),
+                  hintText: 'Поиск',
+                  focusColor: Globals.secondColor,
                 ),
               ),
             ),
