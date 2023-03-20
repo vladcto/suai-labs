@@ -16,7 +16,8 @@ class TallDishPage extends StatefulWidget {
   State<TallDishPage> createState() => _TallDishPageState();
 }
 
-class _TallDishPageState extends State<TallDishPage> implements AbstractDishPage {
+class _TallDishPageState extends State<TallDishPage>
+    implements AbstractDishPage {
   late Function(String name, String description, List<String> recipe) _showDish;
 
   @override
@@ -61,21 +62,22 @@ class _TallDishPageState extends State<TallDishPage> implements AbstractDishPage
                 const SizedBox(width: 16),
                 AspectRatio(
                   aspectRatio: 1,
-                  child: Container(
-                    decoration: BoxDecoration(
-                        color: Globals.mainColor,
-                        borderRadius: BorderRadius.circular(100),
-                        border: Border.all(color: Colors.black, width: 2),
-                        boxShadow: [Globals.shadow]),
-                    child: GestureDetector(
-                      onTap: () => Navigator.of(context).push(
-                        MaterialPageRoute<CreateDishPage>(
-                          builder: (_) => CreateDishPage(
-                            onCreateShaverma: widget._dishPresenter.createShaverma,
-                            onCreateTaco: widget._dishPresenter.createTaco,
-                          ),
+                  child: GestureDetector(
+                    onTap: () => Navigator.of(context).push(
+                      MaterialPageRoute<CreateDishPage>(
+                        builder: (_) => CreateDishPage(
+                          onCreateShaverma:
+                              widget._dishPresenter.createShaverma,
+                          onCreateTaco: widget._dishPresenter.createTaco,
                         ),
                       ),
+                    ),
+                    child: Container(
+                      decoration: BoxDecoration(
+                          color: Globals.mainColor,
+                          borderRadius: BorderRadius.circular(100),
+                          border: Border.all(color: Colors.black, width: 2),
+                          boxShadow: [Globals.shadow]),
                       child: const Icon(
                         Icons.add,
                         color: Colors.black,

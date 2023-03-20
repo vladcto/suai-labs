@@ -4,7 +4,8 @@ import 'package:meta/meta.dart';
 import '../../Globals.dart';
 
 class ShavermaCreator extends StatefulWidget {
-  final Function(String name, String description, int checked, List<String> topings)
+  final Function(
+          String name, String description, int checked, List<String> topings)
       onCreateShaverma;
   const ShavermaCreator({Key? key, required this.onCreateShaverma})
       : super(key: key);
@@ -62,13 +63,13 @@ class _ShavermaCreatorState extends State<ShavermaCreator> {
         Expanded(
           child: AspectRatio(
             aspectRatio: 1,
-            child: Container(
-              decoration: BoxDecoration(
-                color: Globals.mainColor,
-                borderRadius: BorderRadius.circular(100),
-              ),
-              child: GestureDetector(
-                onTap: _createShaverma,
+            child: GestureDetector(
+              onTap: _createShaverma,
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Globals.mainColor,
+                  borderRadius: BorderRadius.circular(100),
+                ),
                 child: const Icon(
                   Icons.check,
                   color: Colors.black,

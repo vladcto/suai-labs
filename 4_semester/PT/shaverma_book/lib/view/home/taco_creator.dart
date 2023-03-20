@@ -60,13 +60,13 @@ class _TacoCreatorState extends State<TacoCreator> {
         Expanded(
           child: AspectRatio(
             aspectRatio: 1,
-            child: Container(
-              decoration: BoxDecoration(
-                color: Globals.mainColor,
-                borderRadius: BorderRadius.circular(100),
-              ),
-              child: GestureDetector(
-                onTap: _createTaco,
+            child: GestureDetector(
+              onTap: _createTaco,
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Globals.mainColor,
+                  borderRadius: BorderRadius.circular(100),
+                ),
                 child: const Icon(
                   Icons.check,
                   color: Colors.black,

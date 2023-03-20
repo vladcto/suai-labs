@@ -21,7 +21,8 @@ class HomeScreen extends StatelessWidget {
       ),
       body: LayoutBuilder(
         builder: (bcontext, constraints) {
-          if (constraints.maxHeight / constraints.maxWidth > 1.2) {
+          var size = MediaQuery.of(bcontext).size;
+          if (size.height / size.width > 1.2) {
             return TallDishPage(_dishPresenter);
           } else {
             return WideDishPage(_dishPresenter);

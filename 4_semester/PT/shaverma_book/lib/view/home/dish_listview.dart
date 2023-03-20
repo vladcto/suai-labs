@@ -40,7 +40,7 @@ class _DishListViewState extends State<DishListView> {
       separatorBuilder: (_, __) => Container(
         height: 2,
         margin: const EdgeInsets.symmetric(horizontal: 16),
-        color: Globals.secondColor,
+        color: Colors.black,
       ),
     );
   }

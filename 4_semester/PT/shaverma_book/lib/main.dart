@@ -4,7 +4,7 @@ import 'package:shaverma_book/view/home_screen.dart';
 import 'Globals.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {

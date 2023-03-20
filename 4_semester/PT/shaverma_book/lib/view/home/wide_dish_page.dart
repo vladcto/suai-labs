@@ -16,7 +16,8 @@ class WideDishPage extends StatefulWidget {
   State<WideDishPage> createState() => _WideDishPageState();
 }
 
-class _WideDishPageState extends State<WideDishPage> implements AbstractDishPage {
+class _WideDishPageState extends State<WideDishPage>
+    implements AbstractDishPage {
   String dishName = "Ничего не выбрано";
   String dishDescription = "Нажмите на элемент списка, чтобы посмотреть рецепт";
   List<String> dishRecipe = [];
