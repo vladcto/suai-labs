@@ -1,37 +1,25 @@
-# `SUAI` Labs
-Here are the laboratories for the time of study at the __SUAI__.
-# Labs
+<h1> 
+	<img src = "https://img.shields.io/badge/SUAI-LAB-important
+?style=for-the-badge&logo=lada" height = "60px" /> 
+</h1>
 
-## 2 Semester
-### Basics of programming
-| № | code | № var | task |
-| :---: | :---: | :---: | :---: |
-| 1.1 | [code](2_semester/OP/1.1/1.1.cpp) |:trollface:| :x: |
-| 1.2 | [code](2_semester/OP/1.2/1.2.cpp) |:trollface:| :x: |
-| 1.3 | [code](2_semester/OP/1.3/1.3.cpp) |:trollface:| :x: |
-| 2.1 | [code](2_semester/OP/2.1/2.1OP.cpp) |:trollface:| :x: |
-| 2.2 | [code](2_semester/OP/2.2/2.2OP.cpp) |:trollface:| :x: |
-| 3.1 | [code](2_semester/OP/3.1/3.1.cpp) |:trollface:| :x: |
-| 3.2 | [code](2_semester/OP/3.2/3.2.cpp) |:trollface:| :x: |
-| 4.1 | [code](2_semester/OP/4.1/4.1.cpp) |:trollface:| :x: |
-| 4.2 | [code](2_semester/OP/4.2/4.2.cpp) |:trollface:| :x: |
-| 5.1 | [code](2_semester/OP/5.1/5.1.cpp) |:trollface:| :x: |
-| 5.2 | [code](2_semester/OP/5.2/5.2.cpp) |:trollface:| :x: |
-| __add__ 1 | [code](2_semester/OP/2семестр_доп_задание1/source_code.cpp) |:trollface:| :x: |
-## 3 Semester
-### Information Systems Architecture
-| № | source |
-| :---: | :---: |
-| 1 | [source](/3_semester/AIS/) |
-### Basics of Programming
-| № | code | task |
-| :---: | :---: | :---: |
-| 1 | [code](3_semester/OP/lab_1/src/) | :x: |
-| 2 | [code](3_semester/OP/lab_2/src/) | :x: |
-| 3 | [code](3_semester/OP/lab_3/src/) | :x: |
-### Information Technology
-| № | source |
-| :---: | :---: |
-| 1 | [code](3_semester/IT/lab_1/) |
-| 2 | [code](3_semester/IT/lab_2/) |
-| 3 | [code](3_semester/IT/lab_3/) |
+Here are the laboratories for the time of study at the __SUAI__.
+
+## ![Semester 2](https://img.shields.io/badge/Semester_2-orange?style=flat)
+- [Основы Программирования](2_semester/OP/)
+
+## ![Semester 3](https://img.shields.io/badge/Semester_3-orange?style=flat)
+- [Основы программирования](3_semester/OP/)
+- [Архитектура информационных систем](3_semester/AIS/)
+- [Информационные технологии](3_semester/IT/)
+- [Электроника и схемотехника](3_semester/Схемотехника/)
+- [Теория вероятностей и математическая статистика](3_semester/Теорвер/)
+
+## ![Semester 4](https://img.shields.io/badge/Semester_4-orange?style=flat)
+- [Технологии программирования](4_semester/PT/)
+- [Компьютерная графика](4_semester/CG/)
+- [Инструментальные средства информационных систем](4_semester/IST/)
+- [Основы информационных технологий в медиаиндустрии](4_semester/FITMI/)
+- [Управление данными](4_semester/DM/)
+- [Вычислительная математика](4_semester/CM/)
+- [Социология](4_semester/Sociology/)
