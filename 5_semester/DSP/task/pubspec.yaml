@@ -9,6 +9,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_riverpod: ^2.4.4
+  riverpod: ^2.4.4
+  my_math:
+    path: packages/my_math
+  fl_chart: ^0.64.0
 
 dev_dependencies:
   flutter_test:

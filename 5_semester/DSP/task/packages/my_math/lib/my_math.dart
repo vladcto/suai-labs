@@ -1,7 +1,7 @@
 library my_math;
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+export 'src/utils/typedefs.dart';
+export 'src/extensions/interval_extension.dart';
+export 'src/extensions/integral_extension.dart';
+export 'src/math/algebra.dart';
+export 'src/models/math_interval.dart';
