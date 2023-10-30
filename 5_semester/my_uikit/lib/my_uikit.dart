@@ -1,7 +1,6 @@
-library my_uikit;
+library ui_kit;
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+export 'src/container/kit_title_container.dart';
+export 'src/typography/kit_text.dart';
+export 'src/chart/kit_line_chart.dart';
+export 'src/chart/models/kit_line_data.dart';
