@@ -24,7 +24,7 @@ class DefiniteIntegral {
       result += pow(f(x), 2);
     }
 
-    result *= h;
+    result *= h * (1 / (end - start));
     return sqrt(result);
   }
 }
