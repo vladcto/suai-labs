@@ -4,9 +4,9 @@ import 'dart:math';
 import '../models/point2.dart';
 
 extension DistributionMapStatistics on Map<double, double> {
-  List<Point2<double>> get cumulativeDistribution {
+  List<Point2> get cumulativeDistribution {
     final listEntries = entries.toList();
-    final res = <Point2<double>>[Point2(listEntries.first.key - 1, 0)];
+    final res = <Point2>[Point2(listEntries.first.key - 1, 0)];
     var cumulative = listEntries.first.value;
     res.add(Point2(listEntries.first.key, cumulative));
 
@@ -141,8 +141,6 @@ extension DistributionMapStatistics on Map<double, double> {
   double get standardDeviation => sqrt(variance);
 
   double get skewness {
-    double mean = this.mean;
-    double variance = this.variance;
     double thirdMoment = this.thirdMoment;
     final stdDev = standardDeviation;
 

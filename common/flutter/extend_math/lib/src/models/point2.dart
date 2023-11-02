@@ -1,6 +1,8 @@
-class Point2<T extends num>{
-  final T x;
-  final T y;
+class Point2 {
+  final double x;
+  final double y;
 
-  Point2(this.x, this.y);
+  const Point2(this.x, this.y);
+
+  static const zero = Point2(0, 0);
 }

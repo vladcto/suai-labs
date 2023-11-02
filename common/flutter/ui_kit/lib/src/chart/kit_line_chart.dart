@@ -6,8 +6,8 @@ import '../typography/kit_text.dart';
 import 'models/kit_line_data.dart';
 
 class KitLineChart extends StatelessWidget {
-  static const _leftTileSize = 14.0;
-  static const _bottomTileSize = 18.0;
+  static const _leftTileSize = 28.0;
+  static const _bottomTileSize = 32.0;
   static const _axisNameSize = 24.0;
 
   final List<KitLineData> lines;
@@ -41,7 +41,8 @@ class KitLineChart extends StatelessWidget {
           : null,
       sideTitles: SideTitles(
         reservedSize: _leftTileSize,
-        getTitlesWidget: (_, meta) => KitText.system(meta.formattedValue),
+        getTitlesWidget: (_, meta) =>
+            Center(child: KitText.system(meta.formattedValue)),
         showTitles: true,
       ),
     );
@@ -58,7 +59,8 @@ class KitLineChart extends StatelessWidget {
           : null,
       sideTitles: SideTitles(
         reservedSize: _bottomTileSize,
-        getTitlesWidget: (_, meta) => KitText.system(meta.formattedValue),
+        getTitlesWidget: (_, meta) =>
+            Center(child: KitText.system(meta.formattedValue)),
         showTitles: true,
       ),
     );
@@ -88,8 +90,8 @@ class KitLineChart extends StatelessWidget {
 
     return Padding(
       // Mimic FlTitlesData paddings
-      padding: const EdgeInsets.only(
-        right: _leftTileSize + _axisNameSize,
+      padding: EdgeInsets.only(
+        right: _leftTileSize + (yAxisName != null ? _axisNameSize : 0),
         top: Paddings.medium,
       ),
       child: LineChart(
