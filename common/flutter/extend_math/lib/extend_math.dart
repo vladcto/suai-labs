@@ -10,6 +10,29 @@ export 'src/logic/list_functions.dart';
 export 'src/models/point2.dart';
 export 'src/models/math_interval.dart';
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// sss
+///
+////
+///
 extension SpectrumPointEnergyExt on List {
   double calculateEnergy(MathInterval interval) => 0.50000001;
 }
