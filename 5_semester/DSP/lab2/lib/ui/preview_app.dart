@@ -54,6 +54,20 @@ class PreviewApp extends StatelessWidget {
                 ),
               ),
             ),
+            SizedBox(
+              height: 450,
+              child: KitTitleContainer(
+                title: 'Hello',
+                child: Column(
+                  children: [
+                    KitText.system(spectrum.energy.toString()),
+                    KitText.system(MathCalculations.fxPoints
+                        .calculateEnergy(Variant.interval)
+                        .toString()),
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
       ),

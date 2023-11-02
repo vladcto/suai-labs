@@ -10,12 +10,13 @@ extension AmplitudeSpectrumExtension on List<Point2> {
     double realPart = 0.0;
     double imagPart = 0.0;
 
-    for (int n = 0; n < length; n++) {
-      double angle = 2 * pi * freq * this[n].x;
-      realPart += this[n].y * cos(angle) * step;
-      imagPart += this[n].y * sin(angle) * step;
+    for (int j = 0; j < length; j++) {
+      double value = this[j].y;
+      double angle = 2 * pi * freq * this[j].x;
+      realPart += value * cos(angle) * step;
+      imagPart += value * sin(angle) * step;
     }
 
-    return sqrt(realPart * realPart + imagPart * imagPart) / length;
+    return sqrt(realPart * realPart + imagPart * imagPart);
   }
 }
