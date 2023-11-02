@@ -5,6 +5,7 @@ import 'package:lab2/logic/variant.dart';
 import 'package:ui_kit/ui_kit.dart';
 
 class PreviewApp extends StatelessWidget {
+  static const _itemsPadding = 16.0;
   const PreviewApp({super.key});
 
   @override
@@ -15,62 +16,62 @@ class PreviewApp extends StatelessWidget {
         MathCalculations.fxPoints.amplitudeSpectrumFor(i, step: Variant.step)
     ];
 
-    return Center(
-      child: SizedBox(
-        width: 900,
-        child: ListView(
-          children: [
-            SizedBox(
-              height: 450,
-              child: KitTitleContainer(
-                title: 'Hello',
-                child: KitLineChart(
-                  lines: [
-                    KitLineData(
-                      dots: MathCalculations.fxPoints
-                          .map(
-                            (e) => KitDot(e.x, e.y),
-                          )
-                          .toList(),
-                    ),
-                  ],
-                ),
+    return Row(
+      children: [
+        Expanded(
+          child: Padding(
+            padding: const EdgeInsets.all(_itemsPadding),
+            child: KitTitleContainer(
+              title: 'Граффик',
+              child: KitLineChart(
+                yAxisName: 'u(t)',
+                xAxisName: 't',
+                lines: [
+                  KitLineData(
+                    dots: MathCalculations.fxPoints
+                        .map(
+                          (e) => KitDot(e.x, e.y),
+                        )
+                        .toList(),
+                  ),
+                ],
               ),
             ),
-            SizedBox(
-              height: 450,
-              child: KitTitleContainer(
-                title: 'Hello',
-                child: KitLineChart(
-                  lines: [
-                    KitLineData(
-                      dots: spectrum
-                          .map(
-                            (e) => KitDot((i++).toDouble(), e),
-                          )
-                          .toList(),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            SizedBox(
-              height: 450,
-              child: KitTitleContainer(
-                title: 'Hello',
-                child: Column(
-                  children: [
-                    KitText.system(spectrum.energy.toString()),
-                    KitText.system(MathCalculations.fxPoints
-                        .calculateEnergy(Variant.interval)
-                        .toString()),
-                  ],
-                ),
-              ),
-            ),
-          ],
+          ),
         ),
-      ),
+        Expanded(
+          child: Padding(
+            padding: const EdgeInsets.all(_itemsPadding),
+            child: KitTitleContainer(
+              title: 'Амплитудный спектр',
+              child: Column(
+                children: [
+                  Expanded(
+                    child: KitLineChart(
+                      yAxisName: 'Амплитуда',
+                      xAxisName: 'Частота',
+                      lines: [
+                        KitLineData(
+                          dots: spectrum
+                              .map(
+                                (e) => KitDot((i++).toDouble(), e),
+                              )
+                              .toList(),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+                  KitText.subtitle("Энергия: ${spectrum.energy}"),
+                  KitText.subtitle(
+                    "Равенство: ${MathCalculations.equalEnergy}",
+                  )
+                ],
+              ),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
