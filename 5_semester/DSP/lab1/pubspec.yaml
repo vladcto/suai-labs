@@ -1,0 +1,25 @@
+name: task
+description: A new Flutter project.
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.1.5 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_riverpod: ^2.4.4
+  riverpod: ^2.4.4
+  my_math:
+    path: packages/my_math
+  fl_chart: ^0.64.0
+  google_fonts: ^0.2.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true

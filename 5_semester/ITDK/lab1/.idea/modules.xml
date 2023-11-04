@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../../../common/flutter/extend_math/extend_math.iml" filepath="$PROJECT_DIR$/../../../common/flutter/extend_math/extend_math.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../common/flutter/ui_kit/ui_kit.iml" filepath="$PROJECT_DIR$/../../../common/flutter/ui_kit/ui_kit.iml" />
+    </modules>
+  </component>
+</project>
