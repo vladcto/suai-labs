@@ -8,6 +8,6 @@ abstract final class Variant {
   static const _t = 10 / fn;
 
   static double fx(x) => sin(2 * pi * fn * x);
-  static final interval = MathInterval(0, _t);
+  static const interval = MathInterval(0, _t);
   static const step = 0.001;
 }
