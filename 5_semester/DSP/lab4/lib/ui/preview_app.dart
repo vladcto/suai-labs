@@ -35,7 +35,7 @@ class PreviewApp extends StatelessWidget {
             children: [
               Expanded(
                 child: KitTitleContainer(
-                  title: 'ДПФ',
+                  title: 'БПФ',
                   child: KitLineChart(
                     lines: [
                       KitLineData(
@@ -50,7 +50,7 @@ class PreviewApp extends StatelessWidget {
               const SizedBox(height: 16),
               Expanded(
                 child: KitTitleContainer(
-                  title: 'Обратное ДПФ',
+                  title: 'Обратное БПФ',
                   child: KitLineChart(
                     lines: [
                       KitLineData(

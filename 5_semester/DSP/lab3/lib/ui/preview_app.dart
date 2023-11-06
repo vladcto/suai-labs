@@ -20,7 +20,7 @@ class PreviewApp extends StatelessWidget {
                 children: [
                   Expanded(
                     child: KitTitleContainer(
-                      title: 'Граффик',
+                      title: 'График',
                       child: KitLineChart(
                         yAxisName: 'u(t)',
                         lines: [

@@ -22,7 +22,7 @@ class PreviewApp extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(_itemsPadding),
             child: KitTitleContainer(
-              title: 'Граффик',
+              title: 'График',
               child: KitLineChart(
                 yAxisName: 'u(t)',
                 xAxisName: 't',
