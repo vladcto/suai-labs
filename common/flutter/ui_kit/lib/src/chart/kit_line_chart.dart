@@ -133,7 +133,7 @@ extension KitLineDataExt on KitLineData {
   LineChartBarData get toLineChartBarData => LineChartBarData(
         color: color,
         spots: dots,
-        isCurved: true,
+        isCurved: curved,
         barWidth: 2.5,
         dotData: const FlDotData(show: false),
       );

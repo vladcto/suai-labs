@@ -8,19 +8,19 @@ class PreviewApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: SizedBox(
-        width: 300,
-        child: ListView(
-          padding: EdgeInsets.all(16),
-          children: [
-            SizedBox(
-              height: 300,
-              child: KitTitleContainer(
+    return Row(
+      children: [
+        Expanded(
+          flex: 2,
+          child: KitColumn(
+            childFit: FlexFit.tight,
+            children: [
+              KitTitleContainer(
                 title: "Многоугольник распределения",
                 child: KitLineChart(
                   lines: [
                     KitLineData(
+                      curved: false,
                       dots: Variant.distributionMap.entries
                           .map(
                               (pair) => KitDot(pair.key.toDouble(), pair.value))
@@ -29,10 +29,7 @@ class PreviewApp extends StatelessWidget {
                   ],
                 ),
               ),
-            ),
-            SizedBox(
-              height: 300,
-              child: KitTitleContainer(
+              KitTitleContainer(
                 title: "Функция распредления",
                 child: KitLineChart(
                   lines: [
@@ -45,12 +42,18 @@ class PreviewApp extends StatelessWidget {
                   ],
                 ),
               ),
-            ),
-            SizedBox(
-              height: 300,
-              child: KitTitleContainer(
-                title: "Функция распредления",
+            ],
+          ),
+        ),
+        Expanded(
+          child: KitColumn(
+            mainAxisSize: MainAxisSize.min,
+            childFit: FlexFit.loose,
+            children: [
+              KitTitleContainer(
+                title: "Характеристики",
                 child: Column(
+                  mainAxisSize: MainAxisSize.min,
                   children: [
                     KitText.system("Мода: ${Variant.distributionMap.mode}"),
                     KitText.system(
@@ -68,12 +71,10 @@ class PreviewApp extends StatelessWidget {
                   ],
                 ),
               ),
-            ),
-            SizedBox(
-              height: 300,
-              child: KitTitleContainer(
+              KitTitleContainer(
                 title: "Начальный моменты",
                 child: Column(
+                  mainAxisSize: MainAxisSize.min,
                   children: [
                     KitText.system(
                         "1 порядок: ${Variant.distributionMap.mean}"),
@@ -86,12 +87,10 @@ class PreviewApp extends StatelessWidget {
                   ],
                 ),
               ),
-            ),
-            SizedBox(
-              height: 300,
-              child: KitTitleContainer(
+              KitTitleContainer(
                 title: "Центральные моменты",
                 child: Column(
+                  mainAxisSize: MainAxisSize.min,
                   children: [
                     KitText.system("1 порядок: 0"),
                     KitText.system(
@@ -103,10 +102,10 @@ class PreviewApp extends StatelessWidget {
                   ],
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
-      ),
+      ],
     );
   }
 }

@@ -41,6 +41,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.17.2"
+  complex:
+    dependency: transitive
+    description:
+      name: complex
+      sha256: dba084899c0a4bd2fcba9a36760409171d7bee7c35a749cc4451348270361325
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.7.2"
   equatable:
     dependency: transitive
     description:
