@@ -55,6 +55,7 @@ class PreviewApp extends StatelessWidget {
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
+                     KitText.system("МО: ${Variant.distributionMap.mean}"),
                     KitText.system("Мода: ${Variant.distributionMap.mode}"),
                     KitText.system(
                         "Медиана: ${Variant.distributionMap.median}"),

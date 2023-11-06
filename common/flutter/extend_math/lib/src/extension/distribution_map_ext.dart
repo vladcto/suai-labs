@@ -72,17 +72,18 @@ extension DistributionMapStatistics on Map<double, double> {
   }
 
   double get mode {
-    double maxProbability = -1.0;
-    double mode = 0;
+    double mode = entries.first.key;
+    double maxProbability = entries.first.value;
 
-    forEach((key, value) {
-      if (value > maxProbability) {
-        maxProbability = value;
+    // Пройдитесь по всем парам ключ-значение в вашей вероятностной карте
+    forEach((key, probability) {
+      if (probability > maxProbability) {
         mode = key;
+        maxProbability = probability;
       }
     });
 
-    return mode.toDouble();
+    return mode;
   }
 
   double get median {
