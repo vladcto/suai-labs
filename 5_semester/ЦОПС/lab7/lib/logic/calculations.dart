@@ -14,13 +14,12 @@ abstract final class Calculations {
 
   // 2 order
   static final lowPassFilter2 = LowPassFilter2ndOrder(1.8);
-  static final lowPass2 = calculateACHX(calculateSpectrum(
-      noisedDots.map((e) => Point2(e.x, lowPassFilter2.filter(e.y))).toList()));
+  static final lowPass2 =
+      noisedDots.map((e) => Point2(e.x, lowPassFilter2.filter(e.y))).toList();
 
   static final highPassFilter2 = HighPassFilter2ndOrder(0.6);
-  static final highPass2 = calculateACHX(calculateSpectrum(noisedDots
-      .map((e) => Point2(e.x, highPassFilter2.filter(e.y)))
-      .toList()));
+  static final highPass2 =
+      noisedDots.map((e) => Point2(e.x, highPassFilter2.filter(e.y))).toList();
 
   static final bandPassFilter2 = BandPassFilter2ndOrder(0.8, 0.8);
   static final bandPass2 =
@@ -52,6 +51,7 @@ extension Point2ToKitDot on List<Point2> {
   List<KitDot> get toKitDot => map((e) => KitDot(e.x, e.y)).toList();
 }
 
+// Впадлу в extend_math выносить или отдельные функции.
 class LowPassFilter2ndOrder {
   double alpha;
   double yPrev = 0;
@@ -213,79 +213,4 @@ class NotchFilter3rdOrder {
     xPrev = x;
     return x - y;
   }
-}
-
-List<Point2> calculateLACHX(List<Point2> signal) {
-  int N = signal.length;
-  List<Point2> lachx = <Point2>[];
-
-  for (int k = 0; k < N; k++) {
-    double sumReal = 0;
-    double sumImaginary = 0;
-
-    for (int n = 0; n < N; n++) {
-      double angle = -2 * pi * k * n / N;
-      double realPart = signal[n].y * cos(angle);
-      double imaginaryPart = signal[n].y * sin(angle);
-
-      sumReal += realPart;
-      sumImaginary += imaginaryPart;
-    }
-
-    double magnitude = sqrt(sumReal * sumReal + sumImaginary * sumImaginary);
-    double lachxValue =
-        20 * log(magnitude) / log(10); // Преобразование в децибелы
-
-    lachx.add(Point2(k.toDouble(), lachxValue));
-  }
-
-  return lachx;
-}
-
-List<Point2> calculateSpectrum(List<Point2> signal) {
-  int N = signal.length;
-  List<Point2> spectrum = <Point2>[];
-
-  for (int k = 0; k < N; k++) {
-    double sumReal = 0;
-    double sumImaginary = 0;
-
-    for (int n = 0; n < N; n++) {
-      double angle = -2 * pi * k * n / N;
-      double realPart = signal[n].y * cos(angle);
-      double imaginaryPart = signal[n].y * sin(angle);
-
-      sumReal += realPart;
-      sumImaginary += imaginaryPart;
-    }
-
-    double magnitude = sqrt(sumReal * sumReal + sumImaginary * sumImaginary);
-    spectrum.add(Point2(k.toDouble(), magnitude));
-  }
-
-  return spectrum;
-}
-
-List<Point2> calculateACHX(List<Point2> signal) {
-  int N = signal.length;
-  List<Point2> achx = <Point2>[];
-
-  for (int k = 0; k < N; k++) {
-    double sumReal = 0;
-    double sumImaginary = 0;
-
-    for (int n = 0; n < N; n++) {
-      double angle = -2 * pi * k * n / N;
-      double realPart = signal[n].y * cos(angle);
-      double imaginaryPart = signal[n].y * sin(angle);
-
-      sumReal += realPart;
-      sumImaginary += imaginaryPart;
-    }
-
-    double magnitude = sqrt(sumReal * sumReal + sumImaginary * sumImaginary);
-    achx.add(Point2(k.toDouble(), magnitude));
-  }
-
-  return achx;
 }
