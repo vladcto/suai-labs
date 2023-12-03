@@ -20,33 +20,31 @@ class KitTitleContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BordersRad.normal,
-        color: ThemeColors.mainContainer,
-        boxShadow: const [
-          Shadows.standard,
-        ],
-      ),
-      padding: const EdgeInsets.all(Paddings.medium),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          const SizedBox(height: Paddings.small),
-          KitText.title(title),
-          const SizedBox(height: Paddings.small),
-          Flexible(
-            child: Padding(
-              padding: const EdgeInsets.only(
-                left: _childPadding,
-                right: _childPadding,
-                bottom: _childPadding,
+    return Card(
+      elevation: 6,
+      surfaceTintColor: ThemeColors.mainContainer,
+      color: ThemeColors.mainContainer,
+      child: Padding(
+        padding: const EdgeInsets.all(Paddings.medium),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const SizedBox(height: Paddings.small),
+            KitText.title(title),
+            const SizedBox(height: Paddings.small),
+            Flexible(
+              child: Padding(
+                padding: const EdgeInsets.only(
+                  left: _childPadding,
+                  right: _childPadding,
+                  bottom: _childPadding,
+                ),
+                child: child,
               ),
-              child: child,
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

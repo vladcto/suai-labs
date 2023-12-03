@@ -5,11 +5,15 @@ class KitLineData {
   final List<KitDot> dots;
   final bool curved;
   final Color? color;
+  final bool showDots;
+  final bool isStepped;
 
   KitLineData({
     required this.dots,
     this.color,
     this.curved = true,
+    this.showDots = false,
+    this.isStepped = false,
   });
 }
 

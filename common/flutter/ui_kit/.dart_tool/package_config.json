@@ -32,6 +32,12 @@
       "languageVersion": "2.18"
     },
     {
+      "name": "crypto",
+      "rootUri": "file:///Users/razrab-ytka/.pub-cache/hosted/pub.dev/crypto-3.0.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
       "name": "equatable",
       "rootUri": "file:///Users/razrab-ytka/.pub-cache/hosted/pub.dev/equatable-2.0.5",
       "packageUri": "lib/",
@@ -42,6 +48,12 @@
       "rootUri": "file:///Users/razrab-ytka/.pub-cache/hosted/pub.dev/fake_async-1.3.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
+    },
+    {
+      "name": "ffi",
+      "rootUri": "file:///Users/razrab-ytka/.pub-cache/hosted/pub.dev/ffi-2.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
     },
     {
       "name": "fl_chart",
@@ -66,6 +78,24 @@
       "rootUri": "file:///Users/razrab-ytka/fvm/versions/stable/packages/flutter_test",
       "packageUri": "lib/",
       "languageVersion": "3.0"
+    },
+    {
+      "name": "google_fonts",
+      "rootUri": "file:///Users/razrab-ytka/.pub-cache/hosted/pub.dev/google_fonts-6.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
+    },
+    {
+      "name": "http",
+      "rootUri": "file:///Users/razrab-ytka/.pub-cache/hosted/pub.dev/http-1.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
+      "name": "http_parser",
+      "rootUri": "file:///Users/razrab-ytka/.pub-cache/hosted/pub.dev/http_parser-4.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
     },
     {
       "name": "lints",
@@ -96,6 +126,54 @@
       "rootUri": "file:///Users/razrab-ytka/.pub-cache/hosted/pub.dev/path-1.8.3",
       "packageUri": "lib/",
       "languageVersion": "2.12"
+    },
+    {
+      "name": "path_provider",
+      "rootUri": "file:///Users/razrab-ytka/.pub-cache/hosted/pub.dev/path_provider-2.1.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
+      "name": "path_provider_android",
+      "rootUri": "file:///Users/razrab-ytka/.pub-cache/hosted/pub.dev/path_provider_android-2.2.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
+      "name": "path_provider_foundation",
+      "rootUri": "file:///Users/razrab-ytka/.pub-cache/hosted/pub.dev/path_provider_foundation-2.3.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
+      "name": "path_provider_linux",
+      "rootUri": "file:///Users/razrab-ytka/.pub-cache/hosted/pub.dev/path_provider_linux-2.2.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
+      "name": "path_provider_platform_interface",
+      "rootUri": "file:///Users/razrab-ytka/.pub-cache/hosted/pub.dev/path_provider_platform_interface-2.1.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
+      "name": "path_provider_windows",
+      "rootUri": "file:///Users/razrab-ytka/.pub-cache/hosted/pub.dev/path_provider_windows-2.2.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
+      "name": "platform",
+      "rootUri": "file:///Users/razrab-ytka/.pub-cache/hosted/pub.dev/platform-3.1.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
+      "name": "plugin_platform_interface",
+      "rootUri": "file:///Users/razrab-ytka/.pub-cache/hosted/pub.dev/plugin_platform_interface-2.1.6",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
     },
     {
       "name": "sky_engine",
@@ -140,6 +218,12 @@
       "languageVersion": "2.18"
     },
     {
+      "name": "typed_data",
+      "rootUri": "file:///Users/razrab-ytka/.pub-cache/hosted/pub.dev/typed_data-1.3.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
       "name": "vector_math",
       "rootUri": "file:///Users/razrab-ytka/.pub-cache/hosted/pub.dev/vector_math-2.1.4",
       "packageUri": "lib/",
@@ -152,13 +236,25 @@
       "languageVersion": "3.1"
     },
     {
+      "name": "win32",
+      "rootUri": "file:///Users/razrab-ytka/.pub-cache/hosted/pub.dev/win32-5.0.9",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
+      "name": "xdg_directories",
+      "rootUri": "file:///Users/razrab-ytka/.pub-cache/hosted/pub.dev/xdg_directories-1.0.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
       "name": "ui_kit",
       "rootUri": "../",
       "packageUri": "lib/",
       "languageVersion": "3.1"
     }
   ],
-  "generated": "2023-11-02T13:21:59.456316Z",
+  "generated": "2023-11-06T23:42:15.185848Z",
   "generator": "pub",
   "generatorVersion": "3.1.5"
 }

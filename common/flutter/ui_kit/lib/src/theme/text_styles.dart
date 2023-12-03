@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'theme_colors.dart';
 
@@ -9,21 +10,24 @@ abstract final class _FontSizes {
 }
 
 abstract final class TextStyles {
-  static const title = TextStyle(
+  static final title = GoogleFonts.getFont(
+    "Roboto",
     color: ThemeColors.mainText,
     fontSize: _FontSizes.title,
     fontWeight: FontWeight.w800,
   );
 
-  static const subtitle = TextStyle(
+  static final subtitle = GoogleFonts.getFont(
+    "Roboto",
     color: ThemeColors.mainText,
     fontSize: _FontSizes.subtitle,
     fontWeight: FontWeight.w600,
   );
 
-  static const system = TextStyle(
+  static final system = GoogleFonts.getFont(
+    "Roboto",
     color: ThemeColors.system,
     fontSize: _FontSizes.system,
-    fontWeight: FontWeight.w800
+    fontWeight: FontWeight.w800,
   );
 }

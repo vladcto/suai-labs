@@ -135,6 +135,7 @@ extension KitLineDataExt on KitLineData {
         spots: dots,
         isCurved: curved,
         barWidth: 2.5,
-        dotData: const FlDotData(show: false),
+        dotData: FlDotData(show: showDots),
+        isStepLineChart: isStepped,
       );
 }

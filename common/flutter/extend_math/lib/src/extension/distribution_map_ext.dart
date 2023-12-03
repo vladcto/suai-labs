@@ -6,7 +6,7 @@ import '../models/point2.dart';
 extension DistributionMapStatistics on Map<double, double> {
   List<Point2> get cumulativeDistribution {
     final listEntries = entries.toList();
-    final res = <Point2>[Point2(listEntries.first.key - 1, 0)];
+    final res = <Point2>[];
     var cumulative = listEntries.first.value;
     res.add(Point2(listEntries.first.key, cumulative));
 
@@ -15,15 +15,14 @@ extension DistributionMapStatistics on Map<double, double> {
       res.add(Point2(listEntries[i].key, cumulative));
     }
 
-    res.add(Point2(listEntries.last.key + 1, 1));
     return res;
   }
 
-  double calcCumulativeProbability(double x0) {
+  double calcCumulativeProbability(double end, {double start = 0}) {
     double cumulativeProbability = 0.0;
 
     forEach((key, value) {
-      if (key <= x0) {
+      if (start <= key && key <= end) {
         cumulativeProbability += value;
       }
     });

@@ -1,0 +1,25 @@
+name: lab5
+description: A new Flutter project.
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.1.5 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  riverpod: ^2.4.6
+  flutter_riverpod: ^2.4.6
+  ui_kit:
+    path: ../../../common/flutter/ui_kit
+  extend_math:
+    path: ../../../common/flutter/extend_math
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.1
+
+flutter:
+  uses-material-design: true
