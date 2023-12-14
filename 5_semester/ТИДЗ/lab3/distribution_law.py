@@ -66,7 +66,6 @@ def get_distribution_points(data: List[float], theoretical_distribution_func: Ca
     empirical_values, _ = np.histogram(data, bins=bins, density=True)
     empirical_points = np.histogram(data, bins=bins)
 
-    # Рассчитываем значения теоретического распределения
     theoretical_values = [theoretical_distribution_func(
         x, *params) for x in empirical_points[1]]
 

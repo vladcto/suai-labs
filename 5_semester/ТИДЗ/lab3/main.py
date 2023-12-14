@@ -8,11 +8,11 @@ import ploter as ploter
 
 warnings.filterwarnings('ignore')
 
-FILE_PATH = "1.txt"
+FILE_PATH = "5.txt"
 rnd_values = reader.read_random_variables(FILE_PATH)
 
 print("Числовые параметры распределения:")
-print()
+print()			
 print(f"Обьем выборки = {dparam.sample_size(rnd_values)}")
 print(f"Xmax = {dparam.calculate_Xmax(rnd_values)}")
 print(f"Xmin = {dparam.calculate_Xmin(rnd_values)}")

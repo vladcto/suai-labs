@@ -1,7 +1,7 @@
 from scipy.stats import skew
 from typing import List
 from typing import List, Tuple
-from scipy.stats import chi2, t, skewnorm
+from scipy.stats import chi2, t
 from typing import List, Optional
 import numpy as np
 
@@ -34,13 +34,13 @@ def degrees_of_freedom(data: List[float]) -> int:
 
 def calculate_variance(data: List[float]) -> float:
     n = len(data)
-    
+
     mean = sum(data) / n
-    
+
     squared_diff = sum((x - mean) ** 2 for x in data)
-    
+
     variance = squared_diff / n
-    
+
     return variance
 
 
@@ -65,12 +65,10 @@ def calculate_median(data: List[float]) -> Optional[float]:
     sorted_data = sorted(data)
     n = len(sorted_data)
     if n % 2 == 0:
-        # Если число элементов четное, медиана - среднее двух центральных элементов
         middle1 = sorted_data[n // 2 - 1]
         middle2 = sorted_data[n // 2]
         return (middle1 + middle2) / 2
     else:
-        # Если число элементов нечетное, медиана - центральный элемент
         return sorted_data[n // 2]
 
 
@@ -86,17 +84,14 @@ def confidence_interval_mean(data: List[float], confidence_level: float = 0.95) 
     if mean_value is None or std_dev_value is None or sample_size_value is None:
         return None
 
-    # Вычисляем стандартную ошибку среднего
     standard_error = std_dev_value / (sample_size_value ** 0.5)
 
-    # Вычисляем критическое значение t-распределения
     df = degrees_of_freedom(data)
     if df is None:
         return None
 
     t_value = t.ppf((1 + confidence_level) / 2, df)
 
-    # Вычисляем доверительный интервал
     margin_of_error = t_value * standard_error
     lower_bound = mean_value - margin_of_error
     upper_bound = mean_value + margin_of_error
@@ -111,7 +106,6 @@ def confidence_interval_variance(data: List[float], confidence_level: float = 0.
     if variance_value is None or sample_size_value is None:
         return None
 
-    # Вычисляем критические значения хи-квадрат распределения
     df = degrees_of_freedom(data)
     if df is None:
         return None
@@ -119,7 +113,6 @@ def confidence_interval_variance(data: List[float], confidence_level: float = 0.
     chi2_lower = chi2.ppf((1 - confidence_level) / 2, df)
     chi2_upper = chi2.ppf((1 + confidence_level) / 2, df)
 
-    # Вычисляем доверительный интервал
     lower_bound = (sample_size_value - 1) * variance_value / chi2_upper
     upper_bound = (sample_size_value - 1) * variance_value / chi2_lower
 
@@ -133,18 +126,15 @@ def confidence_interval_skewness(data: List[float], confidence_level: float = 0.
     if skewness_value is None or sample_size_value is None:
         return None
 
-    # Вычисляем стандартную ошибку асимметрии
     std_error_skewness = (6 * sample_size_value * (sample_size_value - 1) / (
         (sample_size_value - 2) * (sample_size_value + 1) * (sample_size_value + 3))) ** 0.5
 
-    # Вычисляем критическое значение t-распределения
     df = degrees_of_freedom(data)
     if df is None:
         return None
 
     t_value = t.ppf((1 + confidence_level) / 2, df)
 
-    # Вычисляем доверительный интервал
     lower_bound = skewness_value - t_value * std_error_skewness
     upper_bound = skewness_value + t_value * std_error_skewness
 
@@ -158,18 +148,15 @@ def confidence_interval_kurtosis(data: List[float], confidence_level: float = 0.
     if kurtosis_value is None or sample_size_value is None:
         return None
 
-    # Вычисляем стандартную ошибку эксцесса
     std_error_kurtosis = (24 * sample_size_value * (sample_size_value - 2) * (sample_size_value - 3) / (
         (sample_size_value + 1) * (sample_size_value + 1) * (sample_size_value + 3) * (sample_size_value + 5))) ** 0.5
 
-    # Вычисляем критическое значение t-распределения
     df = degrees_of_freedom(data)
     if df is None:
         return None
 
     t_value = t.ppf((1 + confidence_level) / 2, df)
 
-    # Вычисляем доверительный интервал
     lower_bound = kurtosis_value - t_value * std_error_kurtosis
     upper_bound = kurtosis_value + t_value * std_error_kurtosis
 
