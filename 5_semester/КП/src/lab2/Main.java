@@ -27,7 +27,6 @@ public class Main {
     static final JButton close = new JButton("Закрыть");
     static final JButton reset = new JButton("Cбросить");
 
-
     static double selectedValue = SELECTED_VALUE;
     static double selectedEpsilon = SELECTED_EPSILON;
 
@@ -84,9 +83,7 @@ public class Main {
         label.setBounds(35, CONTAINER_OFFSET, 160, LABEL_HEIGHT);
         panel.add(label);
 
-        valueSpinner.setModel(
-                new SpinnerNumberModel(selectedValue, -1, 1, 0.1)
-        );
+        valueSpinner.setModel(new SpinnerNumberModel(selectedValue, -1, 1, 0.1));
         valueSpinner.addChangeListener((x) -> {
             selectedValue = (double) valueSpinner.getValue();
             updateResult();

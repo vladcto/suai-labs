@@ -9,10 +9,6 @@ public class Point2 {
         this.y = y;
     }
 
-    public static Point2 one() {
-        return new Point2(1, 1);
-    }
-
     public Point2 distance(Point2 end) {
         return new Point2(end.x - x, end.y - y);
     }
