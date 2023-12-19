@@ -1,0 +1,39 @@
+[Processor settings]
+Memory size=2048
+Max commands before interruption=1048576
+Generate messages=1
+[Registers]
+R1=000000D9
+R2=0000001A
+R3=000000DC
+R4=000000A0
+R5=00000510
+R6=0000DD7C
+R7=000FA0FE
+R8=00E65EFF
+R9=0B58ABEF
+RF=00000380
+[Memory]
+0x00000380=00 00 00 00 D9 59 57 A1 52 51 53 96 56 CC 51 59 
+0x00000390=AE 54 54 78 58 53 58 00 00 00 00 00 00 00 00 00 
+[Windows]
+MemoryEditor.Opened=1
+MemoryEditor.Left=0
+MemoryEditor.Top=80
+MemoryEditor.Width=600
+MemoryEditor.Height=565
+RegsEditor.Opened=1
+RegsEditor.Left=600
+RegsEditor.Top=80
+RegsEditor.Width=263
+RegsEditor.Height=303
+MsgsEditor.Opened=1
+MsgsForm.Left=0
+MsgsForm.Top=645
+MsgsForm.Width=600
+MsgsForm.Height=300
+VarsEditor.Opened=1
+VarsWin.Left=600
+VarsWin.Top=383
+VarsWin.Width=300
+VarsWin.Height=300
