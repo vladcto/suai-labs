@@ -9,4 +9,4 @@ SELECT DISTINCT student.name
              JOIN conference_program cp ON t.id = cp.topic_id
              JOIN conference c ON c.id = cp.conference_id
     WHERE f.number = 1
-      AND c.name = 'IT-конференция';
+      AND c.name = 'Информатика';

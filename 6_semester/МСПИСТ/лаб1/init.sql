@@ -5,14 +5,14 @@ USE conference_db_lab1;
 CREATE TABLE IF NOT EXISTS university
 (
     id   INT PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(100) NOT NULL
+    name VARCHAR(100) NOT NULL UNIQUE
 );
 
 CREATE TABLE IF NOT EXISTS faculty
 (
     id            INT PRIMARY KEY AUTO_INCREMENT,
     university_id INT,
-    number        INT NOT NULL,
+    number        INT NOT NULL UNIQUE,
     FOREIGN KEY (university_id) REFERENCES university (id)
 );
 
@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS uni_group
 (
     id         INT PRIMARY KEY AUTO_INCREMENT,
     faculty_id INT,
-    name       VARCHAR(50) NOT NULL,
+    name       VARCHAR(50) NOT NULL UNIQUE,
     FOREIGN KEY (faculty_id) REFERENCES faculty (id)
 );
 
