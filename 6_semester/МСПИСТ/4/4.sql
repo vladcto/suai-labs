@@ -7,4 +7,4 @@ SELECT c.id        AS conference_id,
     FROM conference c
              LEFT JOIN
              topic t ON c.id = t.conference_id
-    GROUP BY c.id, c.name;
+    GROUP BY c.id;
