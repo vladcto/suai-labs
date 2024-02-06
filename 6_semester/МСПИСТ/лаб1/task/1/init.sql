@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS student
 CREATE TABLE IF NOT EXISTS conference
 (
     id   INT PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(100) NOT NULL,
+    name VARCHAR(100) NOT NULL DEFAULT 'Научная конференция',
     date DATE         NOT NULL
 );
 
@@ -46,7 +46,8 @@ CREATE TABLE IF NOT EXISTS topic
     author_id     INT,
     title         VARCHAR(255) NOT NULL,
     CONSTRAINT fk_author_id FOREIGN KEY (author_id) REFERENCES student (id),
-    CONSTRAINT fk_conference_id FOREIGN KEY (conference_id) REFERENCES conference (id)
+    CONSTRAINT fk_conference_id FOREIGN KEY (conference_id) REFERENCES conference (id),
+    CONSTRAINT unique_author_title UNIQUE (author_id, title)
 );
 
 CREATE TABLE IF NOT EXISTS conference_program
@@ -57,5 +58,6 @@ CREATE TABLE IF NOT EXISTS conference_program
     start_time    TIME NOT NULL,
     end_time      TIME NOT NULL,
     CONSTRAINT fk_conf_id_program FOREIGN KEY (conference_id) REFERENCES conference (id),
-    CONSTRAINT fk_topic_id_program FOREIGN KEY (topic_id) REFERENCES topic (id)
+    CONSTRAINT fk_topic_id_program FOREIGN KEY (topic_id) REFERENCES topic (id),
+    CONSTRAINT check_time CHECK (start_time < end_time)
 );

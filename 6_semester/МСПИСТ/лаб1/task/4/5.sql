@@ -11,4 +11,4 @@ SELECT AVG(topic_count) AS avg_topic_count
                        JOIN
                        topic t ON s.id = t.author_id
               WHERE f.number = 3
-              GROUP BY s.id) AS subquery;
+              GROUP BY s.id) AS _;
