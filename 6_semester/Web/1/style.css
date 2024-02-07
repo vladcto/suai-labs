@@ -1,0 +1,32 @@
+body {
+	font-family: 'Roboto', sans-serif;
+}
+
+.grid-container {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: auto repeat(3, 1fr);
+	justify-items: center;
+	gap: 10px;
+}
+
+.grid-container pre {
+	text-align: center;
+}
+
+.footer-container {
+	position: fixed;
+	bottom: 32px;
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.avatar {
+	border-radius: 50%;
+	height: 128px;
+	width: auto;
+}
