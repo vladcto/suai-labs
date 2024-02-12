@@ -32,17 +32,27 @@ INSERT INTO conference (name, date)
            ('Физика', '2022-03-01'),
            ('Химия', '2022-04-01');
 
-INSERT INTO topic (conference_id, author_id, title)
-    VALUES (1, 1, 'Topic 1'),
-           (1, 2, 'Topic 1'),
-           (2, 1, 'Topic 2'),
-           (2, 3, 'Topic 3'),
-           (3, 1, 'Topic 4'),
-           (3, 4, 'Topic 5'),
-           (4, 1, 'Topic 6'),
-           (4, 5, 'Topic 7'),
-           (4, 7, 'Topic 8'),
-           (4, 8, 'Topic 8');
+INSERT INTO topic (title)
+    VALUES ('Topic 1'),
+           ('Topic 2'),
+           ('Topic 3'),
+           ('Topic 4'),
+           ('Topic 5'),
+           ('Topic 6'),
+           ('Topic 7'),
+           ('Topic 8');
+
+INSERT INTO authorship (author_id, topic_id)
+    VALUES (1, 1), 
+           (2, 1),
+           (1, 2),
+           (3, 3),
+           (1, 4),
+           (4, 5),
+           (1, 6),
+           (5, 7),
+           (7, 8),
+           (8, 8);
 
 INSERT INTO conference_program (conference_id, topic_id, start_time, end_time)
     VALUES (1, 1, '09:00:00', '10:00:00'),

@@ -42,12 +42,16 @@ CREATE TABLE IF NOT EXISTS conference
 CREATE TABLE IF NOT EXISTS topic
 (
     id            INT PRIMARY KEY AUTO_INCREMENT,
-    conference_id INT,
-    author_id     INT,
-    title         VARCHAR(255) NOT NULL,
+    title         VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS authorship
+(
+    author_id INT,
+    topic_id  INT,
+    CONSTRAINT pk_authorship PRIMARY KEY (author_id, topic_id),
     CONSTRAINT fk_author_id FOREIGN KEY (author_id) REFERENCES student (id),
-    CONSTRAINT fk_conference_id FOREIGN KEY (conference_id) REFERENCES conference (id),
-    CONSTRAINT unique_author_title UNIQUE (author_id, title)
+    CONSTRAINT fk_topic_id FOREIGN KEY (topic_id) REFERENCES topic (id)
 );
 
 CREATE TABLE IF NOT EXISTS conference_program

@@ -15,19 +15,18 @@ ALTER TABLE student
     ADD CONSTRAINT fk_group_id
         FOREIGN KEY (group_id) REFERENCES uni_group (id) ON DELETE CASCADE;
 
-ALTER TABLE topic
-    DROP CONSTRAINT fk_author_id;
-
-ALTER TABLE topic
-    ADD CONSTRAINT fk_author_id
-        FOREIGN KEY (author_id) REFERENCES student (id) ON DELETE CASCADE;
-
 ALTER TABLE conference_program
     DROP CONSTRAINT fk_topic_id_program;
 
 ALTER TABLE conference_program
     ADD CONSTRAINT fk_topic_id_program
         FOREIGN KEY (topic_id) REFERENCES topic (id) ON DELETE CASCADE;
+
+ALTER TABLE authorship
+    DROP CONSTRAINT fk_author_id;
+
+ALTER TABLE authorship
+    ADD CONSTRAINT fk_author_id FOREIGN KEY (author_id) REFERENCES student (id) ON DELETE CASCADE;
 
 DELETE
     FROM faculty
