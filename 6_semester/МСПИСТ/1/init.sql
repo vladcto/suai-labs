@@ -50,7 +50,7 @@ CREATE TABLE IF NOT EXISTS authorship
     author_id INT NOT NULL,
     topic_id  INT NOT NULL,
     CONSTRAINT pk_authorship PRIMARY KEY (author_id, topic_id),
-    CONSTRAINT fk_author_id FOREIGN KEY (author_id) REFERENCES student (id),
+    CONSTRAINT fk_author_id FOREIGN KEY (author_id) REFERENCES student (id) ON DELETE CASCADE,
     CONSTRAINT fk_topic_id FOREIGN KEY (topic_id) REFERENCES topic (id)
 );
 
