@@ -5,6 +5,9 @@ def print_map(map):
 
 def calculate_system_metrics(lmbda, mu):
     rho = lmbda / mu
+    if(rho > 1):
+        print("Бесконечное число состояний")
+        return
 
     L_queue = rho * rho / (1 - rho)
     T_queue = L_queue / lmbda
