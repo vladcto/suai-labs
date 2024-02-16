@@ -3,26 +3,50 @@
   <head>
     <title>Поэзия</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
-    <link href="http://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css" />
+    <link
+      href="http://fonts.googleapis.com/css?family=Roboto"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <style>
+      #best{
+        grid-column: 1 / -1;
+      }
+      h1{
+        margin: 0px auto;
+        width: 20%;
+        border: 2px solid black;
+        border-radius: 16px;
+        margin: 24px auto 16px auto;
+        padding: 8px 0px;
+      }
+    </style>
   </head>
 
   <body>
     <h1 style="text-align: center">Поэзия</h1>
+
     <div class="grid-container">
-      <h2>Неизвестный</h2>
-      <h2>Иван Калита</h2>
-      <h2>Моргенштерн</h2>
-      <div id="omg"></div>
-      <div id="spb"></div>
-      <div id="dulo"></div>
-      <div id="omg2"></div>
-      <div id="prank"></div>
-      <div id="nominalo"></div>
+      <div class="poetry-container horizontal" id="best">
+        <h2>Иван Калита</h2>
+        <div id="spb"></div>
+        <div id="prank"></div>
+      </div>
+      <div class="poetry-container vertical">
+        <h2>Моргенштерн</h2>
+        <div id="dulo"></div>
+        <div id="nominalo"></div>
+      </div>
+      <div class="poetry-container vertical">
+        <h2>Неизвестный</h2>
+        <div id="omg"></div>
+        <div id="omg2"></div>
+      </div>
     </div>
 
     <div class="footer-container">
       <a href="main.html">
-        <img class="avatar" src="assets/avatar.jpeg" />
+        <img class="avatar" src="assets/image/avatar.jpeg" />
       </a>
       <a href="mailto:vladctocrytoe@mail.ru">amogus@mail.ru</a>
     </div>
