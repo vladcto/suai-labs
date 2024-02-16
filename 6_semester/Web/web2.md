@@ -86,7 +86,7 @@ student: В. А. Воробьев
 
 Результат применения CSS изображен на рисунках \ref{fig:Cтраница main} - \ref{fig:Прозрачность при наведении}.
 
-![Cтраница main](report_images/image-2.png)
+![Страница main](report_images/image-2.png)
 
 ![Страница poetry](report_images/image.png)
 
