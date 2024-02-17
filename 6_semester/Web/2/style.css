@@ -79,7 +79,6 @@ img:hover {
 	bottom: 32px;
 	width: 100%;
 	display: flex;
-	justify-content: flex-end;
 	align-items: center;
 	flex-direction: column;
 	gap: 20px;
@@ -90,8 +89,6 @@ img:hover {
 	height: 100%;
 	display: flex;
 	text-align: center;
-	align-items: center;
-	justify-content: center;
 }
 
 .poetry-container>* {
@@ -110,7 +107,6 @@ img:hover {
 .poetry-container h2 {
 	width: 100%;
 	text-align: center;
-	;
 }
 
 .poetry-container.vertical {
@@ -128,5 +124,4 @@ img:hover {
 .avatar {
 	border-radius: 50%;
 	height: 128px;
-	width: auto;
 }
