@@ -1,8 +1,8 @@
 USE conference_db_lab1;
 
 -- Удаляем констрейнты, чтобы можно было спокойно удалить конференцию
-ALTER TABLE conference_program
-    DROP CONSTRAINT fk_conf_id_program;
+ALTER TABLE conference_session
+    DROP FOREIGN KEY fk_conf_id_session;
 
 DELETE
     FROM conference
