@@ -3,6 +3,7 @@
 body {
 	font-family: 'Roboto', sans-serif;
 	font-size: 1em;
+	background-color: fuchsia;
 }
 
 h1 {
@@ -89,10 +90,6 @@ img:hover {
 	height: 100%;
 	display: flex;
 	text-align: center;
-}
-
-.poetry-container>* {
-	flex-grow: 1;
 }
 
 .poetry-container>div {

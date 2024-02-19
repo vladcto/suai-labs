@@ -26,21 +26,31 @@ INSERT INTO student (group_id, name)
            (1, 'Клон 7'),
            (1, 'Клон 8');
 
-INSERT INTO conference (name, date)
-    VALUES ('Информатика', '2022-01-01'),
-           ('Математика', '2022-02-01'),
-           ('Физика', '2022-03-01'),
-           ('Химия', '2022-04-01');
+INSERT INTO conference (name, theme)
+    VALUES ('Информатика', 'Тема 1'),
+           ('Математика', 'Тема 2'),
+           ('Физика', 'Тема 3'),
+           ('Химия', 'Тема 4');
 
-INSERT INTO topic (title)
-    VALUES ('Topic 1'),
-           ('Topic 2'),
-           ('Topic 3'),
-           ('Topic 4'),
-           ('Topic 5'),
-           ('Topic 6'),
-           ('Topic 7'),
-           ('Topic 8');
+INSERT INTO conference_session (conference_id, start_time, end_time, date)
+    VALUES (1, '09:00:00', '10:00:00', '2022-01-01'),
+           (1, '10:00:00', '11:00:00', '2022-01-01'),
+           (2, '09:00:00', '10:00:00', '2022-02-01'),
+           (2, '10:00:00', '11:00:00', '2022-02-01'),
+           (3, '09:00:00', '10:00:00', '2022-03-01'),
+           (3, '10:00:00', '11:00:00', '2022-03-01'),
+           (4, '09:00:00', '10:00:00', '2022-04-01'),
+           (4, '10:00:00', '11:00:00', '2022-04-01');
+
+INSERT INTO topic (title, session_id)
+    VALUES ('Topic 1', 1),
+           ('Topic 2', 2),
+           ('Topic 3', 3),
+           ('Topic 4', 4),
+           ('Topic 5', 5),
+           ('Topic 6', 6),
+           ('Topic 7', 7),
+           ('Topic 8', 8);
 
 INSERT INTO authorship (author_id, topic_id)
     VALUES (1, 1), 
@@ -53,13 +63,3 @@ INSERT INTO authorship (author_id, topic_id)
            (5, 7),
            (7, 8),
            (8, 8);
-
-INSERT INTO conference_program (conference_id, topic_id, start_time, end_time)
-    VALUES (1, 1, '09:00:00', '10:00:00'),
-           (1, 2, '10:00:00', '11:00:00'),
-           (2, 3, '09:00:00', '10:00:00'),
-           (2, 4, '10:00:00', '11:00:00'),
-           (3, 5, '09:00:00', '10:00:00'),
-           (3, 6, '10:00:00', '11:00:00'),
-           (4, 7, '09:00:00', '10:00:00'),
-           (4, 8, '10:00:00', '11:00:00');

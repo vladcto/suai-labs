@@ -36,13 +36,27 @@ CREATE TABLE IF NOT EXISTS conference
 (
     id   INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(100) NOT NULL DEFAULT 'Научная конференция',
-    date DATE         NOT NULL
+    place VARCHAR(100) NOT NULL DEFAULT 'ГУАП',
+    theme VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS conference_session
+(
+    id            INT PRIMARY KEY AUTO_INCREMENT,
+    conference_id INT  NOT NULL,
+    start_time    TIME NOT NULL,
+    end_time      TIME NOT NULL,
+    date          DATE NOT NULL,
+    CONSTRAINT fk_conf_id_session FOREIGN KEY (conference_id) REFERENCES conference (id),
+    CONSTRAINT check_time CHECK (start_time < end_time)
 );
 
 CREATE TABLE IF NOT EXISTS topic
 (
-    id    INT PRIMARY KEY AUTO_INCREMENT,
-    title VARCHAR(255) NOT NULL
+    id         INT PRIMARY KEY AUTO_INCREMENT,
+    title      VARCHAR(255) NOT NULL,
+    session_id INT          NOT NULL,
+    CONSTRAINT fk_session_id_topic FOREIGN KEY (session_id) REFERENCES conference_session (id)
 );
 
 CREATE TABLE IF NOT EXISTS authorship
@@ -52,16 +66,4 @@ CREATE TABLE IF NOT EXISTS authorship
     CONSTRAINT pk_authorship PRIMARY KEY (author_id, topic_id),
     CONSTRAINT fk_author_id FOREIGN KEY (author_id) REFERENCES student (id) ON DELETE CASCADE,
     CONSTRAINT fk_topic_id FOREIGN KEY (topic_id) REFERENCES topic (id)
-);
-
-CREATE TABLE IF NOT EXISTS conference_program
-(
-    program_id    INT PRIMARY KEY AUTO_INCREMENT,
-    conference_id INT  NOT NULL,
-    topic_id      INT  NOT NULL,
-    start_time    TIME NOT NULL,
-    end_time      TIME NOT NULL,
-    CONSTRAINT fk_conf_id_program FOREIGN KEY (conference_id) REFERENCES conference (id),
-    CONSTRAINT fk_topic_id_program FOREIGN KEY (topic_id) REFERENCES topic (id),
-    CONSTRAINT check_time CHECK (start_time < end_time)
 );
