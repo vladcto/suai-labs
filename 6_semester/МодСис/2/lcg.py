@@ -11,9 +11,8 @@ def plot_histogram(generated_values, K):
     
     frequencies = counts / len(values_A)
     plt.bar(bins[:-1], frequencies, width=1/K, align='edge')
-    plt.xlabel('Value')
-    plt.ylabel('Frequency')
-    plt.title('Histogram of generated values')
+    plt.xlabel('Значение')
+    plt.ylabel('Частота')
     plt.show()
 
 
