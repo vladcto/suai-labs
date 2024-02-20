@@ -64,17 +64,19 @@ print(
     f"Kolmogorov-Smirnov test for B: KS-statistic = {ks_statistic_B}, p-value = {p_value_B}")
 
 # 4 task
-T_values = range(10, 501, 10)
 s_values = [2, 5, 10]
+T_values = {s: [] for s in s_values}
 R_hat_values = {s: [] for s in s_values}
 
-for T in T_values:
-    for s in s_values:
-        R_hat = calculate_R_hat(values_A, T, s)
-        R_hat_values[s].append(R_hat)
+for s in s_values:
+    for T in range(10, 501, 10):
+        if T > s:
+            R_hat = calculate_R_hat(values_A, T, s)
+            R_hat_values[s].append(R_hat)
+            T_values[s].append(T)
 
 for s in s_values:
-    plt.plot(T_values, R_hat_values[s], label=f"s={s}")
+    plt.plot(T_values[s], R_hat_values[s], label=f"s={s}")
 
 plt.xlabel("T")
 plt.ylabel("R_hat")
