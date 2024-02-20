@@ -1,11 +1,15 @@
 -- студентов, выступивших на трех или большем числе конференций
 USE conference_db_lab1;
 
-SELECT s.id                            AS student_id,
-       s.name                          AS student_name,
-       COUNT(DISTINCT t.conference_id) AS conferences_count
+SELECT s.id                             AS student_id,
+       s.name                           AS student_name,
+       COUNT(DISTINCT cs.conference_id) AS conference_count
     FROM student s
-             LEFT JOIN
-             topic t ON s.id = t.author_id
+             JOIN
+             authorship a ON s.id = a.author_id
+             JOIN
+             topic t ON a.topic_id = t.id
+             JOIN
+             conference_session cs ON t.session_id = cs.id
     GROUP BY s.id, s.name
-    HAVING conferences_count >= 3;
+    HAVING conference_count >= 3;

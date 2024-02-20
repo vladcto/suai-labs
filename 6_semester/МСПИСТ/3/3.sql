@@ -13,7 +13,7 @@ SELECT t1.title AS topic,
              uni_group g1 ON s1.group_id = g1.id
              JOIN
              faculty f1 ON g1.faculty_id = f1.id
-                 # for second
+-- for second
              JOIN
              topic t2 ON t1.id < t2.id
              JOIN
