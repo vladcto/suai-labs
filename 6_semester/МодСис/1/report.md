@@ -1,11 +1,11 @@
 ---
-departament: 42
+department: 42
 teacher: Татарникова Т. М.
 teacher_title: Профессор
-discipline: Система массового обслуживания (СМО)
+theme: Система массового обслуживания (СМО)
 variant: 5
 number: 1
-subject: Моделирование систем
+discipline: Моделирование систем
 group: 4128
 student: Воробьев В. А.
 ---

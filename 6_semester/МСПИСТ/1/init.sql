@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS student
 (
     id       INT PRIMARY KEY AUTO_INCREMENT,
     group_id INT          NOT NULL,
-    name     VARCHAR(100) NOT NULL,
+    name     VARCHAR(100),
     CONSTRAINT fk_group_id FOREIGN KEY (group_id) REFERENCES uni_group (id)
 );
 

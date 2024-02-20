@@ -24,7 +24,7 @@ INSERT INTO student (group_id, name)
            (4, 'Клон 5'),
            (4, 'Клон 6'),
            (1, 'Клон 7'),
-           (1, 'Клон 8');
+           (1, NULL);
 
 INSERT INTO conference (name, place, theme)
     VALUES ('Информатика', 'ГУАП', 'Тема 1'),
@@ -50,7 +50,10 @@ INSERT INTO topic (title, session_id)
            ('Topic 5', 5),
            ('Topic 6', 6),
            ('Topic 7', 7),
-           ('Topic 8', 8);
+           ('Topic 8', 8),
+           ('Topic 9', 3),
+           ('Topic 10', 5),
+           ('Topic 11', 7);
 
 INSERT INTO authorship (author_id, topic_id)
     VALUES (1, 1),
@@ -62,4 +65,7 @@ INSERT INTO authorship (author_id, topic_id)
            (1, 6),
            (5, 7),
            (7, 8),
-           (8, 8);
+           (8, 8),
+           (1, 9),
+           (1, 10),
+           (1, 11);

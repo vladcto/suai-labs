@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>мсипист_6.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="%D0%BF%D0%BE%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B8">Постановка задачи</h1>
+<h2 id="%D1%86%D0%B5%D0%BB%D1%8C-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B">Цель работы</h2>
+<p>Получить навыки работы с подзапросами. Освоить подзапросы, экзистенциальные запросы, производные
+таблицы и представления, а также директивы <code>create view, drop view, exists</code>.</p>
+<h2 id="%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5">Задание</h2>
+<p>По аналогии с примерами, приведенными выше:</p>
+<ul>
+<li>реализовать запросы ж) .. и), указанные в варианте задания;</li>
+<li>самостоятельно предложить и реализовать запросы, демонстрирующие
+использование подзапросов в операторах манипулирования данными;</li>
+<li>с помощью <code>[not] exists</code> реализовать запросы, разработанные в п. 4 для
+иллюстрации использования теоретико-множественных операций, показать раз-
+личие в выполнении запросов с <code>[not] exists</code> и теоретико-множественными опера-
+циями при наличии в таблицах <code>null</code>-значений (п. 5.3).</li>
+</ul>
+<p><strong>5 Вариант:</strong></p>
+<p>Создайте базу данных для хранения следующих сведений: ВУЗ, студент,
+группа, факультет, конференция, тема доклада, программа конференции.
+Составьте запросы, позволяющие выбрать:</p>
+<p>а) студентов первого факультета, выступавших на конференции Информатика;</p>
+<p>б) темы докладов студентов для заданной группы;</p>
+<p>в) выступления, подготовленные двумя студентами различных факультетов;</p>
+<p>г) количество докладов для каждой конференции;</p>
+<p>д) среднее количество докладов, сделанных студентами третьего факультета на конференциях;</p>
+<p>е) студентов, выступивших на трех или большем числе конференций;</p>
+<p>ж) студентов четвертого факультета, не выступавших на конференциях;</p>
+<p>з) студентов, выступивших на всех конференциях;</p>
+<p>и) пары студентов, всегда выступающие вместе.</p>
+<h2 id="%D1%81%D0%BE%D0%B4%D0%B5%D1%80%D0%B6%D0%B0%D0%BD%D0%B8%D0%B5-%D0%BE%D1%82%D1%87%D0%B5%D1%82%D0%B0">Содержание отчета</h2>
+<ul>
+<li>текст запросов на SQL (с прояснениями/комментариями);</li>
+<li>наборы данных, возвращаемые запросами.</li>
+</ul>
+<h1 id="%D0%B2%D1%8B%D0%BF%D0%BE%D0%BB%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B">Выполнение работы</h1>
+<p>Исходные данные взяты из лабораторной работы №2, отчет для которой есть
+на <a href="https://github.com/vladcto/suai-labs/blob/d8c7a508971967641d8638ebcd107539c8fd618e/6_semester/%D0%9C%D0%A1%D0%9F%D0%98%D0%A1%D0%A2/%D0%BC%D1%81%D0%B8%D0%BF%D0%B8%D1%81%D1%82_2.pdf">GitHub</a>.</p>
+<h2 id="%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-1">Задание 1</h2>
+<p>Запрос для задания 1 позволяет получить список имен студентов первого факультета, принимавших
+участие в конференции &quot;Информатика&quot;. Для этого используется несколько <code>JOIN</code> операторов для
+объединения таблиц и условия <code>WHERE</code> для фильтрации результатов по номеру факультета и названию
+конференции. Ключевое слово <code>DISTINCT</code> используется для вывода уникальных имен студентов.</p>
+<p><strong>Листинг 1 задания:</strong>
+\lstinputlisting{3/1.sql}</p>
+<p><img src="file:///Users/razrab-ytka/Documents/Projects/suai-labs/6_semester/МСПИСТ/report_images/image-19.png" alt="Результат 1.sql"><m></p>
+<h2 id="%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-2">Задание 2</h2>
+<p>Запрос 2.sql возвращает уникальные темы докладов студентов группы с указанным именем. Используются
+<code>JOIN</code> операторы для объединения таблиц и условие <code>WHERE</code> для фильтрации результатов по имени
+группы.
+Ключевое слово <code>DISTINCT</code> применяется для вывода уникальных тем докладов.</p>
+<p><strong>Листинг 2 задания:</strong>
+\lstinputlisting{3/2.sql}</p>
+<p><img src="file:///Users/razrab-ytka/Documents/Projects/suai-labs/6_semester/МСПИСТ/report_images/image-20.png" alt="Результат 2.sql"><m></p>
+<h2 id="%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-3">Задание 3</h2>
+<p>В запросе для 3 задания осуществляется поиск выступлений, подготовленных двумя студентами с
+различных
+факультетов. С использованием операторов <code>JOIN</code> объединяются таблицы, представляющие информацию о
+темах докладов, авторах, студентах, группах и факультетах. Условия <code>WHERE</code> фильтруют результаты,
+чтобы
+выбрать только те темы, для которых студенты принадлежат разным факультетам. Результат запроса
+включает название темы, имя первого и второго студента. Результаты сортируются в алфавитном порядке
+по имени первого студента.</p>
+<p><strong>Листинг 3 задания:</strong>
+\lstinputlisting{3/3.sql}</p>
+<p><img src="file:///Users/razrab-ytka/Documents/Projects/suai-labs/6_semester/МСПИСТ/report_images/image-21.png" alt="Результат 3.sql"><m></p>
+<h2 id="%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D1%8B-%D0%B4%D0%BB%D1%8F-%D0%B4%D0%B5%D0%BC%D0%BE%D0%BD%D1%81%D1%82%D1%80%D0%B0%D1%86%D0%B8%D0%B8">Запросы для демонстрации</h2>
+<p>В ниже представленных SQL-запросах представлены ранее не использованные команды. Первый запрос
+демонстрирует использование оператора <code>BETWEEN</code> для выбора тем докладов с идентификаторами от 1 до
+3.</p>
+<p>Второй запрос использует оператор <code>IS NOT NULL</code> для извлечения идентификаторов групп, у которых имя
+не
+равно <code>NULL</code>. Третий запрос иллюстрирует использование оператора <code>LIKE</code> с символом <code>%</code>, что
+позволяет выбрать все идентификаторы групп, где имя содержит любые символы.</p>
+<p><strong>Листинг between.sql:</strong>
+\lstinputlisting{3/between.sql}</p>
+<p><img src="file:///Users/razrab-ytka/Documents/Projects/suai-labs/6_semester/МСПИСТ/report_images/image-22.png" alt="Результат between.sql"><sm></p>
+<p><strong>Листинг check_null_fields.sql:</strong>
+\lstinputlisting{3/check_null_fields.sql}</p>
+<p><img src="file:///Users/razrab-ytka/Documents/Projects/suai-labs/6_semester/МСПИСТ/report_images/image-23.png" alt="Результат check_null_fields.sql"><sm></p>
+<p><strong>Листинг like.sql:</strong>
+\lstinputlisting{3/like.sql}</p>
+<p><img src="file:///Users/razrab-ytka/Documents/Projects/suai-labs/6_semester/МСПИСТ/report_images/image-24.png" alt="Результат like.sql"><sm></p>
+<h1 id="%D0%B2%D1%8B%D0%B2%D0%BE%D0%B4">Вывод</h1>
+<p>В результате выполнения лабораторной работы были получены навыки работы с SQL-запросами, включая
+применение различных директив, таких
+как <code>distinct</code>, <code>order by</code>, <code>as</code>, <code>[not] in</code>, <code>[not] between ... and ...</code>, <code>is [not] null</code>, <code>[not] like</code>.
+Работа включала создание базы данных для хранения информации о ВУЗе, студентах, группах,
+факультетах, конференциях, темах докладов и программах конференций.</p>
+<p>Каждый запрос был разработан с учетом поставленных задач, а также внедрены самостоятельно
+предложенные запросы, демонстрирующие использование различных директив SQL. В процессе выполнения
+работы были охвачены такие аспекты, как фильтрация данных, сортировка
+результатов, объединение таблиц и использование различных условий для точного извлечения необходимой
+информации из базы данных.</p>
+<p>Полученные знания и навыки будут полезны в будущих проектах и задачах, связанных с обработкой данных
+в среде SQL.</p>
+
+</body>
+</html>
