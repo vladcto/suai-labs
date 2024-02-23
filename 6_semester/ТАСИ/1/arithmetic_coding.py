@@ -49,16 +49,17 @@ def get_accuracy(num1, num2):
         match = True
     print("Increase decimal.getcontext().prec")
 
+
 input = "ШОРОХ ОТ ДУБКА КАК БУДТО ХОРОШ!"
 bound_map = create_bound_map(input)
-
-bounds = [(char, bound_map[char][0], bound_map[char][1]) for char in input]
+i = 0
+bounds = [(char, i * (1 / 256), (i + 1) * (1 / 256)) for char in input]
 result = arithmetic_encoding(bounds)
-decimal.getcontext().prec = 100
+decimal.getcontext().prec = 500
 lower_bound = str(decimal_from_fraction(result[0]))
 upper_bound = str(decimal_from_fraction(result[1]))
 split_i = get_accuracy(lower_bound, upper_bound)
-print()
+# print()
 print(f'Final interval: {lower_bound}, {upper_bound}')
 print(f'Interval cut  : {lower_bound[:split_i]}, {upper_bound[:split_i]}')
-print(f'Prefix        : {os.path.commonprefix([lower_bound, upper_bound])}')
+# print(f'Prefix        : {os.path.commonprefix([lower_bound, upper_bound])}')
