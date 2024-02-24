@@ -2,7 +2,6 @@
 USE conference_db_lab1;
 
 SELECT c.id              AS conference_id,
-       c.name            AS conference_name,
        COUNT(a.topic_id) AS report_count
     FROM conference c
              JOIN
@@ -11,4 +10,4 @@ SELECT c.id              AS conference_id,
              topic t ON cs.id = t.session_id
              JOIN
              authorship a ON t.id = a.topic_id
-    GROUP BY c.id, c.name;
+    GROUP BY c.id;
