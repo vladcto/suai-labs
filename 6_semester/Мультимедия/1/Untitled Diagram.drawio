@@ -1,0 +1,719 @@
+<mxfile host="Electron" modified="2024-02-25T23:25:51.216Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.1.16 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="Rp9QexCrcamD5LuM0aws" version="22.1.16" type="device">
+  <diagram name="Page-1" id="b98fa263-6416-c6ec-5b7d-78bf54ef71d0">
+    <mxGraphModel dx="1687" dy="1347" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1.5" pageWidth="1169" pageHeight="826" background="none" math="0" shadow="0">
+      <root>
+        <mxCell id="0" style=";html=1;" />
+        <mxCell id="1" value="Командир батальона" style=";html=1;" parent="0" />
+        <mxCell id="0QYm9itzc9TNsAhSSJbO-3" value="Командир&lt;br style=&quot;font-size: 20px;&quot;&gt;батальона" style="rounded=1;whiteSpace=wrap;html=1;fontSize=20;" parent="1" vertex="1">
+          <mxGeometry x="772" y="60" width="210" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="0QYm9itzc9TNsAhSSJbO-5" value="Огневая поддержка" style="rounded=1;whiteSpace=wrap;html=1;fontSize=20;" parent="1" vertex="1">
+          <mxGeometry x="622" y="260" width="250" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="0QYm9itzc9TNsAhSSJbO-6" value="Мотопехотная" style="rounded=1;whiteSpace=wrap;html=1;fontSize=20;" parent="1" vertex="1">
+          <mxGeometry x="1430" y="260" width="250" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="0QYm9itzc9TNsAhSSJbO-7" value="Мотопехотная" style="rounded=1;whiteSpace=wrap;html=1;fontSize=20;" parent="1" vertex="1">
+          <mxGeometry x="1440" y="270" width="250" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="0QYm9itzc9TNsAhSSJbO-8" value="МПР" style="rounded=1;whiteSpace=wrap;html=1;fontSize=20;" parent="1" vertex="1">
+          <mxGeometry x="1450" y="280" width="250" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="0QYm9itzc9TNsAhSSJbO-9" value="штаб" style="rounded=1;whiteSpace=wrap;html=1;fontSize=20;" parent="1" vertex="1">
+          <mxGeometry x="570" y="85" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="0QYm9itzc9TNsAhSSJbO-4" value="Штабная рота" style="rounded=1;whiteSpace=wrap;html=1;fontSize=20;" parent="1" vertex="1">
+          <mxGeometry x="40" y="260" width="250" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="0QYm9itzc9TNsAhSSJbO-16" value="" style="endArrow=none;html=1;rounded=0;fontSize=20;startSize=8;endSize=8;curved=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="0QYm9itzc9TNsAhSSJbO-9" target="0QYm9itzc9TNsAhSSJbO-3" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="660" y="260" as="sourcePoint" />
+            <mxPoint x="710" y="210" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0QYm9itzc9TNsAhSSJbO-17" value="" style="endArrow=none;html=1;rounded=0;fontSize=20;startSize=8;endSize=8;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" parent="1" source="0QYm9itzc9TNsAhSSJbO-4" target="0QYm9itzc9TNsAhSSJbO-3" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="620" y="310" as="sourcePoint" />
+            <mxPoint x="670" y="260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0QYm9itzc9TNsAhSSJbO-18" value="" style="endArrow=none;html=1;rounded=0;fontSize=20;startSize=8;endSize=8;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" parent="1" source="0QYm9itzc9TNsAhSSJbO-5" target="0QYm9itzc9TNsAhSSJbO-3" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1150" y="210" as="sourcePoint" />
+            <mxPoint x="1200" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0QYm9itzc9TNsAhSSJbO-19" value="" style="endArrow=none;html=1;rounded=0;fontSize=20;startSize=8;endSize=8;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" parent="1" source="0QYm9itzc9TNsAhSSJbO-6" target="0QYm9itzc9TNsAhSSJbO-3" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1370" y="170" as="sourcePoint" />
+            <mxPoint x="1420" y="120" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AxRSapy-rKkkzFosCY9n-1" value="2 РС&lt;br style=&quot;font-size: 20px;&quot;&gt;2-4 км" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=20;" parent="1" vertex="1">
+          <mxGeometry x="845" y="525" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="AxRSapy-rKkkzFosCY9n-2" value="2 РС&lt;br style=&quot;font-size: 20px;&quot;&gt;4-8 км" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=20;" parent="1" vertex="1">
+          <mxGeometry x="955" y="525" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="AxRSapy-rKkkzFosCY9n-5" value="ВРЛР" style="rounded=1;whiteSpace=wrap;html=1;fontSize=20;" parent="1" vertex="1">
+          <mxGeometry x="832.5" y="425" width="220" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="AxRSapy-rKkkzFosCY9n-22" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=20;" parent="1" vertex="1">
+          <mxGeometry x="882.75" y="735" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="AxRSapy-rKkkzFosCY9n-66" value="ВР" style="rounded=1;whiteSpace=wrap;html=1;fontSize=20;" parent="1" vertex="1">
+          <mxGeometry x="467.5" y="425" width="220" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="AxRSapy-rKkkzFosCY9n-67" value="группа управления" style="rounded=1;whiteSpace=wrap;html=1;fontSize=20;" parent="1" vertex="1">
+          <mxGeometry x="430" y="535" width="125" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="AxRSapy-rKkkzFosCY9n-68" value="" style="rounded=1;whiteSpace=wrap;html=1;fontSize=20;" parent="1" vertex="1">
+          <mxGeometry x="570" y="535" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="AxRSapy-rKkkzFosCY9n-69" value="разведсекция" style="rounded=1;whiteSpace=wrap;html=1;fontSize=20;" parent="1" vertex="1">
+          <mxGeometry x="580" y="545" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="AxRSapy-rKkkzFosCY9n-70" value="секция &lt;br&gt;ЗУРО" style="rounded=1;whiteSpace=wrap;html=1;fontSize=20;" parent="1" vertex="1">
+          <mxGeometry x="863.75" y="635" width="150" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="AxRSapy-rKkkzFosCY9n-75" value="МИНВ" style="rounded=1;whiteSpace=wrap;html=1;fontSize=20;" parent="1" vertex="1">
+          <mxGeometry x="500" y="635" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="AxRSapy-rKkkzFosCY9n-76" value="управление" style="rounded=1;whiteSpace=wrap;html=1;fontSize=20;" parent="1" vertex="1">
+          <mxGeometry x="925" y="280" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="AxRSapy-rKkkzFosCY9n-77" value="управление" style="rounded=1;whiteSpace=wrap;html=1;fontSize=20;" parent="1" vertex="1">
+          <mxGeometry x="821" y="845" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="AxRSapy-rKkkzFosCY9n-85" value="Управление роты" style="rounded=1;whiteSpace=wrap;html=1;fontSize=20;" parent="1" vertex="1">
+          <mxGeometry x="1260" y="280" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="AxRSapy-rKkkzFosCY9n-86" value="МИНВ" style="rounded=1;whiteSpace=wrap;html=1;fontSize=20;" parent="1" vertex="1">
+          <mxGeometry x="1280" y="405" width="190" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="AxRSapy-rKkkzFosCY9n-87" value="Мотопехотный взвод" style="rounded=1;whiteSpace=wrap;html=1;fontSize=20;" parent="1" vertex="1">
+          <mxGeometry x="1497.5" y="620" width="155" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="AxRSapy-rKkkzFosCY9n-88" value="Мотопехотный взвод" style="rounded=1;whiteSpace=wrap;html=1;fontSize=20;" parent="1" vertex="1">
+          <mxGeometry x="1507.5" y="630" width="165" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="AxRSapy-rKkkzFosCY9n-89" value="МПВ" style="rounded=1;whiteSpace=wrap;html=1;fontSize=20;" parent="1" vertex="1">
+          <mxGeometry x="1517.5" y="640" width="175" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-1" value="управление" style="rounded=1;whiteSpace=wrap;html=1;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="1315" y="630" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-7" value="отделение оружия" style="rounded=1;whiteSpace=wrap;html=1;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="795.63" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-16" value="&lt;b style=&quot;font-size: 20px;&quot;&gt;888 человек&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="1193.75" y="120" width="305" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-18" value="&lt;div style=&quot;font-size: 20px;&quot;&gt;&lt;span style=&quot;background-color: initial; font-size: 20px;&quot;&gt;Мотопехотный батальон армии США&lt;/span&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;fontSize=20;align=center;" vertex="1" parent="1">
+          <mxGeometry x="1152.5" y="80" width="387.5" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-23" value="" style="endArrow=none;html=1;rounded=0;fontSize=20;startSize=8;endSize=8;curved=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="0QYm9itzc9TNsAhSSJbO-5" target="AxRSapy-rKkkzFosCY9n-76">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="800" y="460" as="sourcePoint" />
+            <mxPoint x="850" y="410" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-24" value="" style="endArrow=none;html=1;rounded=0;fontSize=20;startSize=8;endSize=8;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="0QYm9itzc9TNsAhSSJbO-5" target="AxRSapy-rKkkzFosCY9n-5">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="760" y="470" as="sourcePoint" />
+            <mxPoint x="810" y="420" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-25" value="" style="endArrow=none;html=1;rounded=0;fontSize=20;startSize=8;endSize=8;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="AxRSapy-rKkkzFosCY9n-1" target="AxRSapy-rKkkzFosCY9n-5">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="690" y="635" as="sourcePoint" />
+            <mxPoint x="740" y="585" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-26" value="" style="endArrow=none;html=1;rounded=0;fontSize=20;startSize=8;endSize=8;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="AxRSapy-rKkkzFosCY9n-2" target="AxRSapy-rKkkzFosCY9n-5">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="690" y="625" as="sourcePoint" />
+            <mxPoint x="740" y="575" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-27" value="" style="endArrow=none;html=1;rounded=0;fontSize=20;startSize=8;endSize=8;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="AxRSapy-rKkkzFosCY9n-70" target="0QYm9itzc9TNsAhSSJbO-5">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="440" y="490" as="sourcePoint" />
+            <mxPoint x="490" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-28" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="923.75" y="735" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-29" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="965.75" y="735" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-30" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="843.75" y="735" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-33" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="1011.25" y="735" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-34" value="" style="endArrow=none;html=1;rounded=0;fontSize=20;startSize=8;endSize=8;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="OVKNDqmPp79XCQJYVAa0-30" target="AxRSapy-rKkkzFosCY9n-70">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="798.75" y="755" as="sourcePoint" />
+            <mxPoint x="848.75" y="705" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-35" value="" style="endArrow=none;html=1;rounded=0;fontSize=20;startSize=8;endSize=8;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="AxRSapy-rKkkzFosCY9n-22" target="AxRSapy-rKkkzFosCY9n-70">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="868.75" y="745" as="sourcePoint" />
+            <mxPoint x="948.75" y="715" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-36" value="" style="endArrow=none;html=1;rounded=0;fontSize=20;startSize=8;endSize=8;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="OVKNDqmPp79XCQJYVAa0-28" target="AxRSapy-rKkkzFosCY9n-70">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="907.75" y="745" as="sourcePoint" />
+            <mxPoint x="948.75" y="715" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-37" value="" style="endArrow=none;html=1;rounded=0;fontSize=20;startSize=8;endSize=8;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="OVKNDqmPp79XCQJYVAa0-29" target="AxRSapy-rKkkzFosCY9n-70">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="948.75" y="745" as="sourcePoint" />
+            <mxPoint x="948.75" y="715" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-38" value="" style="endArrow=none;html=1;rounded=0;fontSize=20;startSize=8;endSize=8;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="OVKNDqmPp79XCQJYVAa0-33" target="AxRSapy-rKkkzFosCY9n-70">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="990.75" y="745" as="sourcePoint" />
+            <mxPoint x="948.75" y="715" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-39" value="" style="endArrow=none;html=1;rounded=0;fontSize=20;startSize=8;endSize=8;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="AxRSapy-rKkkzFosCY9n-66" target="0QYm9itzc9TNsAhSSJbO-5">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="730" y="720" as="sourcePoint" />
+            <mxPoint x="780" y="670" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-40" value="" style="endArrow=none;html=1;rounded=0;fontSize=20;startSize=8;endSize=8;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="AxRSapy-rKkkzFosCY9n-67" target="AxRSapy-rKkkzFosCY9n-66">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="355" y="615" as="sourcePoint" />
+            <mxPoint x="405" y="565" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-41" value="" style="endArrow=none;html=1;rounded=0;fontSize=20;startSize=8;endSize=8;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="AxRSapy-rKkkzFosCY9n-68" target="AxRSapy-rKkkzFosCY9n-66">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="325" y="615" as="sourcePoint" />
+            <mxPoint x="375" y="565" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-42" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="491.5" y="745" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-43" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="540.5" y="745" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-44" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="589.5" y="745" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-45" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="638.5" y="745" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-46" value="" style="endArrow=none;html=1;rounded=0;fontSize=20;startSize=8;endSize=8;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="OVKNDqmPp79XCQJYVAa0-42" target="AxRSapy-rKkkzFosCY9n-75">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="460" y="855" as="sourcePoint" />
+            <mxPoint x="510" y="805" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-47" value="" style="endArrow=none;html=1;rounded=0;fontSize=20;startSize=8;endSize=8;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="OVKNDqmPp79XCQJYVAa0-43" target="AxRSapy-rKkkzFosCY9n-75">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="480" y="755" as="sourcePoint" />
+            <mxPoint x="560" y="715" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-48" value="" style="endArrow=none;html=1;rounded=0;fontSize=20;startSize=8;endSize=8;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="OVKNDqmPp79XCQJYVAa0-44" target="AxRSapy-rKkkzFosCY9n-75">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="540" y="755" as="sourcePoint" />
+            <mxPoint x="560" y="715" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-49" value="" style="endArrow=none;html=1;rounded=0;fontSize=20;startSize=8;endSize=8;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="OVKNDqmPp79XCQJYVAa0-45" target="AxRSapy-rKkkzFosCY9n-75">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="585" y="755" as="sourcePoint" />
+            <mxPoint x="560" y="715" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-51" value="" style="endArrow=none;html=1;rounded=0;fontSize=20;startSize=8;endSize=8;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="AxRSapy-rKkkzFosCY9n-75" target="0QYm9itzc9TNsAhSSJbO-5">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="720" y="850" as="sourcePoint" />
+            <mxPoint x="770" y="800" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-59" value="" style="endArrow=none;html=1;rounded=0;fontSize=20;startSize=8;endSize=8;curved=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="0QYm9itzc9TNsAhSSJbO-29" target="AxRSapy-rKkkzFosCY9n-77">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="850" y="1018" as="sourcePoint" />
+            <mxPoint x="900" y="968" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-60" value="" style="endArrow=none;html=1;rounded=0;fontSize=20;startSize=8;endSize=8;curved=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="0QYm9itzc9TNsAhSSJbO-6" target="AxRSapy-rKkkzFosCY9n-85">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1780" y="460" as="sourcePoint" />
+            <mxPoint x="1830" y="410" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-62" value="Управление" style="rounded=1;whiteSpace=wrap;html=1;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="1140" y="415" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-73" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="1053.12" y="915" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-74" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="1005.6300000000001" y="915" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-75" value="Отделение" style="rounded=1;whiteSpace=wrap;html=1;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="1545" y="795.63" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-76" value="командир" style="rounded=1;whiteSpace=wrap;html=1;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="1380" y="834.63" width="125" height="45.37" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-78" value="Группа А" style="rounded=1;whiteSpace=wrap;html=1;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="1380" y="938.5" width="125" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-79" value="Группа Б" style="rounded=1;whiteSpace=wrap;html=1;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="1590" y="935" width="135" height="63.5" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-83" value="" style="endArrow=none;html=1;rounded=0;fontSize=20;startSize=8;endSize=8;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="AxRSapy-rKkkzFosCY9n-86" target="0QYm9itzc9TNsAhSSJbO-8">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1320" y="500" as="sourcePoint" />
+            <mxPoint x="1370" y="450" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-84" value="" style="endArrow=none;html=1;rounded=0;fontSize=20;startSize=8;endSize=8;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="AxRSapy-rKkkzFosCY9n-87" target="0QYm9itzc9TNsAhSSJbO-8">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1325" y="515" as="sourcePoint" />
+            <mxPoint x="1445" y="390" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-96" value="" style="endArrow=none;html=1;rounded=0;fontSize=20;startSize=8;endSize=8;curved=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="OVKNDqmPp79XCQJYVAa0-62" target="AxRSapy-rKkkzFosCY9n-86">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1200" y="550" as="sourcePoint" />
+            <mxPoint x="1250" y="500" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-140" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;curved=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="0QYm9itzc9TNsAhSSJbO-29" target="0QYm9itzc9TNsAhSSJbO-5">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="460" y="400" as="sourcePoint" />
+            <mxPoint x="510" y="350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-148" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://upload.wikimedia.org/wikipedia/commons/4/46/NATO_Map_Symbol_-_Land_Equipment_-_Friendly_-_Mortar_-_Heavy.svg;" vertex="1" parent="1">
+          <mxGeometry x="480" y="775.5" width="53" height="53" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-149" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://upload.wikimedia.org/wikipedia/commons/4/46/NATO_Map_Symbol_-_Land_Equipment_-_Friendly_-_Mortar_-_Heavy.svg;" vertex="1" parent="1">
+          <mxGeometry x="529" y="775" width="53" height="53" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-150" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://upload.wikimedia.org/wikipedia/commons/4/46/NATO_Map_Symbol_-_Land_Equipment_-_Friendly_-_Mortar_-_Heavy.svg;" vertex="1" parent="1">
+          <mxGeometry x="578" y="775" width="53" height="53" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-151" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://upload.wikimedia.org/wikipedia/commons/4/46/NATO_Map_Symbol_-_Land_Equipment_-_Friendly_-_Mortar_-_Heavy.svg;" vertex="1" parent="1">
+          <mxGeometry x="627" y="775" width="53" height="53" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-155" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="841" y="765" width="36" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-153" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://upload.wikimedia.org/wikipedia/commons/d/d9/NATO_Map_Symbol_-_Land_Equipment_-_Friendly_-_Air_Defence_Gun_-_Heavy.svg;" vertex="1" parent="OVKNDqmPp79XCQJYVAa0-155">
+          <mxGeometry width="36" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-154" value="6" style="text;strokeColor=none;fillColor=none;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontColor=#0000ff;" vertex="1" parent="OVKNDqmPp79XCQJYVAa0-155">
+          <mxGeometry y="3" width="11" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-156" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="879.75" y="765" width="36" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-157" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://upload.wikimedia.org/wikipedia/commons/d/d9/NATO_Map_Symbol_-_Land_Equipment_-_Friendly_-_Air_Defence_Gun_-_Heavy.svg;" vertex="1" parent="OVKNDqmPp79XCQJYVAa0-156">
+          <mxGeometry width="36" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-158" value="6" style="text;strokeColor=none;fillColor=none;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontColor=#0000ff;" vertex="1" parent="OVKNDqmPp79XCQJYVAa0-156">
+          <mxGeometry y="3" width="11" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-159" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="920.75" y="765" width="36" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-160" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://upload.wikimedia.org/wikipedia/commons/d/d9/NATO_Map_Symbol_-_Land_Equipment_-_Friendly_-_Air_Defence_Gun_-_Heavy.svg;" vertex="1" parent="OVKNDqmPp79XCQJYVAa0-159">
+          <mxGeometry width="36" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-161" value="6" style="text;strokeColor=none;fillColor=none;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontColor=#0000ff;" vertex="1" parent="OVKNDqmPp79XCQJYVAa0-159">
+          <mxGeometry y="3" width="11" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-162" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="962.75" y="765" width="36" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-163" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://upload.wikimedia.org/wikipedia/commons/d/d9/NATO_Map_Symbol_-_Land_Equipment_-_Friendly_-_Air_Defence_Gun_-_Heavy.svg;" vertex="1" parent="OVKNDqmPp79XCQJYVAa0-162">
+          <mxGeometry width="36" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-164" value="6" style="text;strokeColor=none;fillColor=none;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontColor=#0000ff;" vertex="1" parent="OVKNDqmPp79XCQJYVAa0-162">
+          <mxGeometry y="3" width="11" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-165" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="1008.25" y="765" width="36" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-166" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://upload.wikimedia.org/wikipedia/commons/d/d9/NATO_Map_Symbol_-_Land_Equipment_-_Friendly_-_Air_Defence_Gun_-_Heavy.svg;" vertex="1" parent="OVKNDqmPp79XCQJYVAa0-165">
+          <mxGeometry width="36" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-167" value="6" style="text;strokeColor=none;fillColor=none;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontColor=#0000ff;" vertex="1" parent="OVKNDqmPp79XCQJYVAa0-165">
+          <mxGeometry y="3" width="11" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-172" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="580" y="940" width="45.5" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-168" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=20;" vertex="1" parent="OVKNDqmPp79XCQJYVAa0-172">
+          <mxGeometry x="7.75" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-171" value="" style="group" vertex="1" connectable="0" parent="OVKNDqmPp79XCQJYVAa0-172">
+          <mxGeometry y="30" width="45.5" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-169" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/NATO_Map_Symbol_-_Land_Equipment_-_Friendly_-_Anti-Tank_Gun_-_Medium.svg/593px-NATO_Map_Symbol_-_Land_Equipment_-_Friendly_-_Anti-Tank_Gun_-_Medium.svg.png;" vertex="1" parent="OVKNDqmPp79XCQJYVAa0-171">
+          <mxGeometry x="10.5" width="35" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-170" value="2" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;fontColor=#0000ff;" vertex="1" parent="OVKNDqmPp79XCQJYVAa0-171">
+          <mxGeometry y="3" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-174" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="637" y="940" width="45.5" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-175" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=20;" vertex="1" parent="OVKNDqmPp79XCQJYVAa0-174">
+          <mxGeometry x="7.75" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-176" value="" style="group" vertex="1" connectable="0" parent="OVKNDqmPp79XCQJYVAa0-174">
+          <mxGeometry y="30" width="45.5" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-177" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/NATO_Map_Symbol_-_Land_Equipment_-_Friendly_-_Anti-Tank_Gun_-_Medium.svg/593px-NATO_Map_Symbol_-_Land_Equipment_-_Friendly_-_Anti-Tank_Gun_-_Medium.svg.png;" vertex="1" parent="OVKNDqmPp79XCQJYVAa0-176">
+          <mxGeometry x="10.5" width="35" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-178" value="2" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;fontColor=#0000ff;" vertex="1" parent="OVKNDqmPp79XCQJYVAa0-176">
+          <mxGeometry y="3" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-179" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="752" y="940" width="45.5" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-180" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=20;" vertex="1" parent="OVKNDqmPp79XCQJYVAa0-179">
+          <mxGeometry x="7.75" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-181" value="" style="group" vertex="1" connectable="0" parent="OVKNDqmPp79XCQJYVAa0-179">
+          <mxGeometry y="30" width="45.5" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-182" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/NATO_Map_Symbol_-_Land_Equipment_-_Friendly_-_Anti-Tank_Gun_-_Medium.svg/593px-NATO_Map_Symbol_-_Land_Equipment_-_Friendly_-_Anti-Tank_Gun_-_Medium.svg.png;" vertex="1" parent="OVKNDqmPp79XCQJYVAa0-181">
+          <mxGeometry x="10.5" width="35" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-183" value="2" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;fontColor=#0000ff;" vertex="1" parent="OVKNDqmPp79XCQJYVAa0-181">
+          <mxGeometry y="3" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-184" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="695" y="940" width="45.5" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-185" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=20;" vertex="1" parent="OVKNDqmPp79XCQJYVAa0-184">
+          <mxGeometry x="7.75" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-186" value="" style="group" vertex="1" connectable="0" parent="OVKNDqmPp79XCQJYVAa0-184">
+          <mxGeometry y="30" width="45.5" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-187" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/NATO_Map_Symbol_-_Land_Equipment_-_Friendly_-_Anti-Tank_Gun_-_Medium.svg/593px-NATO_Map_Symbol_-_Land_Equipment_-_Friendly_-_Anti-Tank_Gun_-_Medium.svg.png;" vertex="1" parent="OVKNDqmPp79XCQJYVAa0-186">
+          <mxGeometry x="10.5" width="35" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-188" value="2" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;fontColor=#0000ff;" vertex="1" parent="OVKNDqmPp79XCQJYVAa0-186">
+          <mxGeometry y="3" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-189" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="810" y="940" width="45.5" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-190" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=20;" vertex="1" parent="OVKNDqmPp79XCQJYVAa0-189">
+          <mxGeometry x="7.75" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-191" value="" style="group" vertex="1" connectable="0" parent="OVKNDqmPp79XCQJYVAa0-189">
+          <mxGeometry y="30" width="45.5" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-192" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/NATO_Map_Symbol_-_Land_Equipment_-_Friendly_-_Anti-Tank_Gun_-_Medium.svg/593px-NATO_Map_Symbol_-_Land_Equipment_-_Friendly_-_Anti-Tank_Gun_-_Medium.svg.png;" vertex="1" parent="OVKNDqmPp79XCQJYVAa0-191">
+          <mxGeometry x="10.5" width="35" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-193" value="2" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;fontColor=#0000ff;" vertex="1" parent="OVKNDqmPp79XCQJYVAa0-191">
+          <mxGeometry y="3" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-194" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="867" y="940" width="45.5" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-195" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=20;" vertex="1" parent="OVKNDqmPp79XCQJYVAa0-194">
+          <mxGeometry x="7.75" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-196" value="" style="group" vertex="1" connectable="0" parent="OVKNDqmPp79XCQJYVAa0-194">
+          <mxGeometry y="30" width="45.5" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-197" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/NATO_Map_Symbol_-_Land_Equipment_-_Friendly_-_Anti-Tank_Gun_-_Medium.svg/593px-NATO_Map_Symbol_-_Land_Equipment_-_Friendly_-_Anti-Tank_Gun_-_Medium.svg.png;" vertex="1" parent="OVKNDqmPp79XCQJYVAa0-196">
+          <mxGeometry x="10.5" width="35" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-198" value="2" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;fontColor=#0000ff;" vertex="1" parent="OVKNDqmPp79XCQJYVAa0-196">
+          <mxGeometry y="3" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-199" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="OVKNDqmPp79XCQJYVAa0-168" target="0QYm9itzc9TNsAhSSJbO-29">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="630" y="930" as="sourcePoint" />
+            <mxPoint x="680" y="880" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-200" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="OVKNDqmPp79XCQJYVAa0-175" target="0QYm9itzc9TNsAhSSJbO-29">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="613" y="950" as="sourcePoint" />
+            <mxPoint x="757" y="920" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-201" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.536;exitY=0.085;exitDx=0;exitDy=0;exitPerimeter=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="OVKNDqmPp79XCQJYVAa0-185" target="0QYm9itzc9TNsAhSSJbO-29">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="670" y="950" as="sourcePoint" />
+            <mxPoint x="757" y="920" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-202" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="OVKNDqmPp79XCQJYVAa0-180" target="0QYm9itzc9TNsAhSSJbO-29">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="680" y="960" as="sourcePoint" />
+            <mxPoint x="767" y="930" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-203" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="OVKNDqmPp79XCQJYVAa0-190" target="0QYm9itzc9TNsAhSSJbO-29">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="785" y="950" as="sourcePoint" />
+            <mxPoint x="757" y="920" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-204" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="OVKNDqmPp79XCQJYVAa0-195" target="0QYm9itzc9TNsAhSSJbO-29">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="843" y="950" as="sourcePoint" />
+            <mxPoint x="757" y="920" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-209" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="1275" y="520" width="60" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-205" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=20;" vertex="1" parent="OVKNDqmPp79XCQJYVAa0-209">
+          <mxGeometry x="10" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-208" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://upload.wikimedia.org/wikipedia/commons/c/c4/NATO_Map_Symbol_-_Land_Equipment_-_Friendly_-_Mortar_-_Medium.svg;" vertex="1" parent="OVKNDqmPp79XCQJYVAa0-209">
+          <mxGeometry y="40" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-210" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="1345" y="520" width="60" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-211" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=20;" vertex="1" parent="OVKNDqmPp79XCQJYVAa0-210">
+          <mxGeometry x="10" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-212" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://upload.wikimedia.org/wikipedia/commons/c/c4/NATO_Map_Symbol_-_Land_Equipment_-_Friendly_-_Mortar_-_Medium.svg;" vertex="1" parent="OVKNDqmPp79XCQJYVAa0-210">
+          <mxGeometry y="40" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-213" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="1415" y="520" width="60" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-214" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=20;" vertex="1" parent="OVKNDqmPp79XCQJYVAa0-213">
+          <mxGeometry x="10" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-215" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://upload.wikimedia.org/wikipedia/commons/c/c4/NATO_Map_Symbol_-_Land_Equipment_-_Friendly_-_Mortar_-_Medium.svg;" vertex="1" parent="OVKNDqmPp79XCQJYVAa0-213">
+          <mxGeometry y="40" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-216" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="OVKNDqmPp79XCQJYVAa0-205" target="AxRSapy-rKkkzFosCY9n-86">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1210" y="580" as="sourcePoint" />
+            <mxPoint x="1260" y="530" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-217" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="OVKNDqmPp79XCQJYVAa0-211" target="AxRSapy-rKkkzFosCY9n-86">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1310" y="530" as="sourcePoint" />
+            <mxPoint x="1385" y="495" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-218" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="OVKNDqmPp79XCQJYVAa0-214" target="AxRSapy-rKkkzFosCY9n-86">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1380" y="530" as="sourcePoint" />
+            <mxPoint x="1385" y="495" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-219" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;curved=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="OVKNDqmPp79XCQJYVAa0-1" target="AxRSapy-rKkkzFosCY9n-87">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1420" y="775" as="sourcePoint" />
+            <mxPoint x="1470" y="725" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-222" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="OVKNDqmPp79XCQJYVAa0-7" target="AxRSapy-rKkkzFosCY9n-89">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1500" y="835" as="sourcePoint" />
+            <mxPoint x="1550" y="785" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-223" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/NATO_Map_Symbol_-_Land_Equipment_-_Friendly_-_Machine_Gun_-_Medium.svg/593px-NATO_Map_Symbol_-_Land_Equipment_-_Friendly_-_Machine_Gun_-_Medium.svg.png;" vertex="1" parent="1">
+          <mxGeometry x="998.75" y="956.25" width="53.75" height="53.75" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-224" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/NATO_Map_Symbol_-_Land_Equipment_-_Friendly_-_Machine_Gun_-_Medium.svg/593px-NATO_Map_Symbol_-_Land_Equipment_-_Friendly_-_Machine_Gun_-_Medium.svg.png;" vertex="1" parent="1">
+          <mxGeometry x="1046.25" y="956.25" width="53.75" height="53.75" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-226" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;curved=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="OVKNDqmPp79XCQJYVAa0-75" target="AxRSapy-rKkkzFosCY9n-89">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1450" y="915" as="sourcePoint" />
+            <mxPoint x="1500" y="865" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-228" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="1116.25" y="915" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-229" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="1163.75" y="915" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-231" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://upload.wikimedia.org/wikipedia/commons/6/69/NATO_Map_Symbol_-_Land_Equipment_-_Friendly_-_Anti-Tank_Gun.svg;" vertex="1" parent="1">
+          <mxGeometry x="1108.75" y="956.87" width="55" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-232" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://upload.wikimedia.org/wikipedia/commons/6/69/NATO_Map_Symbol_-_Land_Equipment_-_Friendly_-_Anti-Tank_Gun.svg;" vertex="1" parent="1">
+          <mxGeometry x="1156.25" y="956.87" width="55" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-234" value="доносчик" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="1220" y="915" width="120" height="43" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-236" value="доносчик" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="1230" y="922" width="120" height="43" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-237" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="OVKNDqmPp79XCQJYVAa0-74" target="OVKNDqmPp79XCQJYVAa0-7">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="990" y="940" as="sourcePoint" />
+            <mxPoint x="1040" y="890" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-238" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="OVKNDqmPp79XCQJYVAa0-73" target="OVKNDqmPp79XCQJYVAa0-7">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1036" y="940" as="sourcePoint" />
+            <mxPoint x="1170" y="866" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-239" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="OVKNDqmPp79XCQJYVAa0-228" target="OVKNDqmPp79XCQJYVAa0-7">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1083" y="940" as="sourcePoint" />
+            <mxPoint x="1170" y="866" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-240" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="OVKNDqmPp79XCQJYVAa0-229" target="OVKNDqmPp79XCQJYVAa0-7">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1146" y="940" as="sourcePoint" />
+            <mxPoint x="1210" y="885" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-241" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="OVKNDqmPp79XCQJYVAa0-234" target="OVKNDqmPp79XCQJYVAa0-7">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1194" y="940" as="sourcePoint" />
+            <mxPoint x="1170" y="866" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-242" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="OVKNDqmPp79XCQJYVAa0-76" target="OVKNDqmPp79XCQJYVAa0-75">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1450" y="955" as="sourcePoint" />
+            <mxPoint x="1500" y="905" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-243" value="водитель БТР" style="rounded=1;whiteSpace=wrap;html=1;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="1345" y="774.63" width="160" height="45.37" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-244" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="OVKNDqmPp79XCQJYVAa0-243" target="OVKNDqmPp79XCQJYVAa0-75">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1680" y="845" as="sourcePoint" />
+            <mxPoint x="1730" y="795" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-245" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="OVKNDqmPp79XCQJYVAa0-78" target="OVKNDqmPp79XCQJYVAa0-75">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1440" y="1055" as="sourcePoint" />
+            <mxPoint x="1490" y="1005" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1442" y="905" />
+              <mxPoint x="1605" y="905" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-246" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="OVKNDqmPp79XCQJYVAa0-79" target="OVKNDqmPp79XCQJYVAa0-75">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1453" y="917" as="sourcePoint" />
+            <mxPoint x="1615" y="866" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1658" y="905" />
+              <mxPoint x="1605" y="905" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-250" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Military_Symbol_-_Friendly_Unit_%28Solid_Light_1.5x1_Frame%29-_Artillery_-_Rocket_Launchers_%28MulitRocket%29_-_Wheeled_Agile_%28NATO_APP-6%29.svg/600px-Military_Symbol_-_Friendly_Unit_%28Solid_Light_1.5x1_Frame%29-_Artillery_-_Rocket_Launchers_%28MulitRocket%29_-_Wheeled_Agile_%28NATO_APP-6%29.svg.png;" vertex="1" parent="1">
+          <mxGeometry x="1410" y="1080" width="60" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-251" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Military_Symbol_-_Friendly_Unit_%28Solid_Light_1.5x1_Frame%29-_Artillery_-_Rocket_Launchers_%28MulitRocket%29_-_Wheeled_Agile_%28NATO_APP-6%29.svg/600px-Military_Symbol_-_Friendly_Unit_%28Solid_Light_1.5x1_Frame%29-_Artillery_-_Rocket_Launchers_%28MulitRocket%29_-_Wheeled_Agile_%28NATO_APP-6%29.svg.png;" vertex="1" parent="1">
+          <mxGeometry x="1627.5" y="1080" width="60" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-253" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Infantry_Company_Nato.svg/600px-Infantry_Company_Nato.svg.png;imageBackground=none;" vertex="1" parent="1">
+          <mxGeometry x="1358.82" y="1130" width="46.18" height="40.79" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-257" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Infantry_Company_Nato.svg/600px-Infantry_Company_Nato.svg.png;imageBackground=none;" vertex="1" parent="1">
+          <mxGeometry x="1475" y="1130" width="46.18" height="40.79" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-258" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Infantry_Company_Nato.svg/600px-Infantry_Company_Nato.svg.png;imageBackground=none;" vertex="1" parent="1">
+          <mxGeometry x="1416.9099999999999" y="1130" width="46.18" height="40.79" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-259" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Infantry_Company_Nato.svg/600px-Infantry_Company_Nato.svg.png;imageBackground=none;" vertex="1" parent="1">
+          <mxGeometry x="1663.46" y="1130" width="46.18" height="40.79" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-260" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Infantry_Company_Nato.svg/600px-Infantry_Company_Nato.svg.png;imageBackground=none;" vertex="1" parent="1">
+          <mxGeometry x="1605.37" y="1130" width="46.18" height="40.79" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-261" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Military_Symbol_-_Friendly_Command_%28Solid_Light_1.5x1_Frame%29-_Unspecified_or_Composite_All-Arms_%28NATO_APP-6%29.svg/2319px-Military_Symbol_-_Friendly_Command_%28Solid_Light_1.5x1_Frame%29-_Unspecified_or_Composite_All-Arms_%28NATO_APP-6%29.svg.png;" vertex="1" parent="1">
+          <mxGeometry x="1410" y="1009.9999999999999" width="58.75" height="51.9" as="geometry" />
+        </mxCell>
+        <mxCell id="OVKNDqmPp79XCQJYVAa0-262" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Military_Symbol_-_Friendly_Command_%28Solid_Light_1.5x1_Frame%29-_Unspecified_or_Composite_All-Arms_%28NATO_APP-6%29.svg/2319px-Military_Symbol_-_Friendly_Command_%28Solid_Light_1.5x1_Frame%29-_Unspecified_or_Composite_All-Arms_%28NATO_APP-6%29.svg.png;" vertex="1" parent="1">
+          <mxGeometry x="1628.13" y="1011.8699999999999" width="58.75" height="51.9" as="geometry" />
+        </mxCell>
+        <mxCell id="0QYm9itzc9TNsAhSSJbO-2" value="Штабная рота" parent="0" />
+        <mxCell id="0QYm9itzc9TNsAhSSJbO-11" value="ВС" style="rounded=1;whiteSpace=wrap;html=1;fontSize=20;" parent="0QYm9itzc9TNsAhSSJbO-2" vertex="1">
+          <mxGeometry x="220" y="490" width="70" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="0QYm9itzc9TNsAhSSJbO-12" value="РЕМВ" style="rounded=1;whiteSpace=wrap;html=1;fontSize=20;" parent="0QYm9itzc9TNsAhSSJbO-2" vertex="1">
+          <mxGeometry x="220" y="600" width="80" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="0QYm9itzc9TNsAhSSJbO-13" value="ВОБ" style="rounded=1;whiteSpace=wrap;html=1;fontSize=20;" parent="0QYm9itzc9TNsAhSSJbO-2" vertex="1">
+          <mxGeometry x="20" y="490" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="0QYm9itzc9TNsAhSSJbO-14" value="МЕДВ" style="rounded=1;whiteSpace=wrap;html=1;fontSize=20;" parent="0QYm9itzc9TNsAhSSJbO-2" vertex="1">
+          <mxGeometry x="20" y="600" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="0QYm9itzc9TNsAhSSJbO-15" value="обслуживание&lt;br&gt;&amp;nbsp;штаба" style="rounded=1;whiteSpace=wrap;html=1;fontSize=20;" parent="0QYm9itzc9TNsAhSSJbO-2" vertex="1">
+          <mxGeometry x="190" y="390" width="210" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="0QYm9itzc9TNsAhSSJbO-22" value="" style="endArrow=none;html=1;rounded=0;fontSize=20;startSize=8;endSize=8;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;" parent="0QYm9itzc9TNsAhSSJbO-2" source="0QYm9itzc9TNsAhSSJbO-11" target="0QYm9itzc9TNsAhSSJbO-4" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="150" y="490" as="sourcePoint" />
+            <mxPoint x="200" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0QYm9itzc9TNsAhSSJbO-23" value="" style="endArrow=none;html=1;rounded=0;fontSize=20;startSize=8;endSize=8;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;" parent="0QYm9itzc9TNsAhSSJbO-2" source="0QYm9itzc9TNsAhSSJbO-13" target="0QYm9itzc9TNsAhSSJbO-4" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="140" y="520" as="sourcePoint" />
+            <mxPoint x="190" y="470" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0QYm9itzc9TNsAhSSJbO-24" value="" style="endArrow=none;html=1;rounded=0;fontSize=20;startSize=8;endSize=8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" parent="0QYm9itzc9TNsAhSSJbO-2" source="0QYm9itzc9TNsAhSSJbO-14" target="0QYm9itzc9TNsAhSSJbO-4" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="150" y="600" as="sourcePoint" />
+            <mxPoint x="200" y="550" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0QYm9itzc9TNsAhSSJbO-25" value="" style="endArrow=none;html=1;rounded=0;fontSize=20;startSize=8;endSize=8;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;" parent="0QYm9itzc9TNsAhSSJbO-2" source="0QYm9itzc9TNsAhSSJbO-12" target="0QYm9itzc9TNsAhSSJbO-4" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="170" y="580" as="sourcePoint" />
+            <mxPoint x="220" y="530" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0QYm9itzc9TNsAhSSJbO-26" value="" style="endArrow=none;html=1;rounded=0;fontSize=20;startSize=8;endSize=8;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;" parent="0QYm9itzc9TNsAhSSJbO-2" source="0QYm9itzc9TNsAhSSJbO-15" target="0QYm9itzc9TNsAhSSJbO-4" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="100" y="460" as="sourcePoint" />
+            <mxPoint x="150" y="410" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0QYm9itzc9TNsAhSSJbO-27" value="ОгневаяПоддержка" parent="0" />
+        <mxCell id="0QYm9itzc9TNsAhSSJbO-29" value="ПТВ" style="rounded=1;whiteSpace=wrap;html=1;fontSize=20;" parent="0QYm9itzc9TNsAhSSJbO-27" vertex="1">
+          <mxGeometry x="692" y="840" width="110" height="70" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
