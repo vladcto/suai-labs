@@ -3,6 +3,7 @@ USE conference_db_lab1;
 
 DELIMITER //
 CREATE FUNCTION GetReportCountForUniversity(university_id INT) RETURNS INT
+DETERMINISTIC 
 BEGIN
   DECLARE report_count INT;
 
@@ -18,4 +19,4 @@ BEGIN
 END//
 DELIMITER ;
 
-SELECT GetReportCountForUniversity(1);
+SELECT GetReportCountForUniversity(1) as report_count;

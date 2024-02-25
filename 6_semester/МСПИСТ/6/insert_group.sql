@@ -20,3 +20,5 @@ BEGIN
   INSERT INTO student (name, group_id) VALUES (student_name, group_id);
 END //
 DELIMITER ;
+
+CALL InsertStudentWithGroupCheck('Новый', 'Новая', 1)
