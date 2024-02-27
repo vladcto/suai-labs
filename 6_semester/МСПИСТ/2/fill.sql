@@ -24,7 +24,7 @@ INSERT INTO student (group_id, name)
            (4, 'Клон 5'),
            (4, 'Клон 6'),
            (1, 'Клон 7'),
-           (1, NULL);
+           (1, 'Клон 8');
 
 INSERT INTO conference (name, place, theme)
     VALUES ('Информатика', 'ГУАП', 'Тема 1'),

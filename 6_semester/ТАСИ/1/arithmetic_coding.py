@@ -1,37 +1,19 @@
-# Для начала pip install fractions
-# Или pip3 install decimal
 import decimal as decimal
 from fractions import Fraction
 from collections import Counter
+import math
 import os
 
 
-def arithmetic_encoding(bounds):
+def arithmetic_encoding(input, bounds):
     lower, upper = Fraction(0), Fraction(1)
 
-    for char, l, u in bounds:
-        range = upper - lower
-        upper = lower + range * Fraction(u)
-        lower = lower + range * Fraction(l)
-
-        print(f'Character: {char}, Interval: ({lower}, {upper})')
-
+    for char in input:
+        length = upper - lower
+        lower += length * Fraction(bounds[char][0])
+        upper = lower + length * Fraction(bounds[char][1])
+        print(f"Interval: {char}", lower, " - ", upper)
     return [lower, upper]
-
-
-def create_bound_map(input):
-    char_counts = Counter(input)
-    total_chars = len(input)
-
-    bound_map = {}
-    lower_bound = Fraction(0)
-
-    for char, count in char_counts.items():
-        upper_bound = lower_bound + Fraction(count, total_chars)
-        bound_map[char] = (lower_bound, upper_bound)
-        lower_bound = upper_bound
-
-    return bound_map
 
 
 def decimal_from_fraction(frac):
@@ -47,19 +29,31 @@ def get_accuracy(num1, num2):
         if (match):
             return min(length, i+1)
         match = True
-    print("Increase decimal.getcontext().prec")
+    raise ValueError("Increase decimal.getcontext().prec")
 
 
 input = "ШОРОХ ОТ ДУБКА КАК БУДТО ХОРОШ!"
-bound_map = create_bound_map(input)
-i = 0
-bounds = [(char, i * (1 / 256), (i + 1) * (1 / 256)) for char in input]
-result = arithmetic_encoding(bounds)
 decimal.getcontext().prec = 500
+coding = 256
+
+bounds = dict()
+chars = sorted(Counter(input).keys())
+for i, char in enumerate(chars):
+    bounds[char] = (Fraction(i, coding), Fraction(i + 1, coding))
+    
+intervals = [f"{chars[i]} {float(bounds[chars[i]][0])} - {float(bounds[chars[i]][1])}" for i in range(len(chars))]
+for interval in intervals:
+    print(interval)
+
+result = arithmetic_encoding(input, bounds)
 lower_bound = str(decimal_from_fraction(result[0]))
 upper_bound = str(decimal_from_fraction(result[1]))
-split_i = get_accuracy(lower_bound, upper_bound)
-# print()
+accuracy = get_accuracy(lower_bound, upper_bound)
+prefix = os.path.commonprefix([lower_bound, upper_bound])
+print()
 print(f'Final interval: {lower_bound}, {upper_bound}')
-print(f'Interval cut  : {lower_bound[:split_i]}, {upper_bound[:split_i]}')
-# print(f'Prefix        : {os.path.commonprefix([lower_bound, upper_bound])}')
+print(f'Interval cut  : {lower_bound[:accuracy]}, {upper_bound[:accuracy]}')
+print(f'Prefix        : {prefix}')
+coded_num = decimal.Decimal(prefix[-1:1:-1])
+print("Initial data: ", len(input) * math.ceil(math.log2(coding)))
+print("Coded data  : ", math.ceil(math.log2(coded_num)))

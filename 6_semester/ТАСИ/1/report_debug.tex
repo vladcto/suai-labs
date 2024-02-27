@@ -1,0 +1,554 @@
+% Page 
+% = setup 
+\documentclass[a4paper]{article}
+\usepackage[14pt]{extsizes}
+\usepackage[T2A]{fontenc}
+\usepackage{ dsfont }
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{csquotes}
+% = margins
+\usepackage[left=3cm,right=1.5cm,top=2cm,bottom=2cm]{geometry}
+% = indents
+\usepackage{indentfirst}
+\setlength{\parindent}{1.25cm}
+% = spacing
+\usepackage{setspace}
+\onehalfspacing
+
+% Bibliography
+\usepackage[square,sort,comma,numbers]{natbib}
+\setlength{\bibhang}{0pt}
+\makeatletter
+\renewcommand{\@biblabel}[1]{}
+\makeatother
+\makeatletter
+\newcounter{bibcounter}
+\@ifundefined{CSLReferences}{
+  \newenvironment{CSLReferences}[2]
+   {\list{}
+    {\setlength{\leftmargin}{\bibindent}
+     \setlength{\itemindent}{-\leftmargin}
+     \setlength{\itemsep}{\bibsep}
+     \setlength{\parsep}{\z@}}}
+   {\endlist}
+}{}
+\let\oldbibitem\bibitem
+\renewcommand{\bibitem}[2][]{\stepcounter{bibcounter}\oldbibitem{#2}}
+\makeatother
+
+\newcommand{\citeproctext}[1]{#1}
+
+% Fonts
+% = family
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\setmonofont{Courier New}
+
+% Text
+% = parindent
+\setlength{\parindent}{1.25cm}
+% = strikethrough
+\usepackage{ulem}
+\let\st\sout
+% = italic
+\renewcommand{\emph}[1]{\textit{#1}}
+
+% Title 
+% = depth
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+% = space after title
+\usepackage{titlesec}
+\titleformat{\section}
+  {\normalfont\normalsize\bfseries\sloppy}{\hspace{1.25cm}\thesection}{1em}{}
+\titleformat{\subsection}
+  {\normalfont\normalsize\bfseries\sloppy}{\hspace{1.25cm}\thesubsection}{1em}{}
+\titleformat{\subsubsection}
+  {\normalfont\normalsize\bfseries\sloppy}{\hspace{1.25cm}\thesubsubsection}{1em}{}
+\titleformat{\paragraph}
+  {\normalfont\normalsize\bfseries\sloppy}{\hspace{1.25cm}\theparagraph}{1em}{}
+% = Adjust spacing
+\titlespacing*{\section}{0pt}{0.3\baselineskip}{0.3\baselineskip}
+\titlespacing*{\subsection}{0pt}{0.3\baselineskip}{0.3\baselineskip}
+\titlespacing*{\subsubsection}{0pt}{0.3\baselineskip}{0.3\baselineskip}
+\titlespacing*{\paragraph}{0pt}{0.3\baselineskip}{0.3\baselineskip}
+% = breaks
+\usepackage{titlesec}
+\newcommand{\sectionbreak}{\clearpage}
+% = special title
+\newcommand{\centertitle}[1]{
+  \titleformat*{\section}{\centering\normalsize\bfseries}
+  \section*{#1}
+  \titleformat*{\section}{\normalfont\normalsize\bfseries\sloppy}
+  \addcontentsline{toc}{section}{#1}
+}
+
+% List
+% = indents
+\usepackage{enumitem}
+\setlist[itemize,enumerate,1]{label=\textbullet, topsep=0.25pt, partopsep=0.25pt, parsep=0pt, itemsep=0pt, labelindent=\parindent, align=left, leftmargin=*}
+\setlist[itemize,enumerate,2]{label=\textbullet, topsep=0.25pt, partopsep=0.25pt, parsep=0pt, itemsep=0pt, labelindent=\parindent, align=left, leftmargin=*}
+\setlist[itemize,enumerate,3]{label=\textbullet, topsep=0.25pt, partopsep=0.25pt, parsep=0pt, itemsep=0pt, labelindent=\parindent, align=left, leftmargin=*}
+\setlist[itemize,enumerate,4]{label=\textbullet, topsep=0.25pt, partopsep=0.25pt, parsep=0pt, itemsep=0pt, labelindent=\parindent, align=left, leftmargin=*}
+% = tightlist fix
+\def\tightlist{}
+
+% Сode
+\usepackage{xcolor}
+\definecolor{lightgray}{rgb}{0.95, 0.95, 0.95}
+\usepackage{listings}
+\lstset{
+  basicstyle=\small,
+  numbers=left,                    
+  stepnumber=1,                   
+  numbersep=10pt,                  
+  tabsize=2,                      
+  showspaces=false,                
+  showstringspaces=false,
+  breaklines=true,                
+  escapeinside={\%*}{*)},         
+  numbersep=15pt,                 
+  xleftmargin=25pt,              
+  backgroundcolor=\color{lightgray}
+}
+% = inline code
+\usepackage{fontspec}
+\newfontfamily{\codefont}[SizeFeatures={Size=14}]{Courier New}
+\newcommand{\passthrough}[1]{{\codefont #1}}
+% = fix russian sybmols
+\makeatletter % see https://tex.stackexchange.com/a/320345
+\lst@InputCatcodes
+\def\lst@DefEC{%
+ \lst@CCECUse \lst@ProcessLetter
+  ^^80^^81^^82^^83^^84^^85^^86^^87^^88^^89^^8a^^8b^^8c^^8d^^8e^^8f%
+  ^^90^^91^^92^^93^^94^^95^^96^^97^^98^^99^^9a^^9b^^9c^^9d^^9e^^9f%
+  ^^a0^^a1^^a2^^a3^^a4^^a5^^a6^^a7^^a8^^a9^^aa^^ab^^ac^^ad^^ae^^af%
+  ^^b0^^b1^^b2^^b3^^b4^^b5^^b6^^b7^^b8^^b9^^ba^^bb^^bc^^bd^^be^^bf%
+  ^^c0^^c1^^c2^^c3^^c4^^c5^^c6^^c7^^c8^^c9^^ca^^cb^^cc^^cd^^ce^^cf%
+  ^^d0^^d1^^d2^^d3^^d4^^d5^^d6^^d7^^d8^^d9^^da^^db^^dc^^dd^^de^^df%
+  ^^e0^^e1^^e2^^e3^^e4^^e5^^e6^^e7^^e8^^e9^^ea^^eb^^ec^^ed^^ee^^ef%
+  ^^f0^^f1^^f2^^f3^^f4^^f5^^f6^^f7^^f8^^f9^^fa^^fb^^fc^^fd^^fe^^ff%
+  ^^^^20ac^^^^0153^^^^0152%
+  % Basic Cyrillic alphabet coverage
+  ^^^^0410^^^^0411^^^^0412^^^^0413^^^^0414^^^^0415^^^^0416^^^^0417%
+  ^^^^0418^^^^0419^^^^041a^^^^041b^^^^041c^^^^041d^^^^041e^^^^041f%
+  ^^^^0420^^^^0421^^^^0422^^^^0423^^^^0424^^^^0425^^^^0426^^^^0427%
+  ^^^^0428^^^^0429^^^^042a^^^^042b^^^^042c^^^^042d^^^^042e^^^^042f%
+  ^^^^0430^^^^0431^^^^0432^^^^0433^^^^0434^^^^0435^^^^0436^^^^0437%
+  ^^^^0438^^^^0439^^^^043a^^^^043b^^^^043c^^^^043d^^^^043e^^^^043f%
+  ^^^^0440^^^^0441^^^^0442^^^^0443^^^^0444^^^^0445^^^^0446^^^^0447%
+  ^^^^0448^^^^0449^^^^044a^^^^044b^^^^044c^^^^044d^^^^044e^^^^044f%
+  ^^^^0401^^^^0451%
+  %%%
+  ^^00}
+\lst@RestoreCatcodes
+\makeatother
+
+% Hyperlinks
+\usepackage[hidelinks]{hyperref}
+\let\oldhref\href
+% = URI
+\usepackage{seqsplit}
+\renewcommand{\href}[2]{\oldhref{#1}{#2} (URI - \url{#1})}
+
+% Images
+\usepackage{graphicx}
+\usepackage{adjustbox}
+\usepackage{caption}
+\usepackage{float}
+
+\DeclareCaptionLabelSeparator{mysep}{ - }
+\captionsetup[figure]{name=Рисунок, labelsep=mysep}
+\renewcommand{\thefigure}{\arabic{figure}}
+
+\newcommand{\image}[3]{
+    % fix floating
+    \begin{figure}[H]
+        \centering
+        \begin{adjustbox}{width=#3\textwidth,center}
+            \includegraphics[keepaspectratio]{\detokenize{#1}}
+        \end{adjustbox}
+        \caption{\detokenize{#2}}
+        \label{fig:#2}
+    \end{figure}
+}
+
+% Table
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{array}
+% = simple creation
+\captionsetup[table]{
+  name=Таблица, 
+  labelsep=mysep,
+  justification=raggedleft,
+  singlelinecheck=false
+}
+% = csv read
+\usepackage{pgfplotstable}
+\newcommand{\sucsvtable}[2]{
+\begin{table}[h]
+\caption{#2}
+\centering
+\renewcommand{\arraystretch}{1.5} 
+\pgfplotstabletypeset[
+  col sep=semicolon,
+  string type,
+  every head row/.style={before row=\hline,after row=\hline},
+  every column/.style={column type={|c}},
+  every last column/.style={column type={|c|}},
+  after row=\hline
+]{#1}
+\label{tab:#2}
+\end{table}
+}
+% = label 
+\let\oldcaption\caption
+\renewcommand{\caption}[1]{\oldcaption{#1}\label{tab:#1}}
+
+\newcommand{\sutable}[2]{
+\begin{table}[h!]
+    \centering
+    \caption{#1}
+    \label{table:#1}
+    \bgroup
+      \def\arraystretch{1.3}
+      {#2}
+    \egroup
+  \end{table}
+}
+
+% Equation
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{etoolbox}
+% = line margin 
+% TODO: GOST
+\BeforeBeginEnvironment{equation}{\vspace{-0.6\baselineskip}}
+\BeforeBeginEnvironment{equation*}{\vspace{-0.6\baselineskip}}
+
+% Table of content
+\usepackage{titlesec}
+\usepackage{tocloft}
+\renewcommand{\cfttoctitlefont}{\hfill\normalsize\bfseries\MakeUppercase}
+\renewcommand{\cftaftertoctitle}{\hfill\mbox{}}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+
+% Links numeration
+\usepackage{chngcntr}
+\counterwithin{figure}{section}
+\counterwithin{table}{section}
+
+\usepackage{grffile}
+\usepackage{pdfpages}
+\begin{document}
+\sloppy
+\tableofcontents
+****--- csl:
+/Users/razrab-ytka/Documents/Projects/suaidoc/suaidoc/templates/gost2008.csl
+suaidocintropath:
+\detokenize{/var/folders/mr/twkc4jg14f3cl5vr1lh0kgl80000gn/T/tmpxrm7edwb/intro.pdf}
+department: 42 teacher: Суетина Т. А. teacher\_title: Доцент theme:
+Энтропийные алгоритмы сжатия информации variant: 5 number: 1 discipline:
+Техника аудиовизуальных средств информации group: 4128 student: Воробьев
+В. А. ---
+
+\section{Введение}\label{ux432ux432ux435ux434ux435ux43dux438ux435}
+
+\subsection{Цель лабораторной
+работы}\label{ux446ux435ux43bux44c-ux43bux430ux431ux43eux440ux430ux442ux43eux440ux43dux43eux439-ux440ux430ux431ux43eux442ux44b}
+
+Освоить алгоритмы для сжатия информации.
+
+\subsection{Задание}\label{ux437ux430ux434ux430ux43dux438ux435}
+
+Выполнить сжатие текста 4 способами:
+
+\begin{itemize}
+\tightlist
+\item
+  Метод Хаффмана;
+\item
+  Метод Шенона-Фано;
+\item
+  Арифметическим кодированием;
+\item
+  Алгоритмом LZW.
+\end{itemize}
+
+Для каждого метода рассчитать коэффициент сжатия текста.
+
+\textbf{Вариант 5:} ШОРОХ ОТ ДУБКА КАК БУДТО ХОРОШ
+
+\section{Выполнение
+работы}\label{ux432ux44bux43fux43eux43bux43dux435ux43dux438ux435-ux440ux430ux431ux43eux442ux44b}
+
+\subsection{Теоретические
+сведения}\label{ux442ux435ux43eux440ux435ux442ux438ux447ux435ux441ux43aux438ux435-ux441ux432ux435ux434ux435ux43dux438ux44f}
+
+\begin{equation}\begin{gathered}
+K = \frac{V_{\mathit{вх}}}{V_{\mathit{вых}}},
+\end{gathered}\end{equation}
+
+где K - степень сжатия.
+
+\subsection{Анализ исходного
+текста}\label{ux430ux43dux430ux43bux438ux437-ux438ux441ux445ux43eux434ux43dux43eux433ux43e-ux442ux435ux43aux441ux442ux430}
+
+Для начала проанализируем текст.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 22\tabcolsep) * \real{0.1463}}
+  >{\centering\arraybackslash}p{(\columnwidth - 22\tabcolsep) * \real{0.0732}}
+  >{\centering\arraybackslash}p{(\columnwidth - 22\tabcolsep) * \real{0.0732}}
+  >{\centering\arraybackslash}p{(\columnwidth - 22\tabcolsep) * \real{0.0732}}
+  >{\centering\arraybackslash}p{(\columnwidth - 22\tabcolsep) * \real{0.0732}}
+  >{\centering\arraybackslash}p{(\columnwidth - 22\tabcolsep) * \real{0.1220}}
+  >{\centering\arraybackslash}p{(\columnwidth - 22\tabcolsep) * \real{0.0732}}
+  >{\centering\arraybackslash}p{(\columnwidth - 22\tabcolsep) * \real{0.0732}}
+  >{\centering\arraybackslash}p{(\columnwidth - 22\tabcolsep) * \real{0.0732}}
+  >{\centering\arraybackslash}p{(\columnwidth - 22\tabcolsep) * \real{0.0732}}
+  >{\centering\arraybackslash}p{(\columnwidth - 22\tabcolsep) * \real{0.0732}}
+  >{\centering\arraybackslash}p{(\columnwidth - 22\tabcolsep) * \real{0.0732}}@{}}
+\caption{Количество вхождений символов.}\tabularnewline
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Буква
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Ш
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+О
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Р
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Х
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+space
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Д
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+У
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Б
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+К
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+А
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Т
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Буква
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Ш
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+О
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Р
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Х
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+space
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Д
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+У
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Б
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+К
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+А
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Т
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Кол-во & 2 & 6 & 2 & 2 & 5 & 2 & 2 & 2 & 3 & 2 & 2 \\
+\end{longtable}
+
+\textbf{Всего букв:} 30
+
+\subsection{Метод
+Шеннона-Фано}\label{ux43cux435ux442ux43eux434-ux448ux435ux43dux43dux43eux43dux430-ux444ux430ux43dux43e}
+
+\sucsvtable{huffman.csv}{Решение методом Шеннона-Фано}
+
+Итоговый код:
+
+\([\,0111\,\,11\,\,0110\,\,11\,\,0101\,]\allowbreak101\allowbreak[\,11\,\,0000\,]\allowbreak101\allowbreak[\,0100\,\,0011\,\,0010\,\,100\,\,0001\,]\allowbreak101\allowbreak[\,100\,\,0001\,\,100\,]\allowbreak101\allowbreak[\,0010\,\,0011\,\,0100\,\,0000\,\,11\,]\allowbreak101\allowbreak[\,0101\,\,11\,\,0110\,\,11\,\,0111\,]\)
+
+Коэффициент сжатия по формуле 2.1: \(K=120/100=1.2\)
+
+\subsection{Метод
+Хаффмана}\label{ux43cux435ux442ux43eux434-ux445ux430ux444ux444ux43cux430ux43dux430}
+
+\image{huffman.png}{Граф для метода Хаффмана}{0.95}
+
+Итоговый код:
+
+\([\,1100\,\,10\,\,0111\,\,10\,\,0110\,]\allowbreak000\allowbreak[\,10\,\,1101\,]\allowbreak000\allowbreak[\,0101\,\,0100\,\,0011\,\,111\,\,0010\,]\allowbreak000\allowbreak[\,111\,\,0010\,\,111\,]\allowbreak000\allowbreak[\,0011\,\,0100\,\,0101\,\,1101\,\,10\,]\allowbreak000\allowbreak[\,0110\,\,10\,\,0111\,\,10\,\,1100\,]\)
+
+Коэффициент сжатия по формуле 2.1: \(K=120/100=1.2\)
+
+\subsection{Арифметическое
+кодирование}\label{ux430ux440ux438ux444ux43cux435ux442ux438ux447ux435ux441ux43aux43eux435-ux43aux43eux434ux438ux440ux43eux432ux430ux43dux438ux435}
+
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0859}}
+  >{\centering\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0859}}
+  >{\centering\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0920}}
+  >{\centering\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0920}}
+  >{\centering\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0920}}
+  >{\centering\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0920}}
+  >{\centering\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0920}}
+  >{\centering\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0920}}
+  >{\centering\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0920}}
+  >{\centering\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0920}}
+  >{\centering\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0920}}@{}}
+\caption{Таблица интервалов}\tabularnewline
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\centering
+Ш
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+О
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Р
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Х
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+space
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Д
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+У
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Б
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+К
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+А
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Т
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\centering
+Ш
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+О
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Р
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Х
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+space
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Д
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+У
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Б
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+К
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+А
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Т
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\(\frac{2}{30}\) & \(\frac{8}{30}\) & \(\frac{10}{30}\) &
+\(\frac{12}{30}\) & \(\frac{17}{30}\) & \(\frac{19}{30}\) &
+\(\frac{21}{30}\) & \(\frac{23}{30}\) & \(\frac{26}{30}\) &
+\(\frac{28}{30}\) & \(\frac{30}{30}\) \\
+\(\frac{0}{30}\) & \(\frac{2}{30}\) & \(\frac{8}{30}\) &
+\(\frac{10}{30}\) & \(\frac{12}{30}\) & \(\frac{17}{30}\) &
+\(\frac{19}{30}\) & \(\frac{21}{30}\) & \(\frac{23}{30}\) &
+\(\frac{26}{30}\) & \(\frac{28}{30}\) \\
+\end{longtable}
+
+Скрипт на Python представлен в Приложении, результат его работы
+изображен на \ref{fig:Результат арифметического кодирования}.
+
+\image{report_images/image-4.png}{Результат арифметического кодирования}{0.95}
+
+Видно, что получившийся полуинтервал имеет начало
+\seqsplit{$0.0441034119038795609488903820451530821290744566744192886516829504916878805655507570249379945999303363152647240064389130359306227794852805966939598545145125428666525999348211959113656154842474099719851210466003976762294769287109375$}
+и конец
+\seqsplit{$0.0441034119038795609488903820451530821290744566744192923055136319621444851745026939416073769704364819281832636103168237518939100236464475654644311480088525252048969141360375214803192579532571671041552008318831212818622589111328125$}.
+
+Исходя из рисунка \ref{fig:Результат арифметического кодирования}, можно
+сделать вывод, что сообщение можно закодировать количеством бит равным =
+\(171\).
+
+Коэффициент сжатия по формуле 2.1: \(K=248/171=1.45\)
+
+\subsection{Алгоритм
+LZW}\label{ux430ux43bux433ux43eux440ux438ux442ux43c-lzw}
+
+Скрипт на Python представлен в Приложении, результат его работы
+изображен на \ref{fig:Результат работы LZW}.
+
+\image{report_images/image-3.png}{Результат работы LZW}{0.95}
+
+Коэффициент сжатия по формуле 2.1: \(K=252/240=0.95\)
+
+\section{Вывод}\label{ux432ux44bux432ux43eux434}
+
+В ходе выполнения лабораторной мы сжали исходную строку ``ШОРОХ ОТ ДУБКА
+КАК БУДТО ХОРОШ'' 4 разными способами. Для каждого способа мы посчитали
+коэффициент сжатия текста, и получили следующие значения:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Арифметическое кодирование = \(1.45\)
+\item
+  Метод Хаффмана = \(1.2\)
+\item
+  Метод Шенона-Фано = \(1.2\)
+\item
+  Алгоритм LZW = \(0.95\)
+\end{enumerate}
+
+Как мы видим, арифмитическое кодирование имеет самую высокую степень
+сжатия, но тем не требует значительно большую мощность вычислительных
+ресурсов.
+
+Метод Хаффмана и метод Шенона-Фано имеет одинаковую степень сжатия. Эти
+алгоритмы являются простыми в реализации, поэтому для некоторых задач
+могут быть весьма эффективными.
+
+Алгоритм LZW имеет степень сжатия меньше единицы. Так получилось, потому
+что мы не учитывали то, что для предыдущих алгоритмов нужно передавать
+таблицу кодировок. Для алгоритма LZW этого не требуется, что является
+ощутимым плюсом.
+
+Полученные навыки пригодятся нам при создании ПО чувствительного к
+размеру информации.
+
+\centertitle{Приложение}
+
+\textbf{Листинг арифметического кодирования:}
+
+\lstinputlisting{arithmetic_coding.py}
+
+\textbf{Листинг LZW кодирования:}
+
+\lstinputlisting{lzw_encode.py}
+
+\textbf{Листинг кодирования по словарю:}
+
+\lstinputlisting{fill_word.py}
+\end{document}

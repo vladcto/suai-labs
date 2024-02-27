@@ -1,26 +1,19 @@
 USE conference_db_lab1;
 
-DROP VIEW IF EXISTS authors;
-CREATE VIEW authors AS
-SELECT a.author_id
-    FROM authorship a;
+DROP TEMPORARY TABLE IF EXISTS temp_students;
+CREATE TEMPORARY TABLE temp_students AS
+SELECT s.id, s.name
+  FROM student s
+  WHERE s.id <= 5
+UNION
+SELECT NULL, 'Аноним';
 
--- Все студенты, которые являются авторами хотя бы одной темы
-SELECT s.name
-    FROM student s
-    WHERE s.id IN (SELECT author_id FROM authors);
+SELECT  * FROM temp_students;
 
--- Всех студенты, которые не являются авторами ни одной темы
-SELECT s.name
-    FROM student s
-    WHERE s.id NOT IN (SELECT author_id FROM authors);
+SELECT s.id, s.name
+  FROM student s
+  WHERE NOT EXISTS (SELECT 1 FROM temp_students ts WHERE ts.id = s.id);
 
--- Все студенты, которые являются авторами хотя бы одной темы
-SELECT s.name
-    FROM student s
-    WHERE s.id IN (SELECT author_id FROM authors);
-
--- Всех студенты, которые не являются авторами ни одной темы
-SELECT s.name
-    FROM student s
-    WHERE s.id NOT IN (SELECT author_id FROM authors);
+SELECT s.id, s.name
+  FROM student s
+  WHERE s.id NOT IN (SELECT ts.id FROM temp_students ts);

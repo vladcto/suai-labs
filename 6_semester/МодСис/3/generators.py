@@ -22,5 +22,5 @@ def normal_random_variable(z1, z2):
 def rayleigh_random_variable(z1, z2):
     r = math.sqrt(-2 * math.log(z1))
     theta = 2 * math.pi * z2
-    x = r * math.cos(theta)  # x is normally distributed
-    return abs(x)  # Rayleigh distribution is absolute of normal distribution
+    x = r * math.cos(theta) 
+    return abs(x) 
