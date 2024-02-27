@@ -42,10 +42,10 @@ variance_A = np.var(values_A)
 mean_B = np.mean(values_B)
 variance_B = np.var(values_B)
 
-print(f"Ошибка МО A: {0.5 - mean_A}")
-print(f"Ошибка МО B: {0.5 - mean_B}")
-print(f"Ошибка дисперсии A: {1/12 - variance_A}")
-print(f"Ошибка дисперсии B: {1/12 - variance_B}")
+print(f"Ошибка МО A: {mean_A}")
+print(f"Ошибка МО B: {mean_B}")
+print(f"Ошибка дисперсии A: {variance_A}")
+print(f"Ошибка дисперсии B: {variance_B}")
 
 # 3 task
 plot_histogram(generated_values, K=10)

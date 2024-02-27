@@ -12,7 +12,7 @@ SELECT  * FROM temp_students;
 
 SELECT s.id, s.name
   FROM student s
-  WHERE NOT EXISTS (SELECT 1 FROM temp_students ts WHERE ts.id = s.id);
+  WHERE NOT EXISTS (SELECT NULL FROM temp_students ts WHERE ts.id = s.id);
 
 SELECT s.id, s.name
   FROM student s

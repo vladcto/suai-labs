@@ -8,24 +8,21 @@ CREATE TABLE IF NOT EXISTS faculty
 (
   id            SERIAL PRIMARY KEY,
   university_id INT NOT NULL,
-  number        INT NOT NULL UNIQUE,
-  FOREIGN KEY (university_id) REFERENCES university (id)
+  number        INT NOT NULL UNIQUE
 );
 
 CREATE TABLE IF NOT EXISTS uni_group
 (
   id         SERIAL PRIMARY KEY,
   faculty_id INT         NOT NULL,
-  name       VARCHAR(50) NOT NULL UNIQUE,
-  FOREIGN KEY (faculty_id) REFERENCES faculty (id)
+  name       VARCHAR(50) NOT NULL UNIQUE
 );
 
 CREATE TABLE IF NOT EXISTS student
 (
   id       SERIAL PRIMARY KEY,
   group_id INT NOT NULL,
-  name     VARCHAR(100),
-  FOREIGN KEY (group_id) REFERENCES uni_group (id)
+  name     VARCHAR(100)
 );
 
 CREATE TABLE IF NOT EXISTS conference
@@ -39,7 +36,7 @@ CREATE TABLE IF NOT EXISTS conference
 CREATE TABLE IF NOT EXISTS conference_session
 (
   id            SERIAL PRIMARY KEY,
-  conference_id INT  NOT NULL,
+  conference_id INT       NOT NULL,
   start_time    TIMESTAMP NOT NULL,
   end_time      TIMESTAMP NOT NULL
 );
