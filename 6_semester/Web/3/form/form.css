@@ -80,9 +80,10 @@ body {
 	grid-area: description;
 	background-color: greenyellow;
 	display: flex;
-	flex-direction: column;
+	flex-direction: column; 
+	font-family: cursive;
 }
 
 #image {
-	grid-area: image;
+  grid-area: image;
 }

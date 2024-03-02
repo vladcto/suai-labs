@@ -66,12 +66,9 @@ img:hover {
 }
 
 .poetry-container pre {
-	word-spacing: -2px;
-	line-height: 1.3;
 }
 
 .poetry-container pre b {
-	letter-spacing: 2px;
 }
 
 .footer-container {
