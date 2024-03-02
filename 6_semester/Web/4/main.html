@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Бронирование мест в гостинице</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Бронирование мест в гостинице</h1>
+    <form id="booking-form">
+      <div class="row">
+        <div class="input-field col s12">
+          <input name="name" type="text" class="validate" required>
+          <label for="name">Ваше имя</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <textarea name="comments" class="materialize-textarea"></textarea>
+          <label for="comments">Комментарии к бронированию</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input name="password" type="password" class="validate" required>
+          <label for="password">Пароль</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12">
+          <p>
+            <label>
+              <input name="room-type" type="radio" checked />
+              <span>Одиночный номер</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input name="room-type" type="radio" />
+              <span>Двухместный номер</span>
+            </label>
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12">
+          <p>
+            <label>
+              <input name="breakfast" type="checkbox" />
+              <span>Завтрак включен</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input name="lunch" type="checkbox" />
+              <span>Обед включен</span>
+            </label>
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input name="date" type="date" class="validate" required>
+          <label for="date">Дата заезда</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12">
+          <button class="btn waves-effect waves-light" type="submit" name="submit">Забронировать
+            <i class="material-icons right">send</i>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="scripts/submit.js"></script>
+</body>
+
+</html>

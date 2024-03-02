@@ -1,0 +1,88 @@
+html {
+	height: 100%;
+	width: 100%;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+body {
+	height: 90%;
+	width: 90%;
+}
+
+.grid-container {
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	grid-template-areas:
+		"title title title title title image"
+		"form form date date type type"
+		"form1 form1 date1 date1 type1 type1"
+		"form1 form1 date2 date2 type2 type2"
+		"description description description description description description";
+	grid-auto-rows: auto;
+	border: 2px solid red;
+}
+
+.grid-container>div {
+	padding: 5px;
+	border: 0.5px solid black;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#title {
+	grid-area: title;
+}
+
+#form {
+	grid-area: form;
+}
+
+#date {
+	grid-area: date;
+}
+
+#type {
+	grid-area: type;
+}
+
+#image {
+	grid-area: image;
+}
+
+#form1 {
+	grid-area: form1;
+}
+
+#date1 {
+	grid-area: date1;
+}
+
+#type1 {
+	grid-area: type1;
+}
+
+#date2 {
+	grid-area: date2;
+}
+
+#type2 {
+	grid-area: type2;
+}
+
+#description {
+	grid-area: description;
+	background-color: greenyellow;
+	display: flex;
+	flex-direction: column;
+}
+
+#image {
+	grid-area: image;
+}
