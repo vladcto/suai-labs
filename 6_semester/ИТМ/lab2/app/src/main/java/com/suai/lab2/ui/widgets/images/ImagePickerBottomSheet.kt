@@ -1,4 +1,4 @@
-package com.suai.lab2.ui.widgets
+package com.suai.lab2.ui.widgets.images
 
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ModalBottomSheet
@@ -18,7 +18,7 @@ fun ImagePickerBottomSheet(
         sheetState = sheetState,
         modifier = modifier,
     ) {
-        ImagePickerList(
+        ImagePickerGrid(
             onChoose = {}
         )
     }
