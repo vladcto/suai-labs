@@ -1,7 +1,7 @@
 ---
 department: 42
 teacher: Суетина Т. А.
-teacher_title: Доцент
+teacher_title: Старший преподаватель
 theme: Построение древовидной структуры
 variant: 2
 number: 1
