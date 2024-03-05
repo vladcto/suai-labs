@@ -13,11 +13,6 @@ def uniform_random_variable(z, A, B):
 
 def erlang_random_variable(generator, lambd, k):
     return np.random.gamma(k, scale=1/lambd)
-    # sum = 0
-    # for _ in range(k):
-    #     sum += generator()
-    # return -math.log(sum) / lambd
-
 
 def normal_random_variable(z1, z2, mu=2):
     x1 = math.sqrt(-2 * math.log(z1)) * math.cos(2 * math.pi * z2) + mu

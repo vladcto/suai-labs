@@ -12,7 +12,7 @@ def plot_histogram(random_vars, func_name):
 
 fish_gen = FishGenerator(seed=42)
 
-num_vars = 1000
+num_vars = 100000
 
 print("=============\n")
 
@@ -42,7 +42,7 @@ print(f"эмп дисперсия: {(B - A)**2 / 12}\n")
 print("=============\n")
 
 print("Эрланговская СВ")
-lambd = 0.2
+lambd = 1
 k = 1
 random_vars = [erlang_random_variable(
     generator=lambda: next(fish_gen.generate())[0], lambd=lambd, k=k) for _ in range(num_vars)]
