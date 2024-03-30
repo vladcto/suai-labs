@@ -1,59 +1,50 @@
-import decimal as decimal
-from fractions import Fraction
-from collections import Counter
 import math
-import os
+import help as calc
+from decimal import Decimal, getcontext
+
+getcontext().prec = 50
+
+input_string = "ШОРОХ ОТ ДУБКА КАК БУДТО ХОРОШ!"
+dict_words = set(input_string)
+dict_len = len(dict_words)
+
+intervals = {
+    ch: (Decimal(i) / Decimal(dict_len), Decimal(i + 1) / Decimal(dict_len))
+    for i, ch in enumerate(dict_words)
+}
+
+for key, value in intervals.items():
+    print(key, value[0], value[1])
 
 
-def arithmetic_encoding(input, bounds):
-    lower, upper = Fraction(0), Fraction(1)
-
-    for char in input:
-        length = upper - lower
-        lower += length * Fraction(bounds[char][0])
-        upper = lower + length * Fraction(bounds[char][1])
-        print(f"Interval: {char}", lower, " - ", upper)
-    return [lower, upper]
-
-
-def decimal_from_fraction(frac):
-    return frac.numerator / decimal.Decimal(frac.denominator)
+def encode(message):
+    left = Decimal(0.0)
+    right = Decimal(1.0)
+    for ch in message:
+        new_right = left + (right - left) * intervals[ch][1]
+        new_left = left + (right - left) * intervals[ch][0]
+        left = new_left
+        right = new_right
+    print(left, right)
+    return (left + right) / Decimal(2)
 
 
-def get_accuracy(num1, num2):
-    length = len(num1)
-    match = False
-    for i in range(length):
-        if num1[i] == num2[i]:
-            continue
-        if (match):
-            return min(length, i+1)
-        match = True
-    raise ValueError("Increase decimal.getcontext().prec")
+def decode(code):
+    result = ''
+    while True:
+        for ch, (start, end) in intervals.items():
+            if start <= code < end:
+                if ch == '!':
+                    return result
+                result += ch
+                code = (code - start) / (end - start)
+                break
 
 
-input = "ШОРОХ ОТ ДУБКА КАК БУДТО ХОРОШ!"
-decimal.getcontext().prec = 500
-coding = 256
-
-bounds = dict()
-chars = sorted(Counter(input).keys())
-for i, char in enumerate(chars):
-    bounds[char] = (Fraction(i, coding), Fraction(i + 1, coding))
-    
-intervals = [f"{chars[i]} {float(bounds[chars[i]][0])} - {float(bounds[chars[i]][1])}" for i in range(len(chars))]
-for interval in intervals:
-    print(interval)
-
-result = arithmetic_encoding(input, bounds)
-lower_bound = str(decimal_from_fraction(result[0]))
-upper_bound = str(decimal_from_fraction(result[1]))
-accuracy = get_accuracy(lower_bound, upper_bound)
-prefix = os.path.commonprefix([lower_bound, upper_bound])
-print()
-print(f'Final interval: {lower_bound}, {upper_bound}')
-print(f'Interval cut  : {lower_bound[:accuracy]}, {upper_bound[:accuracy]}')
-print(f'Prefix        : {prefix}')
-coded_num = decimal.Decimal(prefix[-1:1:-1])
-print("Initial data: ", len(input) * math.ceil(math.log2(coding)))
-print("Coded data  : ", math.ceil(math.log2(coded_num)))
+print(f"Исходное сообщение: {input_string}")
+print(f"Количество бит: {len(input_string) * math.ceil(math.log2(dict_len))}")
+code = encode(input_string)
+print("Закодированное сообщение:", code)
+print(f"Количество бит: {calc.bits(code)}")
+decoded_message = decode(code)
+print("Декодированное сообщение:", decoded_message)
