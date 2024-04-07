@@ -42,7 +42,7 @@ student: В. А. Воробьев
 
 ## Демонстрация работы
 
-Результат работы изображен на рисунках \ref{fig:Страница main} - \ref{fig:Результат работы}.
+Результат работы изображен на рисунках \ref{fig:Веб-документ при px > 800} - \ref{fig:Веб-документ при px < 800}.
 
 ![Веб-документ при px > 800](report_images/image-12.png)
 
@@ -62,8 +62,8 @@ student: В. А. Воробьев
 
 **Листинг main.html**
 
-\lstinputlisting{4/main.html}\hfill \break
+\lstinputlisting{5/main.html}\hfill \break
 
-**Листинг submit.js**
+**Листинг style.css**
 
-\lstinputlisting{4/scripts/submit.js}\hfill \break
+\lstinputlisting{5/style.css}\hfill \break
