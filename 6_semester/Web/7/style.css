@@ -1,0 +1,50 @@
+html,
+body {
+	min-width: 100vh;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	flex-grow: 0;
+	justify-content: center;
+	align-items: center;
+}
+
+.row {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: 16px;
+}
+
+button {
+	background-color: #007AFF;
+	color: white;
+	border: none;
+	border-radius: 10px;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	border-radius: 10px;
+	padding: 15px;
+	width: 150px;
+	background-color: white;
+	transition: transform 0.2s;
+	text-align: center;
+    -webkit-user-select: none;
+	cursor: pointer;
+	user-select: none;
+}
+
+.card:hover {
+	transform: scale(1.02);
+}
