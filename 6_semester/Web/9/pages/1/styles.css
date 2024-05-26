@@ -1,0 +1,16 @@
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	margin: 0;
+	background-color: #f5f5f5;
+}
+
+.animate-box {
+	font-size: 250px;
+	color: red;
+	margin-right: 1px;
+	transform: translateZ(0);
+}
+

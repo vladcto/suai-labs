@@ -9,7 +9,6 @@ CREATE TABLE IF NOT EXISTS authorship_history
   change_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- Создаем триггеры для отслеживания изменений в таблице authorship
 DELIMITER //
 CREATE TRIGGER authorship_after_insert
   AFTER INSERT
