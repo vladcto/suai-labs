@@ -4,7 +4,7 @@ teacher: В. В. Фомин
 teacher_title: профессор, д-р.т.н., профессор
 theme: МЕТОД ЛИНЕЙНОЙ РЕГРЕССИИ
 variant: 5
-number: 2
+number: 1
 discipline: МЕТОДЫ ИСКУССТВЕННОГО ИНТЕЛЛЕКТА
 group: 4128
 student: Воробьев В. А.
