@@ -39,7 +39,7 @@ Q_MATRIX = [Q_MATRIX_Y, Q_MATRIX_C, Q_MATRIX_C]
 
 
 image = Image.open(
-    '/Users/razrab-ytka/Documents/Projects/suai-labs/6_semester/ТАСИ/2_fix/image.jpg')
+    '/Users/razrab-ytka/Documents/Projects/suai-labs/6_semester/ТАСИ/2_fix/image copy.jpg')
 width, height = image.size
 print("Image Width:", width)
 print("Image Height:", height)

@@ -1,0 +1,62 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #fafafa;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #6200ee;
+}
+
+.input-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.input-section label {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.input-section input {
+    width: 60px;
+    padding: 5px;
+    font-size: 16px;
+}
+
+.input-section button {
+    margin-left: 20px;
+    padding: 10px 20px;
+    background-color: #6200ee;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.input-section button:hover {
+    background-color: #3700b3;
+}
+
+#errorOutput {
+    text-align: center;
+    font-size: 18px;
+    color: #000;
+}
+
+#graph {
+    width: 100%;
+    max-width: 800px;
+    height: 600px;
+    margin: 0 auto;
+}

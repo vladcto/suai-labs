@@ -44,7 +44,8 @@ def quant(yuv, q, n):
     for i in range(3):
         for x in range(n):
             for y in range(n):
-                if np.abs(yuv[x, y, i]) < q:
+                val = np.abs(yuv[x, y, i])
+                if val < q:
                     yuv[x, y, i] = 0
                 else:
                     yuv[x, y, i] = (np.round(yuv[x, y, i] / q))
@@ -68,6 +69,7 @@ def bypass(yuv, n):
             V += v
             print(f'l{y} = {l}\nh{y} = {h}\n')
     print(f'Total file size: {V}')
+    print(f'EC: {6144 / V}')
 
 def arithmetic(input_string):
     symbol_freq = {}
