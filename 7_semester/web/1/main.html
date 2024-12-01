@@ -1,29 +1,24 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
-    <title>График Arcsin и Интерполяция B-Сплайном</title>
-    <link rel="stylesheet" href="styles.css">
-    <!-- Подключаем Plotly.js -->
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Графики</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
+    <script src="jquery-3.7.1.min.js"></script>
+    <style src="styles.css"></style>
+    <canvas id="arcsin_chart"></canvas>
 </head>
+
 <body>
-    <div class="container">
-        <h1>График Arcsin и B-Сплайн Интерполяция</h1>
-
-        <div class="input-section">
-            <label for="controlPoints">Число опорных точек (от 4 до 28):</label>
-            <input type="number" id="controlPoints" name="controlPoints" min="4" max="28" value="10">
-            <button id="generateButton">Построить график</button>
+    <footer>
+        <div id="deviation">
+            Среднее отклонение: <span id="deviation-value"></span>
         </div>
-
-        <div id="graph"></div>
-
-        <div class="error-section">
-            <p id="errorOutput"></p>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
+    </footer>
 </body>
+
+<script src="script.js"></script>
+
 </html>
