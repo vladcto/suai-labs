@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Form</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Registration Form</h1>
+    <form id="registrationForm" action="/submit" method="POST">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required><br>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required><br>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required><br>
+
+      <label for="gender">Gender:</label>
+      <select id="gender" name="gender">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+      </select><br>
+
+      <label for="birthdate">Birthdate:</label>
+      <input type="date" id="birthdate" name="birthdate"><br>
+
+      <label for="country">Country:</label>
+      <input type="text" id="country" name="country"><br>
+
+      <label for="bio">Bio:</label>
+      <textarea id="bio" name="bio"></textarea><br>
+
+      <label for="newsletter">Subscribe to newsletter:</label>
+      <input type="checkbox" id="newsletter" name="newsletter"><br>
+
+      <label for="profilePicture">Profile Picture:</label>
+      <input type="file" id="profilePicture" name="profilePicture"><br>
+
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
