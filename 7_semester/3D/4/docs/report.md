@@ -483,19 +483,19 @@ glutMainLoop()
 2) Проверили отрисовку нашей оболочки используя `OpenGl`. Повторили для каждой модели отражения.
 3) Проверили правильность экспорта карты глубины в 3 формата в `Blender`.
 
-![торенс](report_images/image.png)
+![Модель отражения Торенса-Сперроу](report_images/image.png)
 
-![фонг](report_images/image-1.png)
+![Модель отражения Фонга](report_images/image-1.png)
 
-![Ламберт](report_images/image-2.png)
+![Модель отражения Ламберта](report_images/image-2.png)
 
 ![Полученные модели в Blender](report_images/image-3.png)
 
-![Фрагмент .obj](report_images/image-4.png)
+![Фрагмент .obj](report_images/image-4.png)<m>
 
-![Фрагмент .ply](report_images/image-5.png)
+![Фрагмент .ply](report_images/image-5.png)<m>
 
-![Фрагмент .stl](report_images/image-6.png)
+![Фрагмент .stl](report_images/image-6.png)<l>
 
 Как мы видим - модели совпадают, а освещение работает корректно => работа выполнена верно.
 
