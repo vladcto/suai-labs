@@ -1,0 +1,6 @@
+ktor:
+    application:
+        modules:
+            - suai.vladcto.ApplicationKt.module
+    deployment:
+        port: 8080

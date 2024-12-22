@@ -1,0 +1,49 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.8 Chrome/128.0.6613.36 Electron/32.0.1 Safari/537.36" version="24.7.8">
+  <diagram name="Page-1" id="2a216829-ef6e-dabb-86c1-c78162f3ba2b">
+    <mxGraphModel dx="760" dy="572" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="none" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="KOjaIG6KO3pNiAQMidZp-17" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="170" y="545" width="580" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="KOjaIG6KO3pNiAQMidZp-14" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="330" y="385" width="260" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="KOjaIG6KO3pNiAQMidZp-1" value="Рекрутер" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="360" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="KOjaIG6KO3pNiAQMidZp-2" value="Соискатель" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="550" y="360" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="KOjaIG6KO3pNiAQMidZp-3" value="" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="410" y="350" width="90" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="KOjaIG6KO3pNiAQMidZp-4" value="" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="550" y="510" width="90" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="KOjaIG6KO3pNiAQMidZp-5" value="" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="510" width="90" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="KOjaIG6KO3pNiAQMidZp-7" value="Оператор" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="520" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="KOjaIG6KO3pNiAQMidZp-8" value="Рекрутер" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="395" y="520" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="KOjaIG6KO3pNiAQMidZp-9" value="Соискатель" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="670" y="520" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="KOjaIG6KO3pNiAQMidZp-19" value="Найм&lt;div&gt;сотрудника&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="425" y="440" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="KOjaIG6KO3pNiAQMidZp-21" value="Обслуживание&lt;div&gt;вакансии&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="242.5" y="600" width="145" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="KOjaIG6KO3pNiAQMidZp-22" value="Найм&lt;br&gt;сотрудника" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="522.5" y="600" width="145" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

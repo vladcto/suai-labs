@@ -1,0 +1,12 @@
+{
+  "name": "test.dat",
+  "light_source": {
+    "position": [1.0, 1.0, -1.0]
+  },
+  "viewer": {
+    "position": [0.0, 0.0, -500.0]
+  },
+  "reflection_model": "lambert",
+  "export_format": "ply",
+  "export_name": "result/output"
+}
