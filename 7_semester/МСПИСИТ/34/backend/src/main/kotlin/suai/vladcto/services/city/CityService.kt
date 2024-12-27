@@ -18,11 +18,32 @@ class CityService {
                 if (resultSet.next()) {
                     resultSet.getString("name")
                 } else {
-                    null // Если город с таким ID не найден
+                    null
                 }
             }
         } catch (e: SQLException) {
             null
+        }
+    }
+
+    fun getAllCities(): List<City> {
+        try {
+            val query = "SELECT id, name FROM Cities"
+            val cities = mutableListOf<City>()
+            val connection = DatabaseFactory.getConnection()
+
+            connection.createStatement().use { statement ->
+                val resultSet = statement.executeQuery(query)
+
+                while (resultSet.next()) {
+                    val id = resultSet.getInt("id")
+                    val name = resultSet.getString("name")
+                    cities.add(City(id, name))
+                }
+            }
+            return cities
+        } catch (e: SQLException) {
+            return listOf()
         }
     }
 }

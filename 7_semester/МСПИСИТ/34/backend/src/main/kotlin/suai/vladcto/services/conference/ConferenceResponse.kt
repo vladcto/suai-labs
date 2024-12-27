@@ -1,5 +1,8 @@
 package suai.vladcto.services.conference
 
+import kotlinx.serialization.Serializable
+
+@Serializable
 data class ConferenceShortResponse (
     val id: Int,
     val name: String,
@@ -9,13 +12,15 @@ data class ConferenceShortResponse (
     val endDate: String,
 )
 
+@Serializable
 data class ConferenceDetailResponse (
     val id: Int,
     val name: String,
-    val cityId: Int,
-    val topicId: Int,
+    val city: String,
+    val topic: String,
     val startDate: String,
     val endDate: String,
     val description: String,
     val contacts: String,
+    val canRedact: Boolean,
 )

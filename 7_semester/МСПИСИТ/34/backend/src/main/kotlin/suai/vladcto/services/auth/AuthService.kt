@@ -63,12 +63,10 @@ class AuthService {
         }
     }
 
-    private fun generateToken(): String {
-        return UUID.randomUUID().toString()
-    }
+    private fun generateToken(): String = UUID.randomUUID().toString()
 
-    private fun hashPassword(password: String): String {
-        return MessageDigest.getInstance("SHA-256").digest(password.toByteArray())
+    private fun hashPassword(password: String): String =
+        MessageDigest.getInstance("SHA-256")
+            .digest(password.toByteArray())
             .joinToString("") { "%02x".format(it) }
-    }
 }

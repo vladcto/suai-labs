@@ -28,7 +28,7 @@ CREATE TABLE Conferences (
     end_date DATE,
     description TEXT,
     contacts TEXT,
-    image_url VARCHAR(255),
+--    image_url VARCHAR(255),
     FOREIGN KEY (city_id) REFERENCES Cities(id),
     FOREIGN KEY (topic_id) REFERENCES Topics(id),
     FOREIGN KEY (author_username) REFERENCES Users(username)

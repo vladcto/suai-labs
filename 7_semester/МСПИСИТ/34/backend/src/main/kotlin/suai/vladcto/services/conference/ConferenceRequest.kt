@@ -1,5 +1,8 @@
 package suai.vladcto.services.conference
 
+import kotlinx.serialization.Serializable
+
+@Serializable
 data class ConferenceRequest(
     val name: String,
     val cityId: Int,
