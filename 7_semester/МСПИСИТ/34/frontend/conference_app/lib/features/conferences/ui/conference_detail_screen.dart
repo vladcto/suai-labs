@@ -43,14 +43,13 @@ class _ConferenceDetailScreenState
           }
           if (snapshot.hasError || !snapshot.hasData) {
             return const Center(
-              child: Text('Error loading conference details'),
-            );
+                child: Text('Error loading conference details'));
           }
 
           final conference = snapshot.data!;
           _nameController.text = conference.name;
 
-          return Padding(
+          return SingleChildScrollView(
             padding: const EdgeInsets.all(16.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -60,55 +59,146 @@ class _ConferenceDetailScreenState
                     enabled: conference.canRedact,
                     controller: _nameController,
                     decoration: const InputDecoration(
-                        labelText: 'Name', border: OutlineInputBorder()),
+                      labelText: 'Conference Name',
+                      border: OutlineInputBorder(),
+                    ),
+                    style: Theme.of(context).textTheme.titleMedium,
                   )
                 else
-                  Text('Name: ${conference.name}',
-                      style: Theme.of(context).textTheme.bodyLarge),
-                const SizedBox(height: 8),
-                Text('City: ${conference.city}'),
-                Text('Topic: ${conference.topic}'),
-                const SizedBox(height: 8),
-                Text('Start Date: ${conference.startDate}'),
-                Text('End Date: ${conference.endDate}'),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 8.0),
+                    child: Text(
+                      'Name: ${conference.name}',
+                      style: Theme.of(context).textTheme.titleMedium,
+                    ),
+                  ),
+                const Divider(),
+                _buildDetailRow(Icons.location_city, 'City', conference.city),
+                _buildDetailRow(Icons.topic, 'Topic', conference.topic),
+                const Divider(),
+                _buildDetailRow(
+                    Icons.date_range, 'Start Date', conference.startDate),
+                _buildDetailRow(
+                    Icons.date_range, 'End Date', conference.endDate),
                 const SizedBox(height: 16),
-                Text('Description: ${conference.description}'),
-                Text('Contacts: ${conference.contacts}'),
-                if (conference.canRedact) ...[
-                  const SizedBox(height: 16),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      ElevatedButton(
+                Text(
+                  'Description:',
+                  style: Theme.of(context).textTheme.bodyMedium,
+                ),
+                Text(
+                  conference.description,
+                  style: Theme.of(context).textTheme.bodyMedium,
+                ),
+                const SizedBox(height: 8),
+                Text(
+                  'Contacts:',
+                  style: Theme.of(context).textTheme.bodyMedium,
+                ),
+                Text(
+                  conference.contacts,
+                  style: Theme.of(context).textTheme.bodyMedium,
+                ),
+                const SizedBox(height: 16),
+                Text(
+                  'Participants: ${conference.participantCount}',
+                  style: Theme.of(context).textTheme.titleMedium,
+                ),
+                const SizedBox(height: 16),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    _buildActionButton(
+                      context: context,
+                      label: conference.isUserAttending
+                          ? 'Cancel Registration'
+                          : 'Register',
+                      color: conference.isUserAttending
+                          ? Colors.red
+                          : Colors.green,
+                      onPressed: () async {
+                        if (conference.isUserAttending) {
+                          await _conferenceDetailedManager
+                              .cancelConferenceRegistration(conference.id);
+                        } else {
+                          await _conferenceDetailedManager
+                              .registerForConference(conference.id);
+                        }
+                        setState(() {
+                          _conferenceDetailFuture = _conferenceDetailedManager
+                              .getDetailedConference(widget.conferenceId);
+                        });
+                      },
+                    ),
+                    if (conference.canRedact) ...[
+                      _buildActionButton(
+                        context: context,
+                        label: 'Update',
+                        color: Theme.of(context).primaryColor,
                         onPressed: () async {
                           await _conferenceDetailedManager.updateConference(
                             conference.id,
                             ConferenceUpdatingRequest(
                               name: _nameController.text,
+                              // Add additional fields for the update request
                             ),
                           );
                         },
-                        child: const Text('Update'),
                       ),
-                      ElevatedButton(
+                      _buildActionButton(
+                        context: context,
+                        label: 'Delete',
+                        color: Colors.red,
                         onPressed: () async {
                           await _conferenceDetailedManager
                               .deleteConference(conference.id);
-                          // Optionally, navigate back or show a confirmation
+                          Navigator.of(context).pop();
                         },
-                        style: ElevatedButton.styleFrom(
-                          foregroundColor: Colors.red,
-                        ),
-                        child: const Text('Delete'),
                       ),
                     ],
-                  ),
-                ],
+                  ],
+                ),
               ],
             ),
           );
         },
       ),
+    );
+  }
+
+  Widget _buildDetailRow(IconData icon, String title, String value) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8.0),
+      child: Row(
+        children: [
+          Icon(icon, color: Colors.grey[600]),
+          const SizedBox(width: 8),
+          Text(
+            '$title: ',
+            style: const TextStyle(fontWeight: FontWeight.bold),
+          ),
+          Expanded(
+            child: Text(
+              value,
+              style: Theme.of(context).textTheme.titleSmall,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildActionButton({
+    required BuildContext context,
+    required String label,
+    required Color color,
+    required VoidCallback onPressed,
+  }) {
+    return ElevatedButton(
+      onPressed: onPressed,
+      style: ElevatedButton.styleFrom(
+        foregroundColor: color,
+      ),
+      child: Text(label),
     );
   }
 

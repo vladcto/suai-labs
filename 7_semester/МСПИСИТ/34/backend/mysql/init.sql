@@ -5,7 +5,7 @@ USE conference;
 CREATE TABLE Users (
     username VARCHAR(255) PRIMARY KEY,
     password_hash VARCHAR(255) NOT NULL,
-    token VARCHAR(255) NOT NULL,
+    token VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE Cities (
@@ -28,8 +28,17 @@ CREATE TABLE Conferences (
     end_date DATE,
     description TEXT,
     contacts TEXT,
---    image_url VARCHAR(255),
+    image_url VARCHAR(255),
     FOREIGN KEY (city_id) REFERENCES Cities(id),
     FOREIGN KEY (topic_id) REFERENCES Topics(id),
     FOREIGN KEY (author_username) REFERENCES Users(username)
+);
+
+
+CREATE TABLE ConferenceAttendance (
+    user_username VARCHAR(255),
+    conference_id INT,
+    PRIMARY KEY (user_username, conference_id),
+    FOREIGN KEY (user_username) REFERENCES Users(username) ON DELETE CASCADE,
+    FOREIGN KEY (conference_id) REFERENCES Conferences(id) ON DELETE CASCADE
 );

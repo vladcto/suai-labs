@@ -3,6 +3,7 @@ package suai.vladcto.services.auth
 import suai.vladcto.db.DatabaseFactory
 import java.security.MessageDigest
 import java.sql.Connection
+import java.sql.Types
 import java.util.UUID
 
 class AuthService {
@@ -10,16 +11,11 @@ class AuthService {
     fun registerUser(username: String, password: String): Result<String> {
         val connection = DatabaseFactory.getConnection()
 
-        val existingToken = getTokenIfUserExist(connection, username)
-        if (existingToken != null) {
-            return Result.success(existingToken)
-        }
-
         val passwordHash = hashPassword(password)
         val token = generateToken()
-        insertUser(connection, username, passwordHash, token)
 
-        return Result.success(token)
+        val resultingToken = callRegisterNewUserProcedure(connection, username, passwordHash, token)
+        return Result.success(resultingToken)
     }
 
     fun verifyToken(token: String?): String? {
@@ -38,28 +34,22 @@ class AuthService {
         }
     }
 
-    private fun getTokenIfUserExist(connection: Connection, username: String): String? {
-        val query = "SELECT token FROM Users WHERE username = ?"
-        connection.prepareStatement(query).use { preparedStatement ->
-            preparedStatement.setString(1, username)
-            val resultSet = preparedStatement.executeQuery()
-            return if (resultSet.next()) {
-                resultSet.getString("token")
-            } else {
-                null
-            }
-        }
-    }
+    private fun callRegisterNewUserProcedure(
+        connection: Connection,
+        username: String,
+        passwordHash: String,
+        token: String
+    ): String {
+        val procedureCall = "{ CALL RegisterNewUser(?, ?, ?, ?) }"
+        connection.prepareCall(procedureCall).use { callableStatement ->
+            callableStatement.setString(1, username)
+            callableStatement.setString(2, passwordHash)
+            callableStatement.setString(3, token)
+            callableStatement.registerOutParameter(4, Types.VARCHAR)
 
-    private fun insertUser(
-        connection: Connection, username: String, passwordHash: String, token: String
-    ) {
-        val query = "INSERT INTO Users (username, password_hash, token) VALUES (?, ?, ?)"
-        connection.prepareStatement(query).use { preparedStatement ->
-            preparedStatement.setString(1, username)
-            preparedStatement.setString(2, passwordHash)
-            preparedStatement.setString(3, token)
-            preparedStatement.executeUpdate()
+            callableStatement.execute()
+
+            return callableStatement.getString(4)
         }
     }
 

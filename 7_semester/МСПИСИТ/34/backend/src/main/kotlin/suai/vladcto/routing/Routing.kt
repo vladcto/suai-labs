@@ -4,9 +4,9 @@ import io.ktor.http.HttpStatusCode
 import io.ktor.server.application.Application
 import io.ktor.server.request.receive
 import io.ktor.server.response.respond
-import io.ktor.server.routing.get
 import io.ktor.server.routing.post
 import io.ktor.server.routing.routing
+import suai.vladcto.services.attendance.AttendanceService
 import suai.vladcto.services.auth.AuthService
 import suai.vladcto.services.city.CityService
 import suai.vladcto.services.conference.ConferenceRequest
@@ -18,6 +18,7 @@ fun Application.configureRouting() {
     val authService = AuthService()
     val topicService = TopicService()
     val cityService = CityService()
+    val attendanceService = AttendanceService()
     val conferenceService = ConferenceService(
         topicService,
         cityService,
@@ -44,12 +45,12 @@ fun Application.configureRouting() {
                 }
         }
 
-        get("/conferences_search_options") {
+        getAuthorized(authService, "/conferences_search_options") {
             val searchOptions = conferenceService.getSearchOptions()
             call.respond(HttpStatusCode.OK, searchOptions)
         }
 
-        get("/conferences_list") {
+        getAuthorized(authService, "/conferences_list") {
             val name = call.request.queryParameters["name"]
             val cityId = call.request.queryParameters["cityId"]?.toIntOrNull()
             val topicId = call.request.queryParameters["topicId"]?.toIntOrNull()
@@ -70,7 +71,10 @@ fun Application.configureRouting() {
                 imageUrl = imageUrl ?: ""
             )
 
-            val conferences = conferenceService.getConferences(filterRequest)
+            val conferences = conferenceService.getConferences(
+                filterRequest,
+                it
+            )
 
             call.respond(HttpStatusCode.OK, conferences)
         }
@@ -176,6 +180,42 @@ fun Application.configureRouting() {
                 call.respond(
                     HttpStatusCode.Conflict,
                     error.message ?: "Error deleting conference"
+                )
+            }
+        }
+
+        postAuthorized(authService, "/conference/{id}/register") { username ->
+            val conferenceId = call.parameters["id"]?.toIntOrNull()
+            if (conferenceId == null) {
+                call.respond(HttpStatusCode.BadRequest, "Invalid conference ID")
+                return@postAuthorized
+            }
+
+            val success = attendanceService.registerAttendance(username, conferenceId)
+            if (success) {
+                call.respond(HttpStatusCode.OK, "Successfully registered for the conference")
+            } else {
+                call.respond(HttpStatusCode.Conflict, "Error registering for the conference")
+            }
+        }
+
+        postAuthorized(authService, "/conference/{id}/cancel") { username ->
+            val conferenceId = call.parameters["id"]?.toIntOrNull()
+            if (conferenceId == null) {
+                call.respond(HttpStatusCode.BadRequest, "Invalid conference ID")
+                return@postAuthorized
+            }
+
+            val success = attendanceService.cancelAttendance(username, conferenceId)
+            if (success) {
+                call.respond(
+                    HttpStatusCode.OK,
+                    "Successfully cancelled attendance for the conference"
+                )
+            } else {
+                call.respond(
+                    HttpStatusCode.Conflict,
+                    "Error cancelling attendance for the conference"
                 )
             }
         }

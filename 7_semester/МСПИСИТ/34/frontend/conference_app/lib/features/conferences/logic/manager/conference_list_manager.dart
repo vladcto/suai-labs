@@ -11,6 +11,10 @@ class ConferenceListManager {
   final ConferenceSearchOptionsNotifier _conferenceSearchOptionsNotifier;
   final ConferenceListNotifier _conferenceListNotifier;
 
+  int? currentCityId;
+  int? currentTopicId;
+  String? currentName;
+
   ConferenceListManager(
     this._api,
     this._navigationManager,
@@ -31,12 +35,36 @@ class ConferenceListManager {
   }
 
   Future<void> updateSearch({int? cityId, int? topicId, String? name}) async {
-    final list = await _api.getConferencesList(
-      cityId: cityId,
-      topicId: topicId,
-      name: name,
-    );
-    _conferenceListNotifier.updateConferenceList(list);
+    currentCityId = cityId;
+    currentTopicId = topicId;
+    currentName = name;
+
+    await _applyFilters();
+  }
+
+  Future<void> clearFilter() async {
+    currentCityId = null;
+    currentTopicId = null;
+    currentName = null;
+
+    await _applyFilters();
+  }
+
+  Future<void> refreshSearch() => _applyFilters();
+
+  Future<void> reapplyLastFilters() => _applyFilters();
+
+  Future<void> _applyFilters() async {
+    try {
+      final list = await _api.getConferencesList(
+        cityId: currentCityId,
+        topicId: currentTopicId,
+        name: currentName,
+      );
+      _conferenceListNotifier.updateConferenceList(list);
+    } on Object {
+      _navigationManager.showErrorDialog();
+    }
   }
 
   void openDetailedScreen(int conferenceId) =>
@@ -49,6 +77,7 @@ class ConferenceListManager {
     try {
       await _api.createConference(request);
       _navigationManager.pop();
+      refreshSearch();
     } on Object {
       _navigationManager.showErrorDialog();
     }

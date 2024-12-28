@@ -15,6 +15,8 @@ class ConferenceDetailResponse with _$ConferenceDetailResponse {
     required String description,
     required String contacts,
     required bool canRedact,
+    required int participantCount,
+    required bool isUserAttending,
   }) = _ConferenceDetailResponse;
 
   factory ConferenceDetailResponse.fromJson(Map<String, dynamic> json) =>

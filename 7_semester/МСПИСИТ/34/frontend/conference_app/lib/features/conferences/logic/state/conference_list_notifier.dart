@@ -13,4 +13,16 @@ class ConferenceListNotifier
   void removeConference(int conferenceId) {
     state = state?.where((item) => item.id != conferenceId).toList();
   }
+
+  void updateConferenceAttendance(
+    int conferenceId, {
+    required bool isAttending,
+  }) {
+    state = state?.map((conference) {
+      if (conference.id == conferenceId) {
+        return conference.copyWith(isUserAttending: isAttending);
+      }
+      return conference;
+    }).toList();
+  }
 }

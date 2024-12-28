@@ -15,6 +15,8 @@ _$ConferenceShortResponseImpl _$$ConferenceShortResponseImplFromJson(
       topic: json['topic'] as String,
       startDate: json['startDate'] as String,
       endDate: json['endDate'] as String,
+      participantCount: (json['participantCount'] as num).toInt(),
+      isUserAttending: json['isUserAttending'] as bool,
     );
 
 Map<String, dynamic> _$$ConferenceShortResponseImplToJson(
@@ -26,4 +28,6 @@ Map<String, dynamic> _$$ConferenceShortResponseImplToJson(
       'topic': instance.topic,
       'startDate': instance.startDate,
       'endDate': instance.endDate,
+      'participantCount': instance.participantCount,
+      'isUserAttending': instance.isUserAttending,
     };

@@ -27,6 +27,8 @@ mixin _$ConferenceShortResponse {
   String get topic => throw _privateConstructorUsedError;
   String get startDate => throw _privateConstructorUsedError;
   String get endDate => throw _privateConstructorUsedError;
+  int get participantCount => throw _privateConstructorUsedError;
+  bool get isUserAttending => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -46,7 +48,9 @@ abstract class $ConferenceShortResponseCopyWith<$Res> {
       String city,
       String topic,
       String startDate,
-      String endDate});
+      String endDate,
+      int participantCount,
+      bool isUserAttending});
 }
 
 /// @nodoc
@@ -69,6 +73,8 @@ class _$ConferenceShortResponseCopyWithImpl<$Res,
     Object? topic = null,
     Object? startDate = null,
     Object? endDate = null,
+    Object? participantCount = null,
+    Object? isUserAttending = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -95,6 +101,14 @@ class _$ConferenceShortResponseCopyWithImpl<$Res,
           ? _value.endDate
           : endDate // ignore: cast_nullable_to_non_nullable
               as String,
+      participantCount: null == participantCount
+          ? _value.participantCount
+          : participantCount // ignore: cast_nullable_to_non_nullable
+              as int,
+      isUserAttending: null == isUserAttending
+          ? _value.isUserAttending
+          : isUserAttending // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 }
@@ -114,7 +128,9 @@ abstract class _$$ConferenceShortResponseImplCopyWith<$Res>
       String city,
       String topic,
       String startDate,
-      String endDate});
+      String endDate,
+      int participantCount,
+      bool isUserAttending});
 }
 
 /// @nodoc
@@ -136,6 +152,8 @@ class __$$ConferenceShortResponseImplCopyWithImpl<$Res>
     Object? topic = null,
     Object? startDate = null,
     Object? endDate = null,
+    Object? participantCount = null,
+    Object? isUserAttending = null,
   }) {
     return _then(_$ConferenceShortResponseImpl(
       id: null == id
@@ -162,6 +180,14 @@ class __$$ConferenceShortResponseImplCopyWithImpl<$Res>
           ? _value.endDate
           : endDate // ignore: cast_nullable_to_non_nullable
               as String,
+      participantCount: null == participantCount
+          ? _value.participantCount
+          : participantCount // ignore: cast_nullable_to_non_nullable
+              as int,
+      isUserAttending: null == isUserAttending
+          ? _value.isUserAttending
+          : isUserAttending // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -175,7 +201,9 @@ class _$ConferenceShortResponseImpl implements _ConferenceShortResponse {
       required this.city,
       required this.topic,
       required this.startDate,
-      required this.endDate});
+      required this.endDate,
+      required this.participantCount,
+      required this.isUserAttending});
 
   factory _$ConferenceShortResponseImpl.fromJson(Map<String, dynamic> json) =>
       _$$ConferenceShortResponseImplFromJson(json);
@@ -192,10 +220,14 @@ class _$ConferenceShortResponseImpl implements _ConferenceShortResponse {
   final String startDate;
   @override
   final String endDate;
+  @override
+  final int participantCount;
+  @override
+  final bool isUserAttending;
 
   @override
   String toString() {
-    return 'ConferenceShortResponse(id: $id, name: $name, city: $city, topic: $topic, startDate: $startDate, endDate: $endDate)';
+    return 'ConferenceShortResponse(id: $id, name: $name, city: $city, topic: $topic, startDate: $startDate, endDate: $endDate, participantCount: $participantCount, isUserAttending: $isUserAttending)';
   }
 
   @override
@@ -209,13 +241,17 @@ class _$ConferenceShortResponseImpl implements _ConferenceShortResponse {
             (identical(other.topic, topic) || other.topic == topic) &&
             (identical(other.startDate, startDate) ||
                 other.startDate == startDate) &&
-            (identical(other.endDate, endDate) || other.endDate == endDate));
+            (identical(other.endDate, endDate) || other.endDate == endDate) &&
+            (identical(other.participantCount, participantCount) ||
+                other.participantCount == participantCount) &&
+            (identical(other.isUserAttending, isUserAttending) ||
+                other.isUserAttending == isUserAttending));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, id, name, city, topic, startDate, endDate);
+  int get hashCode => Object.hash(runtimeType, id, name, city, topic, startDate,
+      endDate, participantCount, isUserAttending);
 
   @JsonKey(ignore: true)
   @override
@@ -239,7 +275,9 @@ abstract class _ConferenceShortResponse implements ConferenceShortResponse {
       required final String city,
       required final String topic,
       required final String startDate,
-      required final String endDate}) = _$ConferenceShortResponseImpl;
+      required final String endDate,
+      required final int participantCount,
+      required final bool isUserAttending}) = _$ConferenceShortResponseImpl;
 
   factory _ConferenceShortResponse.fromJson(Map<String, dynamic> json) =
       _$ConferenceShortResponseImpl.fromJson;
@@ -256,6 +294,10 @@ abstract class _ConferenceShortResponse implements ConferenceShortResponse {
   String get startDate;
   @override
   String get endDate;
+  @override
+  int get participantCount;
+  @override
+  bool get isUserAttending;
   @override
   @JsonKey(ignore: true)
   _$$ConferenceShortResponseImplCopyWith<_$ConferenceShortResponseImpl>

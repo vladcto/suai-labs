@@ -40,6 +40,7 @@ sealed class ConferenceProviders {
       ref.watch(_api),
       ref.watch(AppProviders.navigationManager),
       ref.watch(listProvider.notifier),
+      ref.watch(conferenceListManager),
     ),
   );
 }

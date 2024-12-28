@@ -55,7 +55,10 @@ class ConferenceApi {
     return ConferenceDetailResponse.fromJson(response.data);
   }
 
-  Future<void> updateConference(int conferenceId, ConferenceUpdatingRequest request) =>
+  Future<void> updateConference(
+    int conferenceId,
+    ConferenceUpdatingRequest request,
+  ) =>
       _dio.put(
         '/conference/$conferenceId',
         data: request.toJson(),
@@ -64,4 +67,11 @@ class ConferenceApi {
   Future<void> deleteConference(int conferenceId) => _dio.post(
         '/delete_conference/$conferenceId',
       );
+
+  Future<void> registerForConference(int conferenceId) async {
+    await _dio.post('/conference/$conferenceId/register');
+  }
+
+  Future<void> cancelConferenceRegistration(int conferenceId) =>
+      _dio.post('/conference/$conferenceId/cancel');
 }

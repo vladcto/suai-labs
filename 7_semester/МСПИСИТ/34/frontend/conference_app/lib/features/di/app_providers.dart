@@ -6,7 +6,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 sealed class AppProviders {
   static final dioBaseOptions = Provider(
-    (_) => BaseOptions(baseUrl: 'http://10.0.2.2:8080'),
+    (_) => BaseOptions(baseUrl: 'http://localhost:8080'),
   );
 
   static final dio = Provider(

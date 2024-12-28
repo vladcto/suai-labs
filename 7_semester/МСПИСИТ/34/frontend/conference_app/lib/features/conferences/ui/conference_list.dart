@@ -17,10 +17,6 @@ class ConferenceListScreen extends ConsumerStatefulWidget {
 
 class _ConferenceListScreenState extends ConsumerState<ConferenceListScreen> {
   late ConferenceListManager _conferenceListManager;
-  final _nameController = TextEditingController();
-  String? _nameFilter;
-  int? _cityFilter;
-  int? _topicFilter;
 
   @override
   void initState() {
@@ -51,9 +47,10 @@ class _ConferenceListScreenState extends ConsumerState<ConferenceListScreen> {
             padding: const EdgeInsets.all(16.0),
             child: Column(
               children: [
+                // Ввод имени и установка фильтра
                 _buildTextInput(
                   'Name',
-                  (value) => setState(() => _nameFilter = value),
+                  (value) => _conferenceListManager.updateSearch(name: value),
                 ),
                 if (searchOptions != null)
                   Row(
@@ -62,12 +59,16 @@ class _ConferenceListScreenState extends ConsumerState<ConferenceListScreen> {
                         child: _buildDropdownInput(
                           'City',
                           searchOptions.cities.cast<City?>().firstWhere(
-                                (city) => city?.id == _cityFilter,
+                                (city) =>
+                                    city?.id ==
+                                    _conferenceListManager.currentCityId,
                                 orElse: () => null,
                               ),
                           searchOptions.cities,
                           (value) => value.name,
-                          (value) => setState(() => _cityFilter = value?.id),
+                          (value) => _conferenceListManager.updateSearch(
+                            cityId: value?.id,
+                          ),
                         ),
                       ),
                       const SizedBox(width: 16),
@@ -75,12 +76,16 @@ class _ConferenceListScreenState extends ConsumerState<ConferenceListScreen> {
                         child: _buildDropdownInput(
                           'Topic',
                           searchOptions.topics.cast<Topic?>().firstWhere(
-                                (topic) => topic?.id == _topicFilter,
+                                (topic) =>
+                                    topic?.id ==
+                                    _conferenceListManager.currentTopicId,
                                 orElse: () => null,
                               ),
                           searchOptions.topics,
                           (value) => value.name,
-                          (value) => setState(() => _topicFilter = value?.id),
+                          (value) => _conferenceListManager.updateSearch(
+                            topicId: value?.id,
+                          ),
                         ),
                       ),
                     ],
@@ -89,29 +94,13 @@ class _ConferenceListScreenState extends ConsumerState<ConferenceListScreen> {
                   children: [
                     ElevatedButton(
                       onPressed: () {
-                        _conferenceListManager.updateSearch(
-                          name: _nameFilter,
-                          cityId: _cityFilter,
-                          topicId: _topicFilter,
-                        );
+                        // Применить фильтры, это делается автоматически каждый раз, когда они изменяются
                       },
                       child: const Text('Apply Filters'),
                     ),
                     const SizedBox(width: 16),
                     ElevatedButton(
-                      onPressed: () {
-                        setState(() {
-                          _nameFilter = null;
-                          _cityFilter = null;
-                          _topicFilter = null;
-                          _nameController.clear();
-                        });
-                        _conferenceListManager.updateSearch(
-                          name: null,
-                          cityId: null,
-                          topicId: null,
-                        );
-                      },
+                      onPressed: () => _conferenceListManager.clearFilter(),
                       child: const Text('Reset Filters'),
                     ),
                   ],
@@ -124,12 +113,12 @@ class _ConferenceListScreenState extends ConsumerState<ConferenceListScreen> {
                 ? const Center(child: CircularProgressIndicator())
                 : ListView.builder(
                     itemCount: conferenceList.length,
-                    itemBuilder: (context, index) {
-                      return GestureDetector(
+                    itemBuilder: (BuildContext context, int index) {
+                      final conference = conferenceList[index];
+                      return ConferenceCard(
+                        conference: conference,
                         onTap: () => _conferenceListManager
-                            .openDetailedScreen(conferenceList[index].id),
-                        child:
-                            ConferenceCard(conference: conferenceList[index]),
+                            .openDetailedScreen(conference.id),
                       );
                     },
                   ),
@@ -138,52 +127,45 @@ class _ConferenceListScreenState extends ConsumerState<ConferenceListScreen> {
       ),
     );
   }
+}
 
-  @override
-  void dispose() {
-    super.dispose();
-    _nameController.dispose();
-  }
-
-  Widget _buildTextInput(String label, ValueChanged<String> onChanged) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8.0),
-      child: TextField(
-        controller: _nameController,
-        decoration: InputDecoration(
-          labelText: label,
-          border: const OutlineInputBorder(),
-        ),
-        onChanged: onChanged,
+Widget _buildTextInput(String label, ValueChanged<String> onChanged) {
+  return Padding(
+    padding: const EdgeInsets.symmetric(vertical: 8.0),
+    child: TextField(
+      decoration: InputDecoration(
+        labelText: label,
+        border: const OutlineInputBorder(),
       ),
-    );
-  }
+      onChanged: onChanged,
+    ),
+  );
+}
 
-  Widget _buildDropdownInput<T, R>(
-    String label,
-    T? value,
-    List<T> items,
-    String Function(T) mapper,
-    ValueChanged<T?> onChanged,
-  ) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8.0),
-      child: DropdownButtonFormField<T>(
-        value: value,
-        decoration: InputDecoration(
-          labelText: label,
-          border: const OutlineInputBorder(),
-        ),
-        items: items
-            .map(
-              (item) => DropdownMenuItem<T>(
-                value: item,
-                child: Text(mapper(item)),
-              ),
-            )
-            .toList(),
-        onChanged: onChanged,
+Widget _buildDropdownInput<T, R>(
+  String label,
+  T? value,
+  List<T> items,
+  String Function(T) mapper,
+  ValueChanged<T?> onChanged,
+) {
+  return Padding(
+    padding: const EdgeInsets.symmetric(vertical: 8.0),
+    child: DropdownButtonFormField<T>(
+      value: value,
+      decoration: InputDecoration(
+        labelText: label,
+        border: const OutlineInputBorder(),
       ),
-    );
-  }
+      items: items
+          .map(
+            (item) => DropdownMenuItem<T>(
+              value: item,
+              child: Text(mapper(item)),
+            ),
+          )
+          .toList(),
+      onChanged: onChanged,
+    ),
+  );
 }

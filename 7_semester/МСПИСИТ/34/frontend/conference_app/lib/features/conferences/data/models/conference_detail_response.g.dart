@@ -18,6 +18,8 @@ _$ConferenceDetailResponseImpl _$$ConferenceDetailResponseImplFromJson(
       description: json['description'] as String,
       contacts: json['contacts'] as String,
       canRedact: json['canRedact'] as bool,
+      participantCount: (json['participantCount'] as num).toInt(),
+      isUserAttending: json['isUserAttending'] as bool,
     );
 
 Map<String, dynamic> _$$ConferenceDetailResponseImplToJson(
@@ -32,4 +34,6 @@ Map<String, dynamic> _$$ConferenceDetailResponseImplToJson(
       'description': instance.description,
       'contacts': instance.contacts,
       'canRedact': instance.canRedact,
+      'participantCount': instance.participantCount,
+      'isUserAttending': instance.isUserAttending,
     };

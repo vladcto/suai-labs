@@ -30,6 +30,8 @@ mixin _$ConferenceDetailResponse {
   String get description => throw _privateConstructorUsedError;
   String get contacts => throw _privateConstructorUsedError;
   bool get canRedact => throw _privateConstructorUsedError;
+  int get participantCount => throw _privateConstructorUsedError;
+  bool get isUserAttending => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -52,7 +54,9 @@ abstract class $ConferenceDetailResponseCopyWith<$Res> {
       String endDate,
       String description,
       String contacts,
-      bool canRedact});
+      bool canRedact,
+      int participantCount,
+      bool isUserAttending});
 }
 
 /// @nodoc
@@ -78,6 +82,8 @@ class _$ConferenceDetailResponseCopyWithImpl<$Res,
     Object? description = null,
     Object? contacts = null,
     Object? canRedact = null,
+    Object? participantCount = null,
+    Object? isUserAttending = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -116,6 +122,14 @@ class _$ConferenceDetailResponseCopyWithImpl<$Res,
           ? _value.canRedact
           : canRedact // ignore: cast_nullable_to_non_nullable
               as bool,
+      participantCount: null == participantCount
+          ? _value.participantCount
+          : participantCount // ignore: cast_nullable_to_non_nullable
+              as int,
+      isUserAttending: null == isUserAttending
+          ? _value.isUserAttending
+          : isUserAttending // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 }
@@ -138,7 +152,9 @@ abstract class _$$ConferenceDetailResponseImplCopyWith<$Res>
       String endDate,
       String description,
       String contacts,
-      bool canRedact});
+      bool canRedact,
+      int participantCount,
+      bool isUserAttending});
 }
 
 /// @nodoc
@@ -163,6 +179,8 @@ class __$$ConferenceDetailResponseImplCopyWithImpl<$Res>
     Object? description = null,
     Object? contacts = null,
     Object? canRedact = null,
+    Object? participantCount = null,
+    Object? isUserAttending = null,
   }) {
     return _then(_$ConferenceDetailResponseImpl(
       id: null == id
@@ -201,6 +219,14 @@ class __$$ConferenceDetailResponseImplCopyWithImpl<$Res>
           ? _value.canRedact
           : canRedact // ignore: cast_nullable_to_non_nullable
               as bool,
+      participantCount: null == participantCount
+          ? _value.participantCount
+          : participantCount // ignore: cast_nullable_to_non_nullable
+              as int,
+      isUserAttending: null == isUserAttending
+          ? _value.isUserAttending
+          : isUserAttending // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -217,7 +243,9 @@ class _$ConferenceDetailResponseImpl implements _ConferenceDetailResponse {
       required this.endDate,
       required this.description,
       required this.contacts,
-      required this.canRedact});
+      required this.canRedact,
+      required this.participantCount,
+      required this.isUserAttending});
 
   factory _$ConferenceDetailResponseImpl.fromJson(Map<String, dynamic> json) =>
       _$$ConferenceDetailResponseImplFromJson(json);
@@ -240,10 +268,14 @@ class _$ConferenceDetailResponseImpl implements _ConferenceDetailResponse {
   final String contacts;
   @override
   final bool canRedact;
+  @override
+  final int participantCount;
+  @override
+  final bool isUserAttending;
 
   @override
   String toString() {
-    return 'ConferenceDetailResponse(id: $id, name: $name, city: $city, topic: $topic, startDate: $startDate, endDate: $endDate, description: $description, contacts: $contacts, canRedact: $canRedact)';
+    return 'ConferenceDetailResponse(id: $id, name: $name, city: $city, topic: $topic, startDate: $startDate, endDate: $endDate, description: $description, contacts: $contacts, canRedact: $canRedact, participantCount: $participantCount, isUserAttending: $isUserAttending)';
   }
 
   @override
@@ -263,13 +295,28 @@ class _$ConferenceDetailResponseImpl implements _ConferenceDetailResponse {
             (identical(other.contacts, contacts) ||
                 other.contacts == contacts) &&
             (identical(other.canRedact, canRedact) ||
-                other.canRedact == canRedact));
+                other.canRedact == canRedact) &&
+            (identical(other.participantCount, participantCount) ||
+                other.participantCount == participantCount) &&
+            (identical(other.isUserAttending, isUserAttending) ||
+                other.isUserAttending == isUserAttending));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, name, city, topic, startDate,
-      endDate, description, contacts, canRedact);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      name,
+      city,
+      topic,
+      startDate,
+      endDate,
+      description,
+      contacts,
+      canRedact,
+      participantCount,
+      isUserAttending);
 
   @JsonKey(ignore: true)
   @override
@@ -296,7 +343,9 @@ abstract class _ConferenceDetailResponse implements ConferenceDetailResponse {
       required final String endDate,
       required final String description,
       required final String contacts,
-      required final bool canRedact}) = _$ConferenceDetailResponseImpl;
+      required final bool canRedact,
+      required final int participantCount,
+      required final bool isUserAttending}) = _$ConferenceDetailResponseImpl;
 
   factory _ConferenceDetailResponse.fromJson(Map<String, dynamic> json) =
       _$ConferenceDetailResponseImpl.fromJson;
@@ -319,6 +368,10 @@ abstract class _ConferenceDetailResponse implements ConferenceDetailResponse {
   String get contacts;
   @override
   bool get canRedact;
+  @override
+  int get participantCount;
+  @override
+  bool get isUserAttending;
   @override
   @JsonKey(ignore: true)
   _$$ConferenceDetailResponseImplCopyWith<_$ConferenceDetailResponseImpl>

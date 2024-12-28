@@ -1,6 +1,7 @@
 package suai.vladcto.services.conference
 
 import suai.vladcto.db.DatabaseFactory
+import suai.vladcto.services.attendance.AttendanceService
 import suai.vladcto.services.city.CityService
 import suai.vladcto.services.topic.TopicService
 import java.sql.ResultSet
@@ -47,36 +48,44 @@ class ConferenceService(
     }
 
 
-    fun getConferences(filter: ConferenceRequest): List<ConferenceShortResponse> {
-        val queryBuilder = StringBuilder("SELECT * FROM Conferences WHERE 1=1")
+    fun getConferences(filter: ConferenceRequest, username: String): List<ConferenceShortResponse> {
+        val queryBuilder = StringBuilder(
+            """
+        SELECT C.id, C.name, C.city_id, C.topic_id, C.start_date, C.end_date,
+               (SELECT COUNT(*) FROM ConferenceAttendance A WHERE A.conference_id = C.id) as participantCount,
+               EXISTS(SELECT 1 FROM ConferenceAttendance A WHERE A.conference_id = C.id AND A.user_username = ?) as isUserAttending
+        FROM Conferences C WHERE 1=1
+        """
+        )
 
         if (filter.name.isNotEmpty()) {
-            queryBuilder.append(" AND name ILIKE '%${filter.name}%'")
+            queryBuilder.append(" AND C.name ILIKE '%${filter.name}%'")
         }
         if (filter.cityId != 0) {
-            queryBuilder.append(" AND city_id = ${filter.cityId}")
+            queryBuilder.append(" AND C.city_id = ${filter.cityId}")
         }
         if (filter.topicId != 0) {
-            queryBuilder.append(" AND topic_id = ${filter.topicId}")
+            queryBuilder.append(" AND C.topic_id = ${filter.topicId}")
         }
         if (filter.startDate.isNotEmpty()) {
-            queryBuilder.append(" AND start_date >= '${filter.startDate}'")
+            queryBuilder.append(" AND C.start_date >= '${filter.startDate}'")
         }
         if (filter.endDate.isNotEmpty()) {
-            queryBuilder.append(" AND end_date <= '${filter.endDate}'")
+            queryBuilder.append(" AND C.end_date <= '${filter.endDate}'")
         }
 
         return try {
             val connection = DatabaseFactory.getConnection()
 
-            connection.createStatement().use { statement ->
-                val resultSet = statement.executeQuery(queryBuilder.toString())
+            connection.prepareStatement(queryBuilder.toString()).use { preparedStatement ->
+                preparedStatement.setString(1, username)
+
+                val resultSet = preparedStatement.executeQuery()
                 val conferences = mutableListOf<ConferenceShortResponse>()
 
                 while (resultSet.next()) {
                     conferences.add(mapRowToConference(resultSet))
                 }
-
                 conferences
             }
         } catch (e: SQLException) {
@@ -131,7 +140,6 @@ class ConferenceService(
             updateQuery.append(updates.joinToString(", "))
             updateQuery.append(" WHERE id = $conferenceId")
 
-            // Debug: print the SQL query
             println("Executing SQL: $updateQuery")
 
             connection.createStatement().use { statement ->
@@ -173,28 +181,36 @@ class ConferenceService(
 
 
     fun getConferenceDetails(
-        conferenceId: Int, username: String
+        conferenceId: Int,
+        username: String
     ): Result<ConferenceDetailResponse> {
         return try {
             val connection = DatabaseFactory.getConnection()
 
-            val sql = "SELECT * FROM Conferences WHERE id = ?"
+            val sql = """
+            SELECT C.*, 
+                   (SELECT COUNT(*) FROM ConferenceAttendance A WHERE A.conference_id = C.id) as participantCount,
+                   EXISTS(SELECT 1 FROM ConferenceAttendance A WHERE A.conference_id = C.id AND A.user_username = ?) as isUserAttending
+            FROM Conferences C WHERE C.id = ?
+        """
 
             connection.prepareStatement(sql).use { preparedStatement ->
-                preparedStatement.setInt(1, conferenceId)
+                preparedStatement.setString(1, username)
+                preparedStatement.setInt(2, conferenceId)
 
                 val resultSet = preparedStatement.executeQuery()
                 if (resultSet.next()) {
                     val conferenceDetail = ConferenceDetailResponse(
-                        id = resultSet.getInt("id"),
-                        name = resultSet.getString("name"),
+                        id = resultSet.getInt("id"), name = resultSet.getString("name"),
                         city = cityService.getCityNameById(resultSet.getInt("city_id")) ?: "",
                         topic = topicService.getTopicNameById(resultSet.getInt("topic_id")) ?: "",
                         startDate = resultSet.getString("start_date"),
                         endDate = resultSet.getString("end_date"),
                         description = resultSet.getString("description"),
                         contacts = resultSet.getString("contacts"),
-                        canRedact = isUserAuthorOfConference(conferenceId, username)
+                        canRedact = isUserAuthorOfConference(conferenceId, username),
+                        participantCount = resultSet.getInt("participantCount"),
+                        isUserAttending = resultSet.getBoolean("isUserAttending")
                     )
                     Result.success(conferenceDetail)
                 } else {
@@ -235,6 +251,8 @@ class ConferenceService(
             topic = topicService.getTopicNameById(rs.getInt("topic_id")) ?: "",
             startDate = rs.getString("start_date"),
             endDate = rs.getString("end_date"),
+            participantCount = rs.getInt("participantCount"),
+            isUserAttending = rs.getBoolean("isUserAttending")
         )
     }
 }

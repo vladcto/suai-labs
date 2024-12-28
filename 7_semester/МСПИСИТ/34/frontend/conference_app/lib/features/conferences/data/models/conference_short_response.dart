@@ -12,6 +12,8 @@ class ConferenceShortResponse with _$ConferenceShortResponse {
     required String topic,
     required String startDate,
     required String endDate,
+    required int participantCount,
+    required bool isUserAttending,
   }) = _ConferenceShortResponse;
 
   factory ConferenceShortResponse.fromJson(Map<String, dynamic> json) =>
