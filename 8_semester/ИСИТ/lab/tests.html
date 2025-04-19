@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Тестирование знаний по географии</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Стили для тестов */
+    .test-question {
+      background: #fff;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .test-question p {
+      margin-bottom: 15px;
+      line-height: 1.6;
+    }
+
+    .test-question form {
+      margin-bottom: 10px;
+    }
+
+    .test-question label {
+      margin-left: 5px;
+    }
+
+    .overall-score {
+      background: #e6f2f8;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+      text-align: center;
+      font-size: 1.2em;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Тестирование знаний по географии</h1>
+  </header>
+
+  <!-- Боковое меню загружается из navigation.html -->
+  <div id="sidebar-container"></div>
+
+  <main>
+    <section class="content">
+      <h2>Проверьте свои знания</h2>
+
+      <!-- Вопрос 1 -->
+      <div class="test-question">
+        <p><strong>Вопрос 1:</strong> Что изучает география?</p>
+        <form id="test1">
+          <input type="radio" name="geography" value="Physical" id="geography1">
+          <label for="geography1">Только физические процессы</label><br>
+          <input type="radio" name="geography" value="Social" id="geography2">
+          <label for="geography2">Только социальные процессы</label><br>
+          <input type="radio" name="geography" value="PhysicalSocial" id="geography3">
+          <label for="geography3">Физические и социальные процессы на Земле</label><br>
+          <input type="radio" name="geography" value="Economic" id="geography4">
+          <label for="geography4">Экономические процессы</label><br>
+        </form>
+        <p id="test1-feedback"></p>
+      </div>
+
+      <!-- Вопрос 2 -->
+      <div class="test-question">
+        <p><strong>Вопрос 2:</strong> Почему география важна для современного человека?</p>
+        <form id="test2">
+          <input type="radio" name="importance" value="Navigation" id="importance1">
+          <label for="importance1">Для навигации и выбора маршрутов</label><br>
+          <input type="radio" name="importance" value="Astronomy" id="importance2">
+          <label for="importance2">Для изучения звездного неба</label><br>
+          <input type="radio" name="importance" value="History" id="importance3">
+          <label for="importance3">Для понимания исторических событий</label><br>
+          <input type="radio" name="importance" value="Military" id="importance4">
+          <label for="importance4">Для проведения военных операций</label><br>
+        </form>
+        <p id="test2-feedback"></p>
+      </div>
+
+      <!-- Вопрос 3 -->
+      <div class="test-question">
+        <p><strong>Вопрос 3:</strong> Как в древней Индии представляли Землю?</p>
+        <form id="test3">
+          <input type="radio" name="indianView" value="Sphere" id="indianView1">
+          <label for="indianView1">Земля как шар</label><br>
+          <input type="radio" name="indianView" value="OnElephants" id="indianView2">
+          <label for="indianView2">Земля, лежащая на спинах трёх слонов</label><br>
+          <input type="radio" name="indianView" value="FlatDisk" id="indianView3">
+          <label for="indianView3">Земля как плоский диск</label><br>
+          <input type="radio" name="indianView" value="Mountain" id="indianView4">
+          <label for="indianView4">Земля как гора</label><br>
+        </form>
+        <p id="test3-feedback"></p>
+      </div>
+
+      <!-- Вопрос 4 -->
+      <div class="test-question">
+        <p><strong>Вопрос 4:</strong> Кто впервые вычислил размеры Земли?</p>
+        <form id="test4">
+          <input type="radio" name="geographer" value="Aristotle" id="geographer1">
+          <label for="geographer1">Аристотель</label><br>
+          <input type="radio" name="geographer" value="Homer" id="geographer2">
+          <label for="geographer2">Гомер</label><br>
+          <input type="radio" name="geographer" value="Eratosthenes" id="geographer3">
+          <label for="geographer3">Эратосфен</label><br>
+          <input type="radio" name="geographer" value="Ptolemy" id="geographer4">
+          <label for="geographer4">Птолемей</label><br>
+        </form>
+        <p id="test4-feedback"></p>
+      </div>
+
+      <!-- Вопрос 5 -->
+      <div class="test-question">
+        <p><strong>Вопрос 5:</strong> Как накапливались географические сведения в Средние века?</p>
+        <form id="test5">
+          <input type="radio" name="medievalKnowledge" value="Monasteries" id="medievalKnowledge1">
+          <label for="medievalKnowledge1">Через записи в монастырях и торговые миссии</label><br>
+          <input type="radio" name="medievalKnowledge" value="Universities" id="medievalKnowledge2">
+          <label for="medievalKnowledge2">Через университеты</label><br>
+          <input type="radio" name="medievalKnowledge" value="Printing" id="medievalKnowledge3">
+          <label for="medievalKnowledge3">Через печатные книги</label><br>
+          <input type="radio" name="medievalKnowledge" value="Internet" id="medievalKnowledge4">
+          <label for="medievalKnowledge4">Через интернет</label><br>
+        </form>
+        <p id="test5-feedback"></p>
+      </div>
+
+      <!-- Вопрос 6 -->
+      <div class="test-question">
+        <p><strong>Вопрос 6:</strong> Какой путешественник оставил знаменитые заметки о своих странствиях по Азии?</p>
+        <form id="test6">
+          <input type="radio" name="traveler" value="MarcoPolo" id="traveler1">
+          <label for="traveler1">Марко Поло</label><br>
+          <input type="radio" name="traveler" value="Columbus" id="traveler2">
+          <label for="traveler2">Христофор Колумб</label><br>
+          <input type="radio" name="traveler" value="Cook" id="traveler3">
+          <label for="traveler3">Джеймс Кук</label><br>
+          <input type="radio" name="traveler" value="Drake" id="traveler4">
+          <label for="traveler4">Френсис Дрейк</label><br>
+        </form>
+        <p id="test6-feedback"></p>
+      </div>
+
+      <!-- Вопрос 7 -->
+      <div class="test-question">
+        <p><strong>Вопрос 7:</strong> Какой народ известен своими морскими походами и открытием новых островов в Средние века?</p>
+        <form id="test7">
+          <input type="radio" name="explorers" value="Vikings" id="explorers1">
+          <label for="explorers1">Викинги</label><br>
+          <input type="radio" name="explorers" value="Arabs" id="explorers2">
+          <label for="explorers2">Арабы</label><br>
+          <input type="radio" name="explorers" value="Phoenicians" id="explorers3">
+          <label for="explorers3">Финикийцы</label><br>
+          <input type="radio" name="explorers" value="Greeks" id="explorers4">
+          <label for="explorers4">Греки</label><br>
+        </form>
+        <p id="test7-feedback"></p>
+      </div>
+
+      <!-- Вопрос 8 -->
+      <div class="test-question">
+        <p><strong>Вопрос 8:</strong> Какой путь выбрал Христофор Колумб в поисках морского пути в Индию?</p>
+        <form id="test8">
+          <input type="radio" name="columbusPath" value="West" id="columbusPath1">
+          <label for="columbusPath1">Плыть на запад</label><br>
+          <input type="radio" name="columbusPath" value="East" id="columbusPath2">
+          <label for="columbusPath2">Плыть на восток</label><br>
+          <input type="radio" name="columbusPath" value="North" id="columbusPath3">
+          <label for="columbusPath3">Плыть по северному морскому пути</label><br>
+          <input type="radio" name="columbusPath" value="South" id="columbusPath4">
+          <label for="columbusPath4">Плыть через Атлантику, затем на восток</label><br>
+        </form>
+        <p id="test8-feedback"></p>
+      </div>
+
+      <!-- Вопрос 9 -->
+      <div class="test-question">
+        <p><strong>Вопрос 9:</strong> Кто совершил первое кругосветное плавание, доказав шарообразность Земли?</p>
+        <form id="test9">
+          <input type="radio" name="circumnavigation" value="Magellan" id="circumnavigation1">
+          <label for="circumnavigation1">Фернан Магеллан</label><br>
+          <input type="radio" name="circumnavigation" value="Columbus" id="circumnavigation2">
+          <label for="circumnavigation2">Христофор Колумб</label><br>
+          <input type="radio" name="circumnavigation" value="DaGama" id="circumnavigation3">
+          <label for="circumnavigation3">Васко да Гама</label><br>
+          <input type="radio" name="circumnavigation" value="Cook" id="circumnavigation4">
+          <label for="circumnavigation4">Джеймс Кук</label><br>
+        </form>
+        <p id="test9-feedback"></p>
+      </div>
+
+      <!-- Вопрос 10 -->
+      <div class="test-question">
+        <p><strong>Вопрос 10:</strong> Какое значение имело открытие Америки для Европы?</p>
+        <form id="test10">
+          <input type="radio" name="americaImpact" value="NewEra" id="americaImpact1">
+          <label for="americaImpact1">Начало эпохи Великих географических открытий</label><br>
+          <input type="radio" name="americaImpact" value="TradeClosure" id="americaImpact2">
+          <label for="americaImpact2">Закрытие торговых путей с Азией</label><br>
+          <input type="radio" name="americaImpact" value="MedievalEnd" id="americaImpact3">
+          <label for="americaImpact3">Окончание Средневековья</label><br>
+          <input type="radio" name="americaImpact" value="Archaeology" id="americaImpact4">
+          <label for="americaImpact4">Увеличение числа археологических раскопок</label><br>
+        </form>
+        <p id="test10-feedback"></p>
+      </div>
+
+      <!-- Вопрос 11 -->
+      <div class="test-question">
+        <p><strong>Вопрос 11:</strong> Кто совершил второе кругосветное плавание и участвовал в грабежах испанских кораблей?</p>
+        <form id="test11">
+          <input type="radio" name="explorer17" value="Drake" id="explorer17_1">
+          <label for="explorer17_1">Френсис Дрейк</label><br>
+          <input type="radio" name="explorer17" value="Cook" id="explorer17_2">
+          <label for="explorer17_2">Джеймс Кук</label><br>
+          <input type="radio" name="explorer17" value="Tasman" id="explorer17_3">
+          <label for="explorer17_3">Абель Тасман</label><br>
+          <input type="radio" name="explorer17" value="Piri" id="explorer17_4">
+          <label for="explorer17_4">Роберт Пири</label><br>
+        </form>
+        <p id="test11-feedback"></p>
+      </div>
+
+      <!-- Вопрос 12 -->
+      <div class="test-question">
+        <p><strong>Вопрос 12:</strong> Кто совершил три кругосветных плавания и открыл новые земли, включая восточное побережье Австралии?</p>
+        <form id="test12">
+          <input type="radio" name="explorer12" value="Cook" id="explorer12_1">
+          <label for="explorer12_1">Джеймс Кук</label><br>
+          <input type="radio" name="explorer12" value="Drake" id="explorer12_2">
+          <label for="explorer12_2">Френсис Дрейк</label><br>
+          <input type="radio" name="explorer12" value="Tasman" id="explorer12_3">
+          <label for="explorer12_3">Абель Тасман</label><br>
+          <input type="radio" name="explorer12" value="Columbus" id="explorer12_4">
+          <label for="explorer12_4">Христофор Колумб</label><br>
+        </form>
+        <p id="test12-feedback"></p>
+      </div>
+
+      <!-- Вопрос 13 -->
+      <div class="test-question">
+        <p><strong>Вопрос 13:</strong> Какой вклад внесла экспедиция "Север-2"?</p>
+        <form id="test13">
+          <input type="radio" name="north2" value="DepthMeasurement" id="north2_1">
+          <label for="north2_1">Первая фиксация глубины Северного Ледовитого океана</label><br>
+          <input type="radio" name="north2" value="Antarctica" id="north2_2">
+          <label for="north2_2">Первое пересечение Антарктиды</label><br>
+          <input type="radio" name="north2" value="NewContinent" id="north2_3">
+          <label for="north2_3">Открытие нового материка</label><br>
+          <input type="radio" name="north2" value="ArcticExpedition" id="north2_4">
+          <label for="north2_4">Первая экспедиция в Арктику</label><br>
+        </form>
+        <p id="test13-feedback"></p>
+      </div>
+
+      <!-- Вопрос 14 -->
+      <div class="test-question">
+        <p><strong>Вопрос 14:</strong> Кто из исследователей открыл Гренландию согласно арабским сагам?</p>
+        <form id="test14">
+          <input type="radio" name="greenland" value="Erik" id="greenland1">
+          <label for="greenland1">Эрик Рыжин</label><br>
+          <input type="radio" name="greenland" value="Leif" id="greenland2">
+          <label for="greenland2">Лейф Эйриксон</label><br>
+          <input type="radio" name="greenland" value="Vikings" id="greenland3">
+          <label for="greenland3">Викинги</label><br>
+          <input type="radio" name="greenland" value="Columbus" id="greenland4">
+          <label for="greenland4">Христофор Колумб</label><br>
+        </form>
+        <p id="test14-feedback"></p>
+      </div>
+
+      <div class="test-question">
+        <p><strong>Вопрос 15:</strong> Какие товары экспортировали финикийцы?</p>
+        <form id="test15">
+          <input type="radio" name="phoenicians" value="GoldSilver" id="phoenicians1">
+          <label for="phoenicians1">Золото и серебро</label><br>
+          <input type="radio" name="phoenicians" value="CedarFabricsOils" id="phoenicians2">
+          <label for="phoenicians2">Ливанский кедр, ткани и масла</label><br>
+          <input type="radio" name="phoenicians" value="Spices" id="phoenicians3">
+          <label for="phoenicians3">Пряности и специи</label><br>
+          <input type="radio" name="phoenicians" value="OliveWine" id="phoenicians4">
+          <label for="phoenicians4">Оливковое масло и вино</label><br>
+        </form>
+        <p id="test15-feedback"></p>
+      </div>
+
+      <!-- Секция общего балла -->
+      <div class="overall-score" id="overall-score">
+        <p>Ваш общий балл: <span id="score-value">0</span> из 15</p>
+        <button type="button" onclick="checkOverallScore()">Проверить общий балл</button>
+      </div>
+
+    </section>
+
+    <div class="navigation-buttons">
+      <a href="culture.html"><button>Назад</button></a>
+      <a href="resources.html"><button>Вперед</button></a>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Учебное пособие по географии</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/tests.js"></script>
+  <script>
+    // Функция проверки вопроса 1
+    function checkTest1() {
+      const form = document.getElementById("test1");
+      const feedback = document.getElementById("test1-feedback");
+      const selected = form.geography.value;
+      if (selected === "PhysicalSocial") {
+        feedback.textContent = "Правильно! География изучает физические и социальные процессы на Земле.";
+        feedback.style.color = "green";
+        return 1;
+      } else {
+        feedback.textContent = "Неправильно.";
+        feedback.style.color = "red";
+        return 0;
+      }
+    }
+
+    // Функция проверки вопроса 2
+    function checkTest2() {
+      const form = document.getElementById("test2");
+      const feedback = document.getElementById("test2-feedback");
+      const selected = form.importance.value;
+      if (selected === "Navigation") {
+        feedback.textContent = "Правильно! География важна для навигации и выбора маршрутов.";
+        feedback.style.color = "green";
+        return 1;
+      } else {
+        feedback.textContent = "Неправильно.";
+        feedback.style.color = "red";
+        return 0;
+      }
+    }
+
+    // Функция проверки вопроса 3
+    function checkTest3() {
+      const form = document.getElementById("test3");
+      const feedback = document.getElementById("test3-feedback");
+      const selected = form.indianView.value;
+      if (selected === "OnElephants") {
+        feedback.textContent = "Правильно! В древней Индии Земля представлялась как лежащая на спинах трёх слонов.";
+        feedback.style.color = "green";
+        return 1;
+      } else {
+        feedback.textContent = "Неправильно.";
+        feedback.style.color = "red";
+        return 0;
+      }
+    }
+
+    // Функция проверки вопроса 4
+    function checkTest4() {
+      const form = document.getElementById("test4");
+      const feedback = document.getElementById("test4-feedback");
+      const selected = form.geographer.value;
+      if (selected === "Eratosthenes") {
+        feedback.textContent = "Правильно! Эратосфен впервые вычислил размеры Земли.";
+        feedback.style.color = "green";
+        return 1;
+      } else {
+        feedback.textContent = "Неправильно.";
+        feedback.style.color = "red";
+        return 0;
+      }
+    }
+
+    // Функция проверки вопроса 5
+    function checkTest5() {
+      const form = document.getElementById("test5");
+      const feedback = document.getElementById("test5-feedback");
+      const selected = form.medievalKnowledge.value;
+      if (selected === "Monasteries") {
+        feedback.textContent = "Правильно! В Средние века географические сведения накапливались в монастырях и через торговые миссии.";
+        feedback.style.color = "green";
+        return 1;
+      } else {
+        feedback.textContent = "Неправильно.";
+        feedback.style.color = "red";
+        return 0;
+      }
+    }
+
+    // Функция проверки вопроса 6
+    function checkTest6() {
+      const form = document.getElementById("test6");
+      const feedback = document.getElementById("test6-feedback");
+      const selected = form.traveler.value;
+      if (selected === "MarcoPolo") {
+        feedback.textContent = "Правильно! Марко Поло оставил знаменитые заметки о своих странствиях по Азии.";
+        feedback.style.color = "green";
+        return 1;
+      } else {
+        feedback.textContent = "Неправильно.";
+        feedback.style.color = "red";
+        return 0;
+      }
+    }
+
+    // Функция проверки вопроса 7
+    function checkTest7() {
+      const form = document.getElementById("test7");
+      const feedback = document.getElementById("test7-feedback");
+      const selected = form.explorers.value;
+      if (selected === "Vikings") {
+        feedback.textContent = "Правильно! Викинги известны своими морскими походами и открытием новых островов.";
+        feedback.style.color = "green";
+        return 1;
+      } else {
+        feedback.textContent = "Неправильно.";
+        feedback.style.color = "red";
+        return 0;
+      }
+    }
+
+    // Функция проверки вопроса 8
+    function checkTest8() {
+      const form = document.getElementById("test8");
+      const feedback = document.getElementById("test8-feedback");
+      const selected = form.columbusPath.value;
+      if (selected === "West") {
+        feedback.textContent = "Правильно! Христофор Колумб выбрал путь на запад.";
+        feedback.style.color = "green";
+        return 1;
+      } else {
+        feedback.textContent = "Неправильно.";
+        feedback.style.color = "red";
+        return 0;
+      }
+    }
+
+    // Функция проверки вопроса 9
+    function checkTest9() {
+      const form = document.getElementById("test9");
+      const feedback = document.getElementById("test9-feedback");
+      const selected = form.circumnavigation.value;
+      if (selected === "Magellan") {
+        feedback.textContent = "Правильно! Фернан Магеллан совершил первое кругосветное плавание.";
+        feedback.style.color = "green";
+        return 1;
+      } else {
+        feedback.textContent = "Неправильно.";
+        feedback.style.color = "red";
+        return 0;
+      }
+    }
+
+    // Функция проверки вопроса 10
+    function checkTest10() {
+      const form = document.getElementById("test10");
+      const feedback = document.getElementById("test10-feedback");
+      const selected = form.americaImpact.value;
+      if (selected === "NewEra") {
+        feedback.textContent = "Правильно! Открытие Америки дало начало эпохе Великих географических открытий.";
+        feedback.style.color = "green";
+        return 1;
+      } else {
+        feedback.textContent = "Неправильно.";
+        feedback.style.color = "red";
+        return 0;
+      }
+    }
+
+    // Функция проверки вопроса 11
+    function checkTest11() {
+      const form = document.getElementById("test11");
+      const feedback = document.getElementById("test11-feedback");
+      const selected = form.explorer17.value;
+      if (selected === "Drake") {
+        feedback.textContent = "Правильно! Френсис Дрейк совершил второе кругосветное плавание и грабил испанские корабли.";
+        feedback.style.color = "green";
+        return 1;
+      } else {
+        feedback.textContent = "Неправильно.";
+        feedback.style.color = "red";
+        return 0;
+      }
+    }
+
+    // Функция проверки вопроса 12
+    function checkTest12() {
+      const form = document.getElementById("test12");
+      const feedback = document.getElementById("test12-feedback");
+      const selected = form.explorer12.value;
+      if (selected === "Cook") {
+        feedback.textContent = "Правильно! Джеймс Кук совершил три кругосветных плавания и открыл восточное побережье Австралии.";
+        feedback.style.color = "green";
+        return 1;
+      } else {
+        feedback.textContent = "Неправильно.";
+        feedback.style.color = "red";
+        return 0;
+      }
+    }
+
+    // Функция проверки вопроса 13
+    function checkTest13() {
+      const form = document.getElementById("test13");
+      const feedback = document.getElementById("test13-feedback");
+      const selected = form.north2.value;
+      if (selected === "DepthMeasurement") {
+        feedback.textContent = "Правильно! Экспедиция 'Север-2' впервые зафиксировала глубину Северного Ледовитого океана.";
+        feedback.style.color = "green";
+        return 1;
+      } else {
+        feedback.textContent = "Неправильно.";
+        feedback.style.color = "red";
+        return 0;
+      }
+    }
+
+    // Функция проверки вопроса 14
+    function checkTest14() {
+      const form = document.getElementById("test14");
+      const feedback = document.getElementById("test14-feedback");
+      const selected = form.greenland.value;
+      if (selected === "Erik") {
+        feedback.textContent = "Правильно! Эрик Рыжин, согласно арабским сагам, открыл Гренландию.";
+        feedback.style.color = "green";
+        return 1;
+      } else {
+        feedback.textContent = "Неправильно.";
+        feedback.style.color = "red";
+        return 0;
+      }
+    }
+
+    // Функция проверки вопроса 15
+    function checkTest15() {
+      const form = document.getElementById("test15");
+      const feedback = document.getElementById("test15-feedback");
+      const selected = form.phoenicians.value;
+      if (selected === "CedarFabricsOils") {
+        feedback.textContent = "Правильно! Финикийцы экспортировали ливанский кедр, ткани и масла.";
+        feedback.style.color = "green";
+      
+        return 1;
+      } else {
+        feedback.innerHTML = "<a href='continents.html#targetAnchor' style='color: red;'>Неправильно. Попробуйте еще раз.</a>";
+        return 0;
+      }
+    }
+
+    // Функция проверки общего балла, вызывающая все функции проверки
+    function checkOverallScore() {
+      const totalScore =
+        checkTest1() +
+        checkTest2() +
+        checkTest3() +
+        checkTest4() +
+        checkTest5() +
+        checkTest6() +
+        checkTest7() +
+        checkTest8() +
+        checkTest9() +
+        checkTest10() +
+        checkTest11() +
+        checkTest12() +
+        checkTest13() +
+        checkTest14() +
+        checkTest15();
+      document.getElementById("score-value").textContent = totalScore;
+    }
+  </script>
+</body>
+
+</html>

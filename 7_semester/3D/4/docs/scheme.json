@@ -2,69 +2,58 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Depth Map Configuration",
   "type": "object",
-  "properties":
-    {
-      "name": { "type": "string", "description": "Имя файла с картой глубины" },
-      "light_source":
-        {
-          "type": "object",
-          "properties":
-            {
-              "position":
-                {
-                  "type": "array",
-                  "description": "Трехмерная позиция источника света",
-                  "items": { "type": "number" },
-                  "minItems": 3,
-                  "maxItems": 3
-                }
-            },
-          "required": ["position"],
-          "additionalProperties": false
-        },
-      "viewer":
-        {
-          "type": "object",
-          "properties":
-            {
-              "position":
-                {
-                  "type": "array",
-                  "description": "Трехмерная позиция наблюдателя",
-                  "items": { "type": "number" },
-                  "minItems": 3,
-                  "maxItems": 3
-                }
-            },
-          "required": ["position"],
-          "additionalProperties": false
-        },
-      "reflection_model":
-        {
-          "type": "string",
-          "description": "Модель отражения для использования в рендеринге",
-          "enum": ["lambert", "phong", "torrance-sparrow"]
-        },
-      "export_format":
-        {
-          "type": "string",
-          "description": "Формат для экспорта файлов",
-          "enum": ["obj", "stl", "ply"]
-        },
-      "export_name":
-        {
-          "type": "string",
-          "description": "Имя файла для экспорта без расширения"
+  "properties": {
+    "name": { "type": "string", "description": "Имя файла с картой глубины" },
+    "light_source": {
+      "type": "object",
+      "properties": {
+        "position": {
+          "type": "array",
+          "description": "Трехмерная позиция источника света",
+          "items": { "type": "number" },
+          "minItems": 3,
+          "maxItems": 3
         }
+      },
+      "required": ["position"],
+      "additionalProperties": false
     },
-  "required":
-    [
-      "name",
-      "light_source",
-      "viewer",
-      "reflection_model",
-      "export_format",
-      "export_name"
-    ],
+    "viewer": {
+      "type": "object",
+      "properties": {
+        "position": {
+          "type": "array",
+          "description": "Трехмерная позиция наблюдателя",
+          "items": { "type": "number" },
+          "minItems": 3,
+          "maxItems": 3
+        }
+      },
+      "required": ["position"],
+      "additionalProperties": false
+    },
+    "reflection_model": {
+      "type": "string",
+      "description": "Модель отражения для использования в рендеринге",
+      "enum": ["lambert", "phong", "torrance-sparrow"]
+    },
+    "export_format": {
+      "type": "string",
+      "description": "Формат для экспорта файлов",
+      "enum": ["obj", "stl", "ply"]
+    },
+    "export_name": {
+      "type": "string",
+      "description": "Имя файла для экспорта без расширения"
+    }
+  },
+  "required": [
+    "name",
+    "light_source",
+    "viewer",
+    "reflection_model",
+    "export_format",
+    "export_name"
+  ],
   "additionalProperties": false
 }

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Дополнительные материалы</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Стили для страницы с ссылками без карточек */
+    .content h2 {
+      margin-bottom: 15px;
+    }
+
+    .content p {
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .link-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .link-column h3 {
+      margin-top: 0;
+      color: #007acc;
+      font-size: 1.2em;
+      margin-bottom: 10px;
+    }
+
+    .link-column ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .link-column li {
+      margin-bottom: 8px;
+    }
+
+    .link-column a {
+      color: #006699;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .link-column a:hover {
+      color: #004466;
+    }
+
+    /* Стили для навигационных кнопок */
+    .navigation-buttons {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .navigation-buttons button,
+    .navigation-buttons a button {
+      font-size: 1rem;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      background: linear-gradient(to right, #007acc, #005ea6);
+      color: #fff;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      margin: 0 10px;
+    }
+
+    .navigation-buttons button:hover,
+    .navigation-buttons a button:hover {
+      background: linear-gradient(to right, #005ea6, #007acc);
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Дополнительные материалы</h1>
+  </header>
+
+  <!-- Загрузка бокового меню -->
+  <div id="sidebar-container"></div>
+
+  <main>
+    <section class="content">
+      <h2>Полезные ресурсы</h2>
+      <p>
+        В данном разделе собраны ссылки и материалы, которые помогут углубить знания по географии. Ниже представлены
+        тематические группы ресурсов, разделённые на две колонки.
+      </p>
+
+      <div class="link-grid">
+        <!-- Колонка 1: Общие ресурсы -->
+        <div class="link-column">
+          <h3>Общие ресурсы</h3>
+          <ul>
+            <li><a href="https://ru.wikipedia.org/wiki/География" target="_blank">Википедия: География</a></li>
+            <li><a href="https://www.britannica.com/science/geography" target="_blank">Encyclopedia Britannica</a></li>
+            <li><a href="https://www.nationalgeographic.com/" target="_blank">National Geographic</a></li>
+          </ul>
+        </div>
+
+        <!-- Колонка 2: Экология и окружающая среда -->
+        <div class="link-column">
+          <h3>Экология и среда</h3>
+          <ul>
+            <li><a href="https://www.un.org/ru/sections/issues-depth/environment/" target="_blank">ООН: Окружающая
+                среда</a></li>
+            <li><a href="https://www.unep.org/" target="_blank">UNEP</a></li>
+            <li><a href="https://www.worldwildlife.org/" target="_blank">WWF</a></li>
+          </ul>
+        </div>
+
+        <!-- Колонка 3: Карты и геоданные -->
+        <div class="link-column">
+          <h3>Карты и данные</h3>
+          <ul>
+            <li><a href="https://www.openstreetmap.org/" target="_blank">OpenStreetMap</a></li>
+            <li><a href="https://earthobservatory.nasa.gov/" target="_blank">NASA Earth Observatory</a></li>
+            <li><a href="https://www.arcgis.com/index.html" target="_blank">ArcGIS</a></li>
+          </ul>
+        </div>
+
+        <!-- Колонка 4: Научные исследования -->
+        <div class="link-column">
+          <h3>Научные исследования</h3>
+          <ul>
+            <li><a href="https://www.sciencedirect.com/" target="_blank">ScienceDirect</a></li>
+            <li><a href="https://www.researchgate.net/" target="_blank">ResearchGate</a></li>
+            <li><a href="https://www.jstor.org/" target="_blank">JSTOR</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Учебное пособие по географии</p>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
