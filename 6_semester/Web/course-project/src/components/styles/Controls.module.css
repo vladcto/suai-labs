@@ -1,0 +1,105 @@
+:root {
+  --primary-color: #fff;
+  --secondary-color: #000;
+  --shadow-color: rgba(0, 0, 0, 0.2);
+  --background-color: #f2f2f2;
+}
+
+.controlsContainer {
+  display: flex;
+  justify-content: center;
+  margin: 0.5em 1em 1em 1em;
+  background-color: var(--background-color);
+}
+
+.betContainer {
+  display: flex;
+  align-items: center;
+  margin: 0 0.5em;
+  padding: 0 1em;
+  width: 40%;
+  border-radius: 10px;
+  background-color: var(--primary-color);
+  box-shadow: 0px 3px 6px var(--shadow-color);
+}
+
+.input {
+  width: 1px;
+  flex-grow: 1;
+  margin: 0 0 0 0.5em;
+  font-size: 200%;
+  text-align: right;
+  margin: 5px;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+.inputError {
+  width: 1px;
+  flex-grow: 1;
+  margin: 0 0 0 0.5em;
+  font-size: 200%;
+  text-align: right;
+  margin: 5px;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background-color: var(--primary-color);
+  color: red;
+}
+
+.input::-webkit-inner-spin-button,
+.inputError::-webkit-inner-spin-button {
+  margin: 0;
+  -webkit-appearance: none;
+}
+
+.button {
+  color: var(--secondary-color);
+  font-weight: bold;
+  margin: 0 0.5em;
+  padding: 1em;
+  width: 30%;
+  outline: none;
+  background-color: var(--primary-color);
+  border-radius: 10px;
+  box-shadow: 0px 3px 6px var(--shadow-color);
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+@media (hover: hover) {
+  .button:hover {
+    background: rgba(0, 0, 0, 0.05);
+  }
+}
+
+.button:disabled {
+  color: gray;
+  background: rgb(245, 245, 245);
+}
+
+@media screen and (max-width: 992px) {
+  .betContainer {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .betContainer {
+    width: 70%;
+  }
+
+  .betContainer h4 {
+    font-size: 75%;
+  }
+
+  .betContainer input {
+    font-size: 125%;
+  }
+}
