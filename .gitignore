@@ -3,3 +3,9 @@ __pycache__
 knime_workspace
 .$*
 node_modules
+
+*.obsidian
+
+# soon
+gia_answers
+diploma
