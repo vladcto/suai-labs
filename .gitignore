@@ -5,6 +5,9 @@ knime_workspace
 node_modules
 
 *.obsidian
+*.vscode
+*.idea
+*.dart_tool
 
 # soon
 gia_answers
