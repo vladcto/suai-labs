@@ -1,1 +1,0 @@
-FLUSH TABLES;

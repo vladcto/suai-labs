@@ -1,0 +1,42 @@
+@startuml MemoryBank_Client_L3
+!includeurl https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+Person(user, "Пользователь")
+
+Container_Boundary(client, "Клиентские приложения") {
+
+  Component(ui, "UI", "Экран/сообщения, формы ввода, навигация")
+
+  Component(mealPresenter,   "Meal Presenter", "Логика приёмов пищи")
+  Component(goalPresenter,   "Goal Presenter", "Логика целей и лимитов")
+  Component(reportPresenter, "Report Presenter", "Формирование отчётов")
+
+  Component(mealRepo,   "Meal Repository", "Интерфейс CRUD Meal")
+  Component(goalRepo,   "Goal Repository", "Интерфейс CRUD Goal")
+  Component(reportRepo, "Report Repository", "Интерфейс выборок статистики")
+
+  Component(dataLayer, "Data Layer", "Remote + Local sources · оффлайн-очередь\nмаппинг DTO ⇄ Domain")
+
+  Component(domainModel, "Domain Model", "Meal, User, NutritionInfo, Goal …")
+
+  Rel(user, ui, "взаимодействует")
+  Rel(ui, mealPresenter,   " ")
+  Rel(ui, goalPresenter,   " ")
+  Rel(ui, reportPresenter, " ")
+
+  Rel(mealPresenter,   mealRepo,   " ")
+  Rel(goalPresenter,   goalRepo,   " ")
+  Rel(reportPresenter, reportRepo, " ")
+
+  Rel(mealRepo,   dataLayer, " ")
+  Rel(goalRepo,   dataLayer, " ")
+  Rel(reportRepo, dataLayer, " ")
+
+  Rel(dataLayer, domainModel, "конвертация моделей")
+
+}
+
+Container(api, "Backend API")
+
+Rel(dataLayer, api, "HTTPS / JSON")
+@enduml

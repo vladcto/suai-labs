@@ -1,0 +1,41 @@
+@startuml Mobile App Architecture
+!theme plain
+top to bottom direction
+
+[main.dart] as main
+
+package "meals" {
+  [MealsPage] as mealsPage
+  [MealBloc] as mealBloc
+  [MealRepository] as mealRepo
+}
+
+package "goals" {
+  [GoalsPage] as goalsPage
+  [GoalBloc] as goalBloc
+  [GoalRepository] as goalRepo
+}
+
+package "dashboard" {
+  [DashboardPage] as dashboardPage
+}
+
+[ApiClient] as apiClient
+cloud "Backend API" as backend
+
+main --> dashboardPage
+
+mealsPage --> mealBloc
+mealBloc --> mealRepo
+mealRepo --> apiClient
+
+goalsPage --> goalBloc
+goalBloc --> goalRepo
+goalRepo --> apiClient
+
+dashboardPage --> mealBloc
+dashboardPage --> goalBloc
+
+apiClient --> backend
+
+@enduml

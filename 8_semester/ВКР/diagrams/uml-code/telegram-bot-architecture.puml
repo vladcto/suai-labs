@@ -1,0 +1,57 @@
+@startuml Telegram Bot Architecture
+!theme plain
+top to bottom direction
+
+hide empty members
+hide circle
+hide methods
+hide stereotypes
+
+package "Telegram Bot Layer" {
+  [BotConfig] as config
+  [TelegramBot] as bot
+  [Application] as app
+}
+
+package "Handler Layer" {
+  [CommandHandler] as cmdHandler
+  [CallbackHandler] as callbackHandler
+  [KeyboardHandler] as keyboardHandler
+  [MealCallbackHandler] as mealHandler
+  [GoalCallbackHandler] as goalHandler
+  [MenuCallbackHandler] as menuHandler
+  [CalculationCallbackHandler] as calcHandler
+  [MealViewCallbackHandler] as mealViewHandler
+}
+
+package "Communication Layer" {
+  [ApiClient] as apiClient
+  [BotMessages] as messages
+}
+
+cloud "Backend API" as backend
+cloud "Telegram API" as telegramApi
+
+bot -l-> config
+app -l-> bot
+bot -d-> cmdHandler
+bot -d-> callbackHandler
+
+cmdHandler -d-> keyboardHandler
+cmdHandler -r-> messages
+
+callbackHandler --> mealHandler
+callbackHandler --> goalHandler
+callbackHandler -l-> menuHandler
+callbackHandler --> calcHandler
+callbackHandler --> mealViewHandler
+
+mealHandler -d-> apiClient
+goalHandler -d-> apiClient
+calcHandler -d-> apiClient
+mealViewHandler -d-> apiClient
+
+bot -u-> telegramApi
+apiClient -d-> backend
+
+@enduml

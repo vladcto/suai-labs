@@ -1,0 +1,9 @@
+@startuml MemoryBank_Context
+!includeurl https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+Person(user, "Пользователь", "Фиксирует питание и просматривает статистику")
+
+System(system, "Система учёта КБЖУ", "Хранит приёмы пищи, считает калории и БЖУ")
+
+Rel(user, system, "Вводит данные и получает отчёты")
+@enduml

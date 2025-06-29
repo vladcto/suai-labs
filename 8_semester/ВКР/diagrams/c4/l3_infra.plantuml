@@ -1,0 +1,22 @@
+@startuml MemoryBank_IaC_Modules_v3
+!includeurl https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+Container(iac, "IaC Codebase", "Модули инфраструктуры") {
+
+  Component(coreMod,  "Core Environment Module", "Root-module: формирует стеки\nконтуров testing и prod")
+
+  Component(netMod,   "Network Module",      "VPC, подсети, маршруты")
+  Component(secMod,   "Security Module",     "IAM-роли, политики, секреты")
+  Component(dbMod,    "Database Module",     "DB Primary + Replica")
+  Component(computeMod,"Compute Module",     "Вычислительные ресурсы\n(ВМ / контейнеры)")
+
+  Rel(coreMod, netMod,    "создаёт")
+  Rel(coreMod, secMod,    "создаёт")
+  Rel(coreMod, dbMod,     "создаёт")
+  Rel(coreMod, computeMod,"создаёт")
+}
+
+System_Ext(cloud, "Cloud Provider", "API облачной платформы")
+
+Rel(iac, cloud, "Provision API calls\n(for testing & prod)")
+@enduml

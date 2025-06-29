@@ -1,0 +1,70 @@
+@startuml Backend Architecture
+!theme plain
+
+package "Presentation Layer" {
+  [Application] as app
+  [Routing] as routing
+  package "Handlers" {
+    [UserHandler] as userHandler
+    [MealHandler] as mealHandler
+    [AnalysisHandler] as analysisHandler
+  }
+  package "Middleware" {
+    [UserMappingMiddleware] as middleware
+  }
+}
+
+package "Domain Layer" {
+  package "Services" {
+    [UserService] as userService
+    [MealService] as mealService
+    [AnalysisService] as analysisService
+    [UserMappingService] as userMappingService
+  }
+}
+
+package "Data Layer" {
+  package "Repositories" {
+    interface "UserRepository" as userRepo
+    interface "MealRepository" as mealRepo
+    interface "UserMappingRepository" as userMappingRepo
+    [UserRepositoryImpl] as userRepoImpl
+    [MealRepositoryImpl] as mealRepoImpl
+    [UserMappingRepositoryImpl] as userMappingRepoImpl
+  }
+  [DatabaseFactory] as dbFactory
+  database "PostgreSQL" as db
+}
+
+' Connections
+app --> routing
+routing --> userHandler
+routing --> mealHandler
+routing --> analysisHandler
+routing --> middleware
+
+userHandler --> userService
+mealHandler --> mealService
+analysisHandler --> analysisService
+
+middleware --> userMappingService
+
+userService --> userRepo
+mealService --> mealRepo
+userMappingService --> userMappingRepo
+analysisService --> mealRepo
+analysisService --> userRepo
+
+userRepo <|-- userRepoImpl
+mealRepo <|-- mealRepoImpl
+userMappingRepo <|-- userMappingRepoImpl
+
+userRepoImpl --> dbFactory
+mealRepoImpl --> dbFactory
+userMappingRepoImpl --> dbFactory
+
+dbFactory --> db
+
+note left of middleware : Конвертация внешнего ID в внутренний ID
+
+@enduml

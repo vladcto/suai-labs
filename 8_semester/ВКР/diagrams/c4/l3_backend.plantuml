@@ -1,0 +1,33 @@
+@startuml MemoryBank_Backend_Components
+!includeurl https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+Container(api, "Backend API", "Сервер приложений") {
+
+  Component(authCtl,   "Authentication Controller", "Приём логина, выдача токенов")
+  Component(mealCtl,   "Meal Controller",           "CRUD операций приёма пищи")
+  Component(reportCtl, "Report Controller",         "Формирование сводок и отчётов")
+
+  Component(authSvc,     "Auth Service",        "Валидация, шифрование, токены")
+  Component(mealSvc,     "Meal Service",        "Правила учёта и верификация блюд")
+  Component(reportSvc,   "Report Service",      "Сбор статистики по БЖУ")
+  Component(calcEngine,  "Nutrition Calculator","Подсчёт калорий и макро-нутриентов")
+
+  Component(userRepo,  "User Repository",  "Доступ к данным пользователей")
+  Component(mealRepo,  "Meal Repository",  "Доступ к приёмам пищи")
+  Component(reportRepo,"Report Repository","Кэш/агрегации отчётов")
+
+  Rel(authCtl,   authSvc,   "вызывает")
+  Rel(mealCtl,   mealSvc,   "вызывает")
+  Rel(reportCtl, reportSvc, "вызывает")
+
+  Rel(authSvc, userRepo,  "читает/пишет")
+  Rel(mealSvc, mealRepo,  "читает/пишет")
+  Rel(reportSvc, reportRepo, "читает/пишет")
+  Rel(calcEngine, mealRepo, "берёт данные для расчётов")
+
+}
+ContainerDb(dbPrimary, "PostgreSQL Primary", "База данных")
+Rel(userRepo,  dbPrimary, "SQL")
+Rel(mealRepo,  dbPrimary, "SQL")
+Rel(reportRepo,dbPrimary, "SQL")
+@enduml

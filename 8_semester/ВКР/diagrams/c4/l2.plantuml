@@ -1,0 +1,27 @@
+@startuml MemoryBank_Containers
+!includeurl https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+left to right direction
+
+Person(user, "Пользователь")
+
+System_Boundary(system, "Система учёта КБЖУ") {
+  Container(mobile, "Клиент", "", "")
+  Container(loadBalancer, "Load Balancer", "", "Автобалансировщик нагрузки")
+  Container(api1, "Backend API", "Stateless-сервис", "REST-эндпоинты и бизнес-логика")
+  Container(api2, "Backend API", "Stateless-сервис", "REST-эндпоинты и бизнес-логика")
+  ContainerDb(dbPrimary, "Реляционная БД", "Например PostgreSQL", "Основная БД")
+
+  Rel(user, mobile, "Использует")
+  Rel(mobile, loadBalancer, "HTTPS / JSON")
+  Rel(loadBalancer, api1, "HTTPS / JSON")
+  Rel(loadBalancer, api2, "HTTPS / JSON")
+  Rel(api1, dbPrimary, "JDBC / SQL")
+  Rel(api2, dbPrimary, "JDBC / SQL")
+
+  Container(iac, "Инфраструктура IaC", "", "Код инфраструктуры (provisioning)")
+}
+
+System_Ext(yc, "Public Cloud Platform", "Google Cloud, Yandex Cloud, AWS, Azure")
+Rel(iac, yc, "Provision API calls")
+
+@enduml
